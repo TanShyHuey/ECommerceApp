@@ -16,7 +16,7 @@ public class EcommerceMain extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.productmainpages);
+        setContentView(R.layout.product_item_main);
 
         int images[]={R.drawable.slide1,R.drawable.slide2,R.drawable.slide4};
 
