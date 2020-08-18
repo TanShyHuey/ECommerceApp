@@ -24,6 +24,7 @@ public class ShoesPagesJava extends AppCompatActivity {
         startActivity(intent);
     }
 
+    
     public void gotoShoesPages(View view) {
         Intent intent = new Intent(this, ShoesPagesJava.class);
         startActivity(intent);
