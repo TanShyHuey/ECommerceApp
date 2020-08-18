@@ -79,7 +79,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         android:text="@string/Shipping"
         android:textSize="22sp"
         android:textStyle="bold"
@@ -101,13 +101,36 @@
 
     <ImageView
         android:id="@+id/imageView25"
-        android:layout_width="409dp"
-        android:layout_height="284dp"
+        android:layout_width="397dp"
+        android:layout_height="213dp"
         android:layout_marginEnd="2dp"
         android:layout_marginRight="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView57"
         app:srcCompat="@drawable/bag3" />
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="153dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="21dp"
+        app:layout_constraintStart_toEndOf="@+id/textView60"
+        app:layout_constraintTop_toBottomOf="@+id/textView59" />
+
+    <TextView
+        android:id="@+id/textView44"
+        android:layout_width="109dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="23dp"
+        android:text="Quantity"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner1" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
