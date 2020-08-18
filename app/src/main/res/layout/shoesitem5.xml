@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -79,9 +78,9 @@
         android:id="@+id/textView82"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginLeft="14dp"
-        android:layout_marginTop="65dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
         android:text="@string/Shipping"
         android:textSize="22sp"
         android:textStyle="bold"
@@ -103,8 +102,8 @@
 
     <ImageView
         android:id="@+id/imageView66"
-        android:layout_width="409dp"
-        android:layout_height="262dp"
+        android:layout_width="399dp"
+        android:layout_height="208dp"
         android:layout_marginStart="2dp"
         android:layout_marginLeft="2dp"
         android:layout_marginTop="1dp"
@@ -113,4 +112,37 @@
         app:layout_constraintTop_toBottomOf="@+id/textView79"
         app:srcCompat="@drawable/shoes5" />
 
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="153dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toEndOf="@+id/textView82"
+        app:layout_constraintTop_toBottomOf="@+id/textView81" />
+
+    <TextView
+        android:id="@+id/textView44"
+        android:layout_width="109dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="31dp"
+        android:text="Quantity"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner1" />
+
+    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+        android:id="@+id/myButton"
+        android:layout_width="183dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="31dp"
+        android:gravity="center"
+        app:layout_constraintStart_toEndOf="@+id/textView44"
+        app:layout_constraintTop_toBottomOf="@+id/spinner1" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+

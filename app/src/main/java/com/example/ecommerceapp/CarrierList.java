@@ -33,7 +33,7 @@ public class CarrierList extends AppCompatActivity {
 
     public void goback(View view) {
 
-        startActivity(new Intent(this, CarrierList.class));
+        startActivity(new Intent(this, NavActivity.class));
     }
 
 
@@ -90,13 +90,7 @@ public class CarrierList extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void Info7(View view) {
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_VIEW);
-        intent.addCategory(Intent.CATEGORY_BROWSABLE);
-        intent.setData(Uri.parse("https://airpak-express.com/"));
-        startActivity(intent);
-    }
+
 
     public void Info8(View view) {
         Intent intent = new Intent();
@@ -104,4 +98,5 @@ public class CarrierList extends AppCompatActivity {
         intent.addCategory(Intent.CATEGORY_BROWSABLE);
         intent.setData(Uri.parse("https://www.delhivery.com/"));
         startActivity(intent);
-    }}
+    }
+}

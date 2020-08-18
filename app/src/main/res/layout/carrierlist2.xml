@@ -19,19 +19,6 @@
         app:layout_constraintTop_toBottomOf="@+id/textView53" />
 
     <TextView
-        android:id="@+id/textView5"
-        android:layout_width="413dp"
-        android:layout_height="63dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:text="@string/GD"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
         android:id="@+id/textView6"
         android:layout_width="413dp"
         android:layout_height="63dp"
@@ -116,28 +103,15 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/imageView7"
         android:layout_width="39dp"
         android:layout_height="37dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:onClick="Info9"
-        app:layout_constraintEnd_toEndOf="@+id/textView5"
-        app:layout_constraintTop_toTopOf="@+id/textView5"
-        app:srcCompat="@drawable/more_info_png_file_infobox_png_1024"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="39dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginRight="12dp"
         android:onClick="Info10"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
         app:srcCompat="@drawable/more_info_png_file_infobox_png_1024"
         tools:ignore="MissingConstraints" />
 
@@ -146,11 +120,11 @@
         android:layout_width="39dp"
         android:layout_height="37dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginRight="12dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:onClick="Info11"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintTop_toTopOf="@+id/textView6"
         app:srcCompat="@drawable/more_info_png_file_infobox_png_1024"
         tools:ignore="MissingConstraints" />
 
@@ -225,7 +199,6 @@
         android:layout_height="?actionBarSize"
         android:gravity="center"
         android:orientation="horizontal"
-        android:text="@string/Search"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -241,30 +214,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_back"
         tools:ignore="VectorDrawableCompat" />
-
-    <ImageButton
-        android:id="@+id/imageButton5"
-        android:layout_width="59dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="5dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView53"
-        app:layout_constraintEnd_toEndOf="@+id/textView53"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/textView53"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.545"
-        app:srcCompat="@drawable/ic_search"
-        tools:ignore="VectorDrawableCompat" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/textView5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView5"
-        app:srcCompat="@drawable/gdex" />
 
     <ImageView
         android:id="@+id/imageView10"

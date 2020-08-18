@@ -60,3 +60,4 @@ public class BagsPagesJava extends AppCompatActivity {
         startActivity(intent);
     }
 }
+

@@ -27,17 +27,11 @@ public class CarrierList2 extends AppCompatActivity{
     }
 
     public void goback2(View view) {
-        startActivity(new Intent(this, CarrierList.class));
+        startActivity(new Intent(this, NavActivity.class));
     }
 
 
-    public void Info9(View view) {
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_VIEW);
-        intent.addCategory(Intent.CATEGORY_BROWSABLE);
-        intent.setData(Uri.parse("https://www.gdexpress.com/malaysia/home/"));
-        startActivity(intent);
-    }
+
 
     public void Info10(View view) {
         Intent intent = new Intent();

@@ -136,4 +136,21 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+
+
+    <string-array name="carrierlist">
+        <item>CTT</item>
+        <item>BRT</item>
+        <item>IML</item>
+        <item>PostaPlus</item>
+        <item>SDA</item>
+        <item>Ecom</item>
+        <item>Delhivery</item>
+        <item>SKYNET</item>
+        <item>Century</item>
+        <item>JT</item>
+        <item>TNT</item>
+        <item>NINJA</item>
+        <item>GOGET</item>
+    </string-array>
 </resources>

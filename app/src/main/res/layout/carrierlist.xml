@@ -37,32 +37,38 @@
         android:text="@string/CTT"
         android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/textView6"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="1dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="413dp"
         android:layout_height="63dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
         android:gravity="center"
         android:orientation="horizontal"
         android:text="@string/BRT"
         android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/textView8"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="1dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="413dp"
         android:layout_height="63dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
         android:gravity="center"
         android:orientation="horizontal"
         android:text="@string/IML"
         android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/textView9"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="1dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView9"
@@ -73,8 +79,9 @@
         android:text="@string/PostaPlus"
         android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/textView10"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-1dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView10"
@@ -85,8 +92,9 @@
         android:text="@string/SDA"
         android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/textView11"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-3dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView11"
@@ -96,21 +104,9 @@
         android:orientation="horizontal"
         android:text="@string/Ecom"
         android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView12"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="1dp" />
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="413dp"
-        android:layout_height="63dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:text="@string/Airpark"
-        android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/textView13"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="1dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView13"
@@ -122,21 +118,20 @@
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView9"
         android:layout_width="39dp"
         android:layout_height="37dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:onClick="Info1"
-        android:clickable="true"
-        android:linksClickable="true"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
         android:autoLink="web"
+        android:clickable="true"
         android:cursorVisible="true"
+        android:linksClickable="true"
+        android:onClick="Info1"
         app:layout_constraintEnd_toEndOf="@+id/textView5"
         app:layout_constraintTop_toTopOf="@+id/textView5"
         app:srcCompat="@drawable/more_info_png_file_infobox_png_1024"
@@ -146,12 +141,12 @@
         android:id="@+id/imageView7"
         android:layout_width="39dp"
         android:layout_height="37dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="26dp"
         android:onClick="Info2"
         app:layout_constraintEnd_toEndOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintTop_toTopOf="@+id/textView6"
         app:srcCompat="@drawable/more_info_png_file_infobox_png_1024"
         tools:ignore="MissingConstraints" />
 
@@ -159,12 +154,12 @@
         android:id="@+id/imageView12"
         android:layout_width="39dp"
         android:layout_height="37dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="26dp"
         android:onClick="Info3"
         app:layout_constraintEnd_toEndOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintTop_toTopOf="@+id/textView8"
         app:srcCompat="@drawable/more_info_png_file_infobox_png_1024"
         tools:ignore="MissingConstraints" />
 
@@ -172,12 +167,12 @@
         android:id="@+id/imageView13"
         android:layout_width="39dp"
         android:layout_height="37dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
         android:onClick="Info4"
         app:layout_constraintEnd_toEndOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        app:layout_constraintTop_toTopOf="@+id/textView9"
         app:srcCompat="@drawable/more_info_png_file_infobox_png_1024"
         tools:ignore="MissingConstraints" />
 
@@ -185,12 +180,12 @@
         android:id="@+id/imageView14"
         android:layout_width="39dp"
         android:layout_height="37dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="26dp"
         android:onClick="Info5"
         app:layout_constraintEnd_toEndOf="@+id/textView10"
-        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        app:layout_constraintTop_toTopOf="@+id/textView10"
         app:srcCompat="@drawable/more_info_png_file_infobox_png_1024"
         tools:ignore="MissingConstraints" />
 
@@ -199,24 +194,11 @@
         android:layout_width="39dp"
         android:layout_height="37dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="26dp"
         android:onClick="Info6"
         app:layout_constraintEnd_toEndOf="@+id/textView11"
-        app:layout_constraintTop_toBottomOf="@+id/textView10"
-        app:srcCompat="@drawable/more_info_png_file_infobox_png_1024"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/imageView16"
-        android:layout_width="39dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:onClick="Info7"
-        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        app:layout_constraintTop_toTopOf="@+id/textView11"
         app:srcCompat="@drawable/more_info_png_file_infobox_png_1024"
         tools:ignore="MissingConstraints" />
 
@@ -224,12 +206,12 @@
         android:id="@+id/imageView17"
         android:layout_width="39dp"
         android:layout_height="37dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="26dp"
         android:onClick="Info8"
-        app:layout_constraintBottom_toBottomOf="@+id/textView13"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView13"
+        app:layout_constraintTop_toTopOf="@+id/textView13"
         app:srcCompat="@drawable/more_info_png_file_infobox_png_1024"
         tools:ignore="MissingConstraints" />
 
@@ -239,42 +221,26 @@
         android:layout_height="?actionBarSize"
         android:gravity="center"
         android:orientation="horizontal"
-        android:text="@string/Search"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/btnBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="63dp"
+        android:layout_height="60dp"
         android:onClick="goback"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_back"
         tools:ignore="VectorDrawableCompat" />
 
-    <ImageButton
-        android:id="@+id/imageButton5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="5dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView53"
-        app:layout_constraintEnd_toEndOf="@+id/textView53"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_search"
-        tools:ignore="VectorDrawableCompat" />
-
     <ImageView
         android:id="@+id/imageView26"
         android:layout_width="69dp"
         android:layout_height="59dp"
-        android:layout_marginTop="3dp"
-        android:layout_marginBottom="1dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView5"
+        android:layout_marginTop="4dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView5"
         app:srcCompat="@drawable/ctt" />
@@ -285,23 +251,21 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@+id/textView6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView6"
         app:srcCompat="@drawable/brt" />
 
     <ImageView
         android:id="@+id/imageView28"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/textView8"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
         app:srcCompat="@drawable/iml" />
 
     <ImageView
         android:id="@+id/imageView29"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/textView9"
+        android:layout_marginTop="1dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView9"
         app:srcCompat="@drawable/postaplus" />
@@ -310,8 +274,8 @@
         android:id="@+id/imageView30"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/textView10"
-        app:layout_constraintStart_toStartOf="@+id/textView10"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9"
         app:srcCompat="@drawable/sda" />
 
@@ -319,27 +283,16 @@
         android:id="@+id/imageView31"
         android:layout_width="99dp"
         android:layout_height="57dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView11"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView11"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
         app:srcCompat="@drawable/ecom" />
-
-    <ImageView
-        android:id="@+id/imageView32"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/textView12"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView12"
-        app:srcCompat="@drawable/airpark" />
 
     <ImageView
         android:id="@+id/imageView33"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView13"
-        app:layout_constraintTop_toTopOf="@+id/textView13"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/delhivery" />
 
     <Button
