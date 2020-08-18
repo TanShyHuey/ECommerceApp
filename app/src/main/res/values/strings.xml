@@ -1,0 +1,139 @@
+<resources>
+    <string name="app_name">ECommerceApp</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_email">Email</string>
+    <string name="btn_login">LOGIN</string>
+    <string name="btn_link_to_register">Don\'t have an account? Sign Up now!</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="auth_failed">Authentication failed, please check your email and password.</string>
+    <string name="minimum_password">Please enter minimum 6 characters!</string>
+    <string name="btn_reset_password">Reset Password</string>
+    <string name="btn_back"><![CDATA["<-- Back to Login Page "]]></string>
+    <string name="forgot_password_msg">Don\'t worry, heppens to the best of us.</string>
+    <string name="register">Register</string>
+    <string name="registration">REGISTRATION</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_phone">Phone No</string>
+    <string name="backToLogin">I have an account, log in now.</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="carrier_list">Carrier List</string>
+    <string name="about_us">About Us</string>
+    <string name="setting">Setting</string>
+    <string name="logout">Logout</string>
+
+    <string name="deliverytracking">DeliveryTracking</string>
+    <string name="cancel">Cancel</string>
+    <string name="Search">Search</string>
+    <string name="International">International</string>
+    <string name="CTT">CTT</string>
+    <string name="BRT">BRT</string>
+    <string name="Ekart">Ekart</string>
+    <string name="IML">IML</string>
+    <string name="PostaPlus">PostaPlus</string>
+    <string name="SDA">SDA</string>
+    <string name="Ecom">Ecom</string>
+    <string name="Airpark">Airpark</string>
+    <string name="Delhivery">Delhivery</string>
+    <string name="GD">GD</string>
+    <string name="DHL">DHL</string>
+    <string name="SkyNET">SKY NET</string>
+    <string name="Century">Century</string>
+    <string name="CLE">CLE</string>
+    <string name="JT">JT</string>
+    <string name="TNT">TNT</string>
+    <string name="Ninja">Ninja</string>
+    <string name="GOGET">GOGET</string>
+    <string name="BASS">BASS</string>
+    <string name="SHOES">shoes</string>
+    <string name="COSMETIC">COSMETIC</string>
+    <string name="liquid_foundation">Liquid Foundation</string>
+    <string name="FullCoverageConcealer">Full Coverage Concealer</string>
+    <string name="rm6_90">RM6.90</string>
+    <string name="rm9_90">RM9.90</string>
+    <string name="matte_lipstick">Matte Lipstick</string>
+    <string name="RM10_90">RM10.90</string>
+    <string name="natural_cheek_blush">Natural Cheek Blush</string>
+
+    <string name="ink_airy_velvet">Ink Airy Velvet</string>
+    <string name="rm29_90">RM29.90</string>
+    <string name="Cheek_Blusher">Cheek Blusher</string>
+    <string name="rm10_99">RM10.99</string>
+    <string name="women_sneakers">Women Sneakers</string>
+    <string name="couple_shoes_sneakers">Couple Shoes Sneakers</string>
+    <string name="rm36_90">RM36.90</string>
+    <string name="macaron_sneakers">Macaron Sneakers</string>
+    <string name="RM45_90">RM45.90</string>
+    <string name="women_s_hight_heels">Women\'s Hight Heels</string>
+    <string name="rm23_90">RM23.90</string>
+    <string name="running_shoes">Running Shoes</string>
+    <string name="rm40_90">RM40.90</string>
+    <string name="rm85_00">RM85.00</string>
+    <string name="simple_satchel_bags">Simple Satchel Bags</string>
+    <string name="women_s_sling_bag">Women\'s Sling Bag</string>
+    <string name="round_pillow_bag">Round Pillow Bag</string>
+    <string name="rm5_90">RM5.90</string>
+    <string name="crossbody_bag">Crossbody Bag</string>
+    <string name="rm13_90">RM13.90</string>
+    <string name="rm19_90">RM19.90</string>
+    <string name="women_s_casual_bag">Women\'s Casual Bag</string>
+    <string name="rm7_90">RM7.90</string>
+    <string name="Malaysia">Malaysia</string>
+    <string name="heybeautys_moist_lipstick_water_lip_tint_fashion_no_fade_glossy_moisturizing_rouge">Heybeautys moist Lipstick Water Lip Tint fashion no-fade Glossy Moisturizing rouge</string>
+    <string name="rm4_90">RM4.90</string>
+    <string name="Shipping">Shipping</string>
+    <string name="add_to_cart">Add to cart</string>
+    <string name="buy_now">Buy Now</string>
+    <string name="comestic">Comestic</string>
+    <string name="shoes">Shoes</string>
+    <string name="BAGS">BAGS</string>
+    <string name="bags">Bags</string>
+    <string name="timberland_men_shoes">Timberland Men Shoes</string>
+    <string name="send_password_reset_email">Reset Email</string>
+    <string name="remove_user">Delete Account</string>
+    <string name="btn_sign_out">Logout</string>
+    <string name="change_password">Change Password</string>
+    <string name="change_email">Change Email</string>
+    <string name="btn_remove">Remove</string>
+    <string name="btn_send">Send</string>
+    <string name="btn_change">Change</string>
+    <string name="new_pass">New Password</string>
+    <string name="hint_new_email">New Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="aname">No Limits</string>
+    <string name="slogan">Buy as much as you can.</string>
+    <string name="our_mission">Our Mission</string>
+    <string name="our_mission_text">"Our mission\n"
+    "No Limits employees provide packages. Develop our global"
+    "business by satisfying our customers’ logistics needs and"
+    "providing excellence and value in everything we do. Maintain"
+    "a company in good financial condition (with extensive"
+    "employee ownership)and provide our shareholders with"
+    "long-term competitive returns. Inspire our employees and"
+    "business partners to do their best to provide opportunities"
+    "for personal development and success. Lead by example and"
+    "become a responsible, caring and sustainable company that"
+    "makes a difference in the communities we serve."</string>
+    <string name="smart_delivery">
+        "Smart E-Commerce\n\n"
+
+        "No Limits is a revolutionary ecommerce shopping app that"
+        "allows you to purchase the products and track the parcel's"
+        "real time location only through apps on any mobile phone."
+        "We have created a mobile application-based vehicle tracking "
+        "and proof-of-delivery system that allows you to control your"
+        fleet even when driving on the road."
+        "Just need to use a smartphone.\n\n"
+
+    </string>
+    <string name="title_activity_navigation_drawer">NavigationDrawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+</resources>
