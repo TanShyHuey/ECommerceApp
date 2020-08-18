@@ -136,6 +136,9 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="product_name">Product Name</string>
+    <string name="size">Size</string>
+    <string name="color">Color</string>
 
 
     <string-array name="carrierlist">
@@ -152,5 +155,13 @@
         <item>TNT</item>
         <item>NINJA</item>
         <item>GOGET</item>
+    </string-array>
+
+    <string-array name="sizelist">
+        <item>S</item>
+        <item>M</item>
+        <item>L</item>
+        <item>XL</item>
+
     </string-array>
 </resources>
