@@ -44,6 +44,6 @@ dependencies {
     implementation files('libs/additionnal.jar')
     implementation files('libs/mail.jar')
 
-    compile 'com.cepheuen.elegant-number-button:lib:1.0.2'
+    implementation 'com.cepheuen.elegant-number-button:lib:1.0.2'
 
 }
