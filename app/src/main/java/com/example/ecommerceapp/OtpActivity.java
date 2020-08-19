@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ProgressBar;
+
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,7 +22,7 @@ public class OtpActivity extends AppCompatActivity {
 
     private String verificationid;
     private FirebaseAuth mAuth;
-    private ProgressBar progressBar;
+
     private EditText editText;
 
     @Override
@@ -32,7 +32,7 @@ public class OtpActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        progressBar = findViewById(R.id.progressbar);
+
         editText = findViewById(R.id.editTextCode);
 
         String phonenumber = getIntent().getStringExtra("phonenumber");
@@ -105,7 +105,7 @@ public class OtpActivity extends AppCompatActivity {
         public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
             String code = phoneAuthCredential.getSmsCode();
             if (code != null){
-                progressBar.setVisibility(View.VISIBLE);
+
                 verifyCode(code);
             }
         }
