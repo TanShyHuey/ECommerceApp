@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Shoes1">
+
+    <ImageView
+        android:id="@+id/product_image_details"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/shoes1"/>
+    <TextView
+        android:id="@+id/product_name_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/product_image_details"
+        android:text="Women Sneakers"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="0dp"/>
+
+    <TextView
+        android:id="@+id/product_image_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/product_image_details"
+        android:text="@string/rm29_90"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/textView62"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/product_image_price"
+        android:layout_marginTop="2dp"
+        android:text="@string/Shipping"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="362dp" />
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="153dp"
+        android:layout_height="41dp"
+        android:layout_below="@+id/product_image_price"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="1dp"
+        android:layout_toEndOf="@+id/textView62"
+        android:layout_toRightOf="@+id/textView62"
+        tools:layout_editor_absoluteX="103dp"
+        tools:layout_editor_absoluteY="362dp" />
+
+
+    <TextView
+        android:id="@+id/textView44"
+        android:layout_width="109dp"
+        android:layout_height="39dp"
+        android:layout_below="@+id/textView62"
+        android:layout_marginTop="13dp"
+        android:text="Quantity"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="427dp" />
+
+    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+        android:id="@+id/myButton"
+        android:layout_width="183dp"
+        android:layout_height="45dp"
+        android:layout_below="@+id/spinner1"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="-2dp"
+        android:layout_marginLeft="-2dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="122dp"
+        android:layout_marginRight="122dp"
+        android:layout_toEndOf="@+id/textView44"
+        android:layout_toRightOf="@+id/textView44"
+        android:gravity="center"
+        tools:layout_editor_absoluteX="125dp"
+        tools:layout_editor_absoluteY="427dp" />
+
+    <TextView
+        android:id="@+id/color"
+        android:layout_width="109dp"
+        android:layout_height="39dp"
+        android:layout_below="@+id/textView62"
+        android:layout_marginTop="61dp"
+        android:text="@string/size"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="427dp" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="153dp"
+        android:layout_height="41dp"
+        android:layout_below="@+id/myButton"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="3dp"
+        android:layout_toEndOf="@+id/color"
+        android:layout_toRightOf="@+id/color"
+        tools:layout_editor_absoluteX="103dp"
+        tools:layout_editor_absoluteY="362dp" />
+
+    <Button
+        android:id="@+id/pd_add_to_cart_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorRed"
+        android:layout_margin="15dp"
+        android:text="@string/add_to_cart"
+        android:layout_alignParentBottom="true"
+        android:textColor="@color/colorWhite"
+        android:textSize="18dp"/>
+
+
+
+</RelativeLayout>
