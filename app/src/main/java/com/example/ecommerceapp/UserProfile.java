@@ -118,14 +118,13 @@ public class UserProfile extends AppCompatActivity {
 
     private void showAllUserData() {
         Intent intent = getIntent();
-        _USERNAME = intent.getStringExtra("username");
         _NAME = intent.getStringExtra("name");
         _EMAIL = intent.getStringExtra("email");
         _PHONENO = intent.getStringExtra("phoneNo");
         _PASSWORD = intent.getStringExtra("password");
 
         fullNameLabel.setText(_NAME);
-        usernameLabel.setText(_USERNAME);
+        usernameLabel.setText(_EMAIL);
         fullName.setText(_NAME);
         email.setText(_EMAIL);
         phoneNo.setText(_PHONENO);
@@ -142,7 +141,7 @@ public class UserProfile extends AppCompatActivity {
 
     private boolean isPasswordChanged() {
         if (!_PASSWORD.equals(password.getText().toString())) {
-            reference.child(_USERNAME).child("password").setValue(password.getText().toString());
+            reference.child(_NAME).child("password").setValue(password.getText().toString());
             _PASSWORD = password.getText().toString();
             return true;
         } else {
@@ -152,7 +151,7 @@ public class UserProfile extends AppCompatActivity {
 
     private boolean isNameChanged() {
         if (!_NAME.equals(fullName.getText().toString())) {
-            reference.child(_USERNAME).child("name").setValue(fullName.getText().toString());
+            reference.child(_NAME).child("name").setValue(fullName.getText().toString());
             _NAME = fullName.getText().toString();
             return true;
         } else {

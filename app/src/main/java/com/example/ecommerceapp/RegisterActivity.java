@@ -11,7 +11,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.ecommerceapp.ui.slideshow.UserHelperClass;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -65,7 +64,8 @@ public class RegisterActivity extends AppCompatActivity {
                 final String name = inputname.getText().toString().trim();
                 final String email = inputEmail.getText().toString().trim();
                 final String password = inputPassword.getText().toString().trim();
-                UserHelperClass helperClass = new UserHelperClass(name,email,password);
+                final String phoneNo = inputPhone.getText().toString().trim();
+                UserHelperClass helperClass = new UserHelperClass(name,email,phoneNo,password);
                 reference.child(name).setValue(helperClass);
                 if (TextUtils.isEmpty(email)) {
                     Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
@@ -102,7 +102,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     currentUserDB.child("Name").setValue(inputname);
                                     currentUserDB.child("Email").setValue(email);
                                     currentUserDB.child("Password").setValue(password);
-                                    currentUserDB.child("Phone").setValue(inputPhone);
+                                    currentUserDB.child("Phone").setValue(phoneNo);
                                     Toast.makeText(RegisterActivity.this, "createUserWithEmail:onComplete:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
                                     startActivity(new Intent(RegisterActivity.this, NavActivity.class));
                                     finish();
