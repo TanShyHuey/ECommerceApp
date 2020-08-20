@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,10 +29,11 @@ public class Bag1 extends AppCompatActivity implements AdapterView.OnItemSelecte
 
     private Button addToCartButton;
     private ImageView productImage;
-    private TextView productPrice,productName,productCarrierList;
+    private TextView productName,productPrice;
     private ElegantNumberButton btn;
-    private Spinner carrierselection;
-    private EditText getTxtSize;
+    private Spinner ShippingList;
+    private Spinner ProductSize;
+    private TextView productCarrierList;
     DatabaseReference Item;
     product product;
 
@@ -46,12 +48,13 @@ public class Bag1 extends AppCompatActivity implements AdapterView.OnItemSelecte
 
 
         productImage=(ImageView) findViewById(R.id.product_image_details);
-        productName=(TextView) findViewById(R.id.product_name_details);
-        productPrice=(TextView) findViewById(R.id.product_image_price);
+        productName=(TextView) findViewById(R.id.ProductName);
+        productPrice=(TextView) findViewById(R.id.ProductPrice);
         addToCartButton=(Button) findViewById(R.id.pd_add_to_cart_button);
-        btn = (ElegantNumberButton) findViewById(R.id.myButton);
-        getTxtSize=(EditText) findViewById(R.id.txtSize);
-        Spinner carrierselection=(Spinner) findViewById(R.id.spinner1);
+        btn = (ElegantNumberButton) findViewById(R.id.Quantity);
+        ProductSize=(Spinner) findViewById(R.id.Size);
+        ShippingList=(Spinner)findViewById(R.id.Shipping);
+
 
 
         product=new product();
@@ -62,9 +65,15 @@ public class Bag1 extends AppCompatActivity implements AdapterView.OnItemSelecte
             @Override
             public void onClick(View view)
             {
-                product.setTxtSize(getTxtSize.getText().toString().trim());
+                product.setSize(ProductSize.getSelectedItem().toString());
+                product.setProductName(productName.getText().toString().trim());
+                product.setProductPrice(productPrice.getText().toString().trim());
+                product.setShipping(ShippingList.getSelectedItem().toString());
+                product.setQuantity(btn.getNumber());
                 Item.push().setValue(product);
+                Toast.makeText(Bag1.this,"add to cart Successful",Toast.LENGTH_LONG).show();
             }
+
         });
 
         btn.setOnClickListener(new ElegantNumberButton.OnClickListener() {
@@ -77,8 +86,14 @@ public class Bag1 extends AppCompatActivity implements AdapterView.OnItemSelecte
             }
         });
 
-        Spinner spinner = findViewById(R.id.spinner1);
+        Spinner spinner = findViewById(R.id.Shipping);
         ArrayAdapter<CharSequence> adapter= ArrayAdapter.createFromResource(this,R.array.carrierlist,android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
+
+        spinner = findViewById(R.id.Size);
+        adapter = ArrayAdapter.createFromResource(this, R.array.sizelist, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
