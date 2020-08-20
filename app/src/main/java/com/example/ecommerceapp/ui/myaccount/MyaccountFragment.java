@@ -1,4 +1,4 @@
-package com.example.ecommerceapp.ui.slideshow;
+package com.example.ecommerceapp.ui.myaccount;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,19 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.ecommerceapp.R;
 
-public class SlideshowFragment extends Fragment {
+import static com.example.ecommerceapp.R.id.text_myaccount;
 
-    private SlideshowViewModel slideshowViewModel;
+public class MyaccountFragment extends Fragment {
+
+    private MyaccountViewModel myaccountViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        slideshowViewModel =
-                ViewModelProviders.of(this).get(SlideshowViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
-        final TextView textView = root.findViewById(R.id.text_slideshow);
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        myaccountViewModel =
+                ViewModelProviders.of(this).get(MyaccountViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_myaccount, container, false);
+        final TextView textView = root.findViewById(text_myaccount);
+        myaccountViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

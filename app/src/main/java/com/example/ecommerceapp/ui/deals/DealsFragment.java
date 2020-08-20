@@ -1,4 +1,4 @@
-package com.example.ecommerceapp.ui.gallery;
+package com.example.ecommerceapp.ui.deals;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.ecommerceapp.R;
 
-public class GalleryFragment extends Fragment {
+public class DealsFragment extends Fragment {
 
-    private GalleryViewModel galleryViewModel;
+    private DealsViewModel dealsViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        galleryViewModel =
-                ViewModelProviders.of(this).get(GalleryViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_gallery, container, false);
-        final TextView textView = root.findViewById(R.id.text_gallery);
-        galleryViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        dealsViewModel =
+                ViewModelProviders.of(this).get(DealsViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_deals, container, false);
+        final TextView textView = root.findViewById(R.id.text_deals);
+        dealsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

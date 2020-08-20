@@ -168,4 +168,17 @@
         <item>XL</item>
 
     </string-array>
+    <string name="title_activity_homepage">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_deals">Deals</string>
+    <string name="title_my_account">My account</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="history_payment">History Payment</string>
+    <string name="text_product">Product</string>
+    <string name="text_payment">Payment</string>
+    <string name="text_favorite_product">Favorite Product</string>
+    <string name="tetxt_product_page">Product Page</string>
 </resources>
