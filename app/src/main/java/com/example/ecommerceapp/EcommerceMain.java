@@ -61,10 +61,7 @@ public class EcommerceMain extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void gotoLipstick(View view) {
-        Intent intent = new Intent(this, Lipstick.class);
-        startActivity(intent);
-    }
+
 
     public void gotoComesticPages(View view) {
         Intent intent = new Intent(this, ComesticPagesJava.class);
@@ -83,6 +80,11 @@ public class EcommerceMain extends AppCompatActivity {
 
     public void gotoComestic7(View view) {
         Intent intent = new Intent(this, Comestic2.class);
+        startActivity(intent);
+    }
+
+    public void gotolipstick(View view) {
+        Intent intent = new Intent(this, Comestic4.class);
         startActivity(intent);
     }
 }

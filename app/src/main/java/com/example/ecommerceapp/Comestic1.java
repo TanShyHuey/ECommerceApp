@@ -7,9 +7,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,20 +20,18 @@ import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.HashMap;
 
 
 public class Comestic1 extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
     private Button addToCartButton;
-    private ImageView productImage;
-    private TextView productPrice,productName,productCarrierList;
+    private TextView productName,productPrice;
     private ElegantNumberButton btn;
-
-
-
+    private Spinner ShippingList;
+    private Spinner ProductColor;
+    private TextView productCarrierList;
+    DatabaseReference Item;
+    product product;
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
@@ -40,19 +40,32 @@ public class Comestic1 extends AppCompatActivity implements AdapterView.OnItemSe
         setContentView(R.layout.comesticitem3);
 
 
-        productImage=(ImageView) findViewById(R.id.product_image_details);
-        productName=(TextView) findViewById(R.id.product_name_details);
-        productPrice=(TextView) findViewById(R.id.product_image_price);
+        productName=(TextView) findViewById(R.id.ProductName);
+        productPrice=(TextView) findViewById(R.id.ProductPrice);
         addToCartButton=(Button) findViewById(R.id.pd_add_to_cart_button);
-        btn = (ElegantNumberButton) findViewById(R.id.myButton);
+        btn = (ElegantNumberButton) findViewById(R.id.Quantity);
+        ShippingList=(Spinner)findViewById(R.id.Shipping);
+        ProductColor=(Spinner) findViewById(R.id.Color);
+
+
+
+        product=new product();
+        Item=FirebaseDatabase.getInstance().getReference().child("Product");
 
 
         addToCartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
             {
-                addingToCartList();
+                product.setColor(ProductColor.getSelectedItem().toString());
+                product.setProductName(productName.getText().toString().trim());
+                product.setProductPrice(productPrice.getText().toString().trim());
+                product.setShipping(ShippingList.getSelectedItem().toString());
+                product.setQuantity(btn.getNumber());
+                Item.push().setValue(product);
+                Toast.makeText(Comestic1.this,"add to cart Successful",Toast.LENGTH_LONG).show();
             }
+
         });
 
         btn.setOnClickListener(new ElegantNumberButton.OnClickListener() {
@@ -60,46 +73,22 @@ public class Comestic1 extends AppCompatActivity implements AdapterView.OnItemSe
             public void onClick(View view) {
                 String num = btn.getNumber();
                 Log.e("Num", num);
+
+
             }
         });
 
-        Spinner spinner = findViewById(R.id.spinner1);
+        Spinner spinner = findViewById(R.id.Shipping);
         ArrayAdapter<CharSequence> adapter= ArrayAdapter.createFromResource(this,R.array.carrierlist,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
 
-        spinner = findViewById(R.id.spinner2);
-        adapter = ArrayAdapter.createFromResource(this, R.array.sizelist, android.R.layout.simple_spinner_item);
+        spinner = findViewById(R.id.Color);
+        adapter = ArrayAdapter.createFromResource(this, R.array.colorlist, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
-
-
-
-    }
-
-    private void addingToCartList()
-    {
-        String saveCurrentTime,saveCurrentDate;
-        Calendar calForDate= Calendar.getInstance();
-        SimpleDateFormat currentDate=new SimpleDateFormat("MM.dd,yyyy");
-        saveCurrentDate=currentDate.format(calForDate.getTime());
-        SimpleDateFormat currentTime=new SimpleDateFormat("HH:mm:ss a");
-        saveCurrentTime=currentDate.format(calForDate.getTime());
-
-        DatabaseReference cartListRef= FirebaseDatabase.getInstance().getReference().child("Product");
-
-        final HashMap<String,Object>cartMap=new HashMap<>();
-        cartMap.put("pid",productName.getText().toString());
-        cartMap.put("pImage",productImage);
-        cartMap.put("Price",productPrice.getText().toString());
-        cartMap.put("Quantity",btn.getNumber());
-        cartMap.put("time",saveCurrentTime);
-        cartMap.put("date",saveCurrentDate);
-        cartMap.put("CarrierList",productCarrierList);
-
-
 
 
     }
@@ -114,5 +103,10 @@ public class Comestic1 extends AppCompatActivity implements AdapterView.OnItemSe
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
+    }
+
+
+    public void setProductCarrierList(TextView productCarrierList) {
+        this.productCarrierList = productCarrierList;
     }
 }

@@ -20,15 +20,11 @@ import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.HashMap;
 
 
 public class Bag1 extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
     private Button addToCartButton;
-    private ImageView productImage;
     private TextView productName,productPrice;
     private ElegantNumberButton btn;
     private Spinner ShippingList;
@@ -37,9 +33,6 @@ public class Bag1 extends AppCompatActivity implements AdapterView.OnItemSelecte
     DatabaseReference Item;
     product product;
 
-
-
-
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +40,6 @@ public class Bag1 extends AppCompatActivity implements AdapterView.OnItemSelecte
         setContentView(R.layout.bagitem1);
 
 
-        productImage=(ImageView) findViewById(R.id.product_image_details);
         productName=(TextView) findViewById(R.id.ProductName);
         productPrice=(TextView) findViewById(R.id.ProductPrice);
         addToCartButton=(Button) findViewById(R.id.pd_add_to_cart_button);
@@ -99,12 +91,7 @@ public class Bag1 extends AppCompatActivity implements AdapterView.OnItemSelecte
         spinner.setOnItemSelectedListener(this);
 
 
-
-
-
     }
-
-
 
 
     @Override
@@ -118,8 +105,6 @@ public class Bag1 extends AppCompatActivity implements AdapterView.OnItemSelecte
 
     }
 
-    public void gotocart(View view) {
-    }
 
     public void setProductCarrierList(TextView productCarrierList) {
         this.productCarrierList = productCarrierList;

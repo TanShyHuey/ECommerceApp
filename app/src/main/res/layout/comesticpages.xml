@@ -13,7 +13,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginBottom="25dp"
-        android:onClick="gotoLipstick"
+        android:onClick="gotocomestic4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/gererere" />

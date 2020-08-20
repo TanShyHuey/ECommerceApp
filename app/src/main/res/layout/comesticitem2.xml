@@ -13,7 +13,7 @@
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/gererere"/>
     <TextView
-        android:id="@+id/product_name_details"
+        android:id="@+id/ProductName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_details"
@@ -24,7 +24,7 @@
         android:layout_marginTop="0dp"/>
 
     <TextView
-        android:id="@+id/product_image_price"
+        android:id="@+id/ProductPrice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_details"
@@ -38,7 +38,7 @@
         android:id="@+id/textView62"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/product_image_price"
+        android:layout_below="@+id/ProductPrice"
         android:layout_marginTop="2dp"
         android:text="@string/Shipping"
         android:textSize="22sp"
@@ -47,10 +47,10 @@
         tools:layout_editor_absoluteY="362dp" />
 
     <Spinner
-        android:id="@+id/spinner1"
+        android:id="@+id/Shipping"
         android:layout_width="153dp"
         android:layout_height="41dp"
-        android:layout_below="@+id/product_image_price"
+        android:layout_below="@+id/ProductPrice"
         android:layout_marginStart="2dp"
         android:layout_marginLeft="2dp"
         android:layout_marginTop="1dp"
@@ -66,17 +66,17 @@
         android:layout_height="39dp"
         android:layout_below="@+id/textView62"
         android:layout_marginTop="13dp"
-        android:text="Quantity"
+        android:text="@string/Quantity"
         android:textSize="22sp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="427dp" />
 
     <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
-        android:id="@+id/myButton"
+        android:id="@+id/Quantity"
         android:layout_width="183dp"
         android:layout_height="45dp"
-        android:layout_below="@+id/spinner1"
+        android:layout_below="@+id/Shipping"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_marginStart="-2dp"
@@ -103,10 +103,10 @@
         tools:layout_editor_absoluteY="427dp" />
 
     <Spinner
-        android:id="@+id/spinner2"
+        android:id="@+id/Color"
         android:layout_width="153dp"
         android:layout_height="41dp"
-        android:layout_below="@+id/myButton"
+        android:layout_below="@+id/Quantity"
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
         android:layout_marginTop="3dp"

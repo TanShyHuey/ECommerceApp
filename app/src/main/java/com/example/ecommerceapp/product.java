@@ -7,6 +7,10 @@ public class product {
     private String spinner2;
     private String ProductPrice;
     private String Size;
+    private String Color;
+
+
+
 
     public String getProductName() {
         return ProductName;
@@ -30,6 +34,18 @@ public class product {
 
     public void setShipping(String Shipping) {
         this.Shipping = Shipping;
+    }
+
+    public String getColor() {
+        return Color;
+    }
+
+    public void setColor(String color) {
+        Color = color;
+    }
+
+    public product(String color) {
+        Color = color;
     }
 
     public String getSpinner2() {

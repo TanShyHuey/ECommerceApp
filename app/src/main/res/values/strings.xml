@@ -143,6 +143,8 @@
     <string name="button3">Button3</string>
     <string name="button4">Button4</string>
     <string name="deals">Deals</string>
+    <string name="quantity" />
+    <string name="Quantity" />
 
 
     <string-array name="carrierlist">
@@ -166,6 +168,25 @@
         <item>M</item>
         <item>L</item>
         <item>XL</item>
+    </string-array>
 
+    <string-array name="colorlist">
+        <item>Ruby woo</item>
+        <item>Chili</item>
+        <item>Diva</item>
+        <item>Taupe</item>
+        <item>Del Rio</item>
+    </string-array>
+
+    <string-array name="shoesSize">
+        <item>40</item>
+        <item>41</item>
+        <item>42</item>
+        <item>43</item>
+        <item>44</item>
+        <item>45</item>
+        <item>46</item>
+        <item>47</item>
+        <item>48</item>
     </string-array>
 </resources>

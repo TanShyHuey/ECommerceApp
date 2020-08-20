@@ -27,10 +27,6 @@ public class ComesticPagesJava extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void gotoLipstick(View view) {
-        Intent intent = new Intent(this, Comestic4.class);
-        startActivity(intent);
-    }
 
     public void gotoComestic1(View view) {
         Intent intent = new Intent(this, Comestic1.class);
@@ -42,10 +38,6 @@ public class ComesticPagesJava extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void gotoComestic4(View view) {
-        Intent intent = new Intent(this, Comestic2.class);
-        startActivity(intent);
-    }
 
     public void gotoComestic5(View view) {
         Intent intent = new Intent(this, Comestic5.class);
@@ -54,6 +46,16 @@ public class ComesticPagesJava extends AppCompatActivity {
 
     public void gotoComestic6(View view) {
         Intent intent = new Intent(this, Comestic6.class);
+        startActivity(intent);
+    }
+
+    public void gotocomestic4(View view) {
+        Intent intent = new Intent(this, Comestic4.class);
+        startActivity(intent);
+    }
+
+    public void gotoComestic4(View view) {
+        Intent intent = new Intent(this, Comestic2.class);
         startActivity(intent);
     }
 }
