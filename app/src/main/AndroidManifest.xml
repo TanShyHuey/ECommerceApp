@@ -12,9 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".NavigationDrawer"
-            android:label="@string/title_activity_navigation_drawer"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:name=".Homepage"
+            android:label="@string/title_activity_homepage"></activity>
         <activity android:name=".AboutUsActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".OtpActivity" />
@@ -49,7 +48,7 @@
         <activity android:name=".Comestic5" />
         <activity android:name=".Comestic6" />
         <activity android:name=".CarrierList" />
-        <activity android:name=".ChatActivity"/>
+        <activity android:name=".ChatActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
