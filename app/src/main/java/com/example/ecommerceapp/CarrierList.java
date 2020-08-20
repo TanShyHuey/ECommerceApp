@@ -99,4 +99,6 @@ public class CarrierList extends AppCompatActivity {
         intent.setData(Uri.parse("https://www.delhivery.com/"));
         startActivity(intent);
     }
+
+
 }

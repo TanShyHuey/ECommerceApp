@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -29,6 +30,10 @@ public class Bag1 extends AppCompatActivity implements AdapterView.OnItemSelecte
     private ImageView productImage;
     private TextView productPrice,productName,productCarrierList;
     private ElegantNumberButton btn;
+    private Spinner carrierselection;
+    private EditText getTxtSize;
+    DatabaseReference Item;
+    product product;
 
 
 
@@ -45,13 +50,20 @@ public class Bag1 extends AppCompatActivity implements AdapterView.OnItemSelecte
         productPrice=(TextView) findViewById(R.id.product_image_price);
         addToCartButton=(Button) findViewById(R.id.pd_add_to_cart_button);
         btn = (ElegantNumberButton) findViewById(R.id.myButton);
+        getTxtSize=(EditText) findViewById(R.id.txtSize);
+        Spinner carrierselection=(Spinner) findViewById(R.id.spinner1);
+
+
+        product=new product();
+        Item=FirebaseDatabase.getInstance().getReference().child("Product");
 
 
         addToCartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
             {
-                addingToCartList();
+                product.setTxtSize(getTxtSize.getText().toString().trim());
+                Item.push().setValue(product);
             }
         });
 
@@ -60,6 +72,8 @@ public class Bag1 extends AppCompatActivity implements AdapterView.OnItemSelecte
             public void onClick(View view) {
                 String num = btn.getNumber();
                 Log.e("Num", num);
+
+
             }
         });
 
@@ -69,40 +83,13 @@ public class Bag1 extends AppCompatActivity implements AdapterView.OnItemSelecte
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
 
-        spinner = findViewById(R.id.spinner2);
-        adapter = ArrayAdapter.createFromResource(this, R.array.sizelist, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
-
-
-
-    }
-
-    private void addingToCartList()
-    {
-        String saveCurrentTime,saveCurrentDate;
-        Calendar calForDate= Calendar.getInstance();
-        SimpleDateFormat currentDate=new SimpleDateFormat("MM.dd,yyyy");
-        saveCurrentDate=currentDate.format(calForDate.getTime());
-        SimpleDateFormat currentTime=new SimpleDateFormat("HH:mm:ss a");
-        saveCurrentTime=currentDate.format(calForDate.getTime());
-
-        DatabaseReference cartListRef= FirebaseDatabase.getInstance().getReference().child("Product");
-
-        final HashMap<String,Object>cartMap=new HashMap<>();
-        cartMap.put("pid",productName.getText().toString());
-        cartMap.put("pImage",productImage);
-        cartMap.put("Price",productPrice.getText().toString());
-        cartMap.put("Quantity",btn.getNumber());
-        cartMap.put("time",saveCurrentTime);
-        cartMap.put("date",saveCurrentDate);
-        cartMap.put("CarrierList",productCarrierList);
 
 
 
 
     }
+
+
 
 
     @Override
@@ -114,5 +101,12 @@ public class Bag1 extends AppCompatActivity implements AdapterView.OnItemSelecte
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
+    }
+
+    public void gotocart(View view) {
+    }
+
+    public void setProductCarrierList(TextView productCarrierList) {
+        this.productCarrierList = productCarrierList;
     }
 }

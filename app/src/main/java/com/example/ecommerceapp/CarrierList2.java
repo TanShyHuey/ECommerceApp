@@ -7,7 +7,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class CarrierList2 extends AppCompatActivity{
+public class CarrierList2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +29,6 @@ public class CarrierList2 extends AppCompatActivity{
     public void goback2(View view) {
         startActivity(new Intent(this, NavActivity.class));
     }
-
-
 
 
     public void Info10(View view) {
@@ -88,4 +86,5 @@ public class CarrierList2 extends AppCompatActivity{
         intent.setData(Uri.parse("https://goget.my/"));
         startActivity(intent);
     }
+
 }

@@ -139,6 +139,10 @@
     <string name="product_name">Product Name</string>
     <string name="size">Size</string>
     <string name="color">Color</string>
+    <string name="add_new_product">Add New Product</string>
+    <string name="button3">Button3</string>
+    <string name="button4">Button4</string>
+    <string name="deals">Deals</string>
 
 
     <string-array name="carrierlist">

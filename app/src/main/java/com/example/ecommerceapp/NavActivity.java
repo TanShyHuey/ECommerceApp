@@ -62,4 +62,9 @@ public class NavActivity extends AppCompatActivity {
         Intent intent = new Intent(this, CarrierList.class);
         startActivity(intent);
     }
+
+    public void gotoproductpages(View view) {
+        Intent intent = new Intent(this, EcommerceMain.class);
+        startActivity(intent);
+    }
 }

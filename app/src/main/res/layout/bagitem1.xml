@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="260dp"
         android:scaleType="centerCrop"
+        android:onClick="gotocart"
         android:src="@drawable/bag3"/>
     <TextView
         android:id="@+id/product_name_details"
@@ -102,18 +103,18 @@
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="427dp" />
 
-    <Spinner
-        android:id="@+id/spinner2"
-        android:layout_width="153dp"
-        android:layout_height="41dp"
+
+    <EditText
+        android:id="@+id/txtSize"
+        android:layout_width="224dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/myButton"
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
+        android:text="Enter your size"
         android:layout_marginTop="3dp"
         android:layout_toEndOf="@+id/color"
-        android:layout_toRightOf="@+id/color"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="362dp" />
+        android:layout_toRightOf="@+id/color" />
 
     <Button
         android:id="@+id/pd_add_to_cart_button"
