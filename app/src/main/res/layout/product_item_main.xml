@@ -76,7 +76,7 @@
             android:layout_height="188dp"
             android:layout_below="@+id/imageView"
             android:layout_marginTop="84dp"
-            android:onClick="gotocomestic2"
+            android:onClick="gotoBag1"
             app:srcCompat="@drawable/bag3" />
 
         <ImageView
@@ -90,7 +90,7 @@
             android:layout_marginEnd="-2dp"
             android:layout_marginRight="-2dp"
             android:layout_marginBottom="40dp"
-            android:onClick="gotoBag1"
+            android:onClick="gotoComestic7"
             app:srcCompat="@drawable/comestic2"/>
 
         <ImageView

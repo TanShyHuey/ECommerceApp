@@ -1,59 +1,59 @@
 package com.example.ecommerceapp;
 
 public class product {
-    private String product_name_details;
-    private Integer myButton;
-    private Integer spinner1;
-    private Integer spinner2;
-    private Float product_image_price;
-    private String txtSize;
+    private String ProductName;
+    private String Quantity;
+    private String Shipping;
+    private String spinner2;
+    private String ProductPrice;
+    private String Size;
 
-    public String getProduct_name_details() {
-        return product_name_details;
+    public String getProductName() {
+        return ProductName;
     }
 
-    public void setProduct_name_details(String product_name_details) {
-        this.product_name_details = product_name_details;
+    public void setProductName(String ProductName) {
+        this.ProductName = ProductName;
     }
 
-    public Integer getMyButton() {
-        return myButton;
+    public String getQuantity() {
+        return Quantity;
     }
 
-    public void setMyButton(Integer myButton) {
-        this.myButton = myButton;
+    public void setQuantity(String Quantity) {
+        this.Quantity = Quantity;
     }
 
-    public Integer getSpinner1() {
-        return spinner1;
+    public String getShipping() {
+        return Shipping;
     }
 
-    public void setSpinner1(Integer spinner1) {
-        this.spinner1 = spinner1;
+    public void setShipping(String Shipping) {
+        this.Shipping = Shipping;
     }
 
-    public Integer getSpinner2() {
+    public String getSpinner2() {
         return spinner2;
     }
 
-    public void setSpinner2(Integer spinner2) {
+    public void setSpinner2(String spinner2) {
         this.spinner2 = spinner2;
     }
 
-    public Float getProduct_image_price() {
-        return product_image_price;
+    public String getProductPrice() {
+        return ProductPrice;
     }
 
-    public void setProduct_image_price(Float product_image_price) {
-        this.product_image_price = product_image_price;
+    public void setProductPrice(String ProductPrice) {
+        this.ProductPrice = ProductPrice;
     }
 
-    public String getTxtSize() {
-        return txtSize;
+    public String getSize() {
+        return Size;
     }
 
-    public void setTxtSize(String txtSize) {
-        this.txtSize = txtSize;
+    public void setSize(String setSize) {
+        this.Size = setSize;
     }
 
     public product() {
