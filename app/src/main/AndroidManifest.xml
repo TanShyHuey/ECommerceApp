@@ -25,15 +25,14 @@
         <activity android:name=".ResetActivity" />
         <activity android:name=".NavActivity" />
         <activity android:name=".CarrierList2" />
-        <activity android:name=".EcommerceMain" />
+        <activity android:name=".EcommerceMain" android:parentActivityName=".NavActivity" />
         <activity android:name=".Shoes1" />
         <activity android:name=".Shoes2" />
         <activity android:name=".Shoes3" />
         <activity android:name=".Shoes4" />
         <activity android:name=".Shoes5" />
         <activity android:name=".Shoes6" />
-        <activity android:name=".Bag1" />
-        <activity android:name=".Lipstick" />
+        <activity android:name=".Bag1" android:parentActivityName=".EcommerceMain"/>
         <activity android:name=".ComesticPagesJava" />
         <activity android:name=".ShoesPagesJava" />
         <activity android:name=".BagsPagesJava" />

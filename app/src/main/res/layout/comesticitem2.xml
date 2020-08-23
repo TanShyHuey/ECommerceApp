@@ -66,7 +66,7 @@
         android:layout_height="39dp"
         android:layout_below="@+id/textView62"
         android:layout_marginTop="13dp"
-        android:text="@string/Quantity"
+        android:text="Quantity"
         android:textSize="22sp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="16dp"

@@ -1,5 +1,6 @@
 package com.example.ecommerceapp;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
@@ -30,6 +32,7 @@ public class Bag1 extends AppCompatActivity implements AdapterView.OnItemSelecte
     private Spinner ShippingList;
     private Spinner ProductSize;
     private TextView productCarrierList;
+    private Button FavouriteProduct;
     DatabaseReference Item;
     product product;
 
@@ -39,6 +42,9 @@ public class Bag1 extends AppCompatActivity implements AdapterView.OnItemSelecte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bagitem1);
 
+        getSupportActionBar().setTitle("Bag3");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         productName=(TextView) findViewById(R.id.ProductName);
         productPrice=(TextView) findViewById(R.id.ProductPrice);
@@ -46,6 +52,9 @@ public class Bag1 extends AppCompatActivity implements AdapterView.OnItemSelecte
         btn = (ElegantNumberButton) findViewById(R.id.Quantity);
         ProductSize=(Spinner) findViewById(R.id.Size);
         ShippingList=(Spinner)findViewById(R.id.Shipping);
+        FavouriteProduct=(Button) findViewById(R.id.Favourite_button);
+
+
 
 
 
@@ -108,5 +117,10 @@ public class Bag1 extends AppCompatActivity implements AdapterView.OnItemSelecte
 
     public void setProductCarrierList(TextView productCarrierList) {
         this.productCarrierList = productCarrierList;
+    }
+
+
+    public void gotowishlist(View view) {
+
     }
 }

@@ -202,4 +202,7 @@
     <string name="text_payment">Payment</string>
     <string name="text_favorite_product">Favorite Product</string>
     <string name="tetxt_product_page">Product Page</string>
+    <string name="wish_list">Wish List</string>
+    <string name="Favourite" />
+    <string name="favourite">Favourite</string>
 </resources>

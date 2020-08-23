@@ -18,6 +18,9 @@ public class EcommerceMain extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.product_item_main);
 
+        getSupportActionBar().setTitle("No Limits");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         int images[]={R.drawable.slide1,R.drawable.slide2,R.drawable.slide4};
 
         v_flipper =findViewById(R.id.v_flipper);

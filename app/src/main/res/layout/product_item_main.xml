@@ -15,7 +15,6 @@
             android:id="@+id/v_flipper"
             android:layout_width="match_parent"
             android:layout_height="177dp"
-            android:layout_centerHorizontal="true"
             android:layout_marginTop="1dp" />
 
         <Button
