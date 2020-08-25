@@ -42,7 +42,7 @@ public class Bag1 extends AppCompatActivity implements AdapterView.OnItemSelecte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bagitem1);
 
-        getSupportActionBar().setTitle("Bag3");
+        getSupportActionBar().setTitle("Bag1");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 

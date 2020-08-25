@@ -38,6 +38,8 @@ public class Comestic3 extends AppCompatActivity implements AdapterView.OnItemSe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.comesticitem4);
+        getSupportActionBar().setTitle("No Limits");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
         productName=(TextView) findViewById(R.id.ProductName);

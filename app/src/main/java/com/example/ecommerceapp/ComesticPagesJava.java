@@ -11,6 +11,10 @@ public class ComesticPagesJava extends AppCompatActivity {
         setContentView(R.layout.comesticpages);
 
 
+        getSupportActionBar().setTitle("Comestic ");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
     }
     public void gotoBagsPages(View view) {
         Intent intent = new Intent(this, BagsPagesJava.class);

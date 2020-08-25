@@ -12,6 +12,9 @@ public class BagsPagesJava extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bagspages);
 
+        getSupportActionBar().setTitle("Bags");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
     }
 

@@ -16,6 +16,9 @@ public class CarrierList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.carrierlist);
 
+        getSupportActionBar().setTitle("Carrier List");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
     }
 

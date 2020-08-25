@@ -39,6 +39,9 @@ public class Bag2 extends AppCompatActivity implements AdapterView.OnItemSelecte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bagitem2);
 
+        getSupportActionBar().setTitle("No Limits");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         productName=(TextView) findViewById(R.id.ProductName);
         productPrice=(TextView) findViewById(R.id.ProductPrice);

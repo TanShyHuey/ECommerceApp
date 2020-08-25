@@ -40,6 +40,9 @@ public class Shoes4 extends AppCompatActivity implements AdapterView.OnItemSelec
         super.onCreate(savedInstanceState);
         setContentView(R.layout.shoesitem4);
 
+        getSupportActionBar().setTitle("No Limits");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         productName=(TextView) findViewById(R.id.ProductName);
         productPrice=(TextView) findViewById(R.id.ProductPrice);

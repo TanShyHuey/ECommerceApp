@@ -12,6 +12,9 @@ public class ShoesPagesJava extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.shoespages);
 
+        getSupportActionBar().setTitle("Shoes");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
     }
     public void gotoBagsPages(View view) {
