@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CartList">
+    tools:context=".ui.Model.AddToCart">
 
     <RelativeLayout
         android:id="@+id/r111"
@@ -27,7 +28,7 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/cart_list"
+        android:id="@+id/recview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/r111"
@@ -44,6 +45,5 @@
         android:textColor="@android:color/white"
         android:textSize="20dp"
         />
-
 
 </RelativeLayout>
