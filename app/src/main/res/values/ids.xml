@@ -2,4 +2,5 @@
 <resources>
     <item name="text_deals" type="id"/>
     <item name="text_myaccount" type="id"/>
+    <item name="btnConOrder" type="id" />
 </resources>

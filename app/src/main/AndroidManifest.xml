@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CartList"></activity>
+        <activity android:name=".CartListLayout"></activity>
+        <activity android:name=".Payment" />
+        <activity android:name=".CartList" />
         <activity
             android:name=".Homepage"
             android:label="@string/title_activity_homepage" />
@@ -24,30 +26,78 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".ResetActivity" />
         <activity android:name=".NavActivity" />
-        <activity android:name=".CarrierList2"  android:parentActivityName=".NavActivity"/>
-        <activity android:name=".EcommerceMain" android:parentActivityName=".NavActivity" />
-        <activity android:name=".Shoes1" android:parentActivityName=".ShoesPagesJava"/>
-        <activity android:name=".Shoes2" android:parentActivityName=".ShoesPagesJava"/>
-        <activity android:name=".Shoes3" android:parentActivityName=".ShoesPagesJava"/>
-        <activity android:name=".Shoes4" android:parentActivityName=".ShoesPagesJava"/>
-        <activity android:name=".Shoes5" android:parentActivityName=".ShoesPagesJava"/>
-        <activity android:name=".Shoes6" android:parentActivityName=".ShoesPagesJava"/>
-        <activity android:name=".Bag1" android:parentActivityName=".EcommerceMain"/>
-        <activity android:name=".ComesticPagesJava" android:parentActivityName=".EcommerceMain"/>
-        <activity android:name=".ShoesPagesJava" android:parentActivityName=".EcommerceMain"/>
-        <activity android:name=".BagsPagesJava" android:parentActivityName=".EcommerceMain"/>
-        <activity android:name=".Bag2" android:parentActivityName=".BagsPagesJava"/>
-        <activity android:name=".Bag3" android:parentActivityName=".BagsPagesJava"/>
-        <activity android:name=".Bag4" android:parentActivityName=".BagsPagesJava"/>
-        <activity android:name=".Bag5" android:parentActivityName=".BagsPagesJava" />
-        <activity android:name=".Bag6"  android:parentActivityName=".BagsPagesJava"/>
-        <activity android:name=".Comestic2" android:parentActivityName=".ComesticPagesJava"/>
-        <activity android:name=".Comestic1"  android:parentActivityName=".ComesticPagesJava"/>
-        <activity android:name=".Comestic3"  android:parentActivityName=".ComesticPagesJava"/>
-        <activity android:name=".Comestic4"  android:parentActivityName=".ComesticPagesJava"/>
-        <activity android:name=".Comestic5"  android:parentActivityName=".ComesticPagesJava"/>
-        <activity android:name=".Comestic6"  android:parentActivityName=".ComesticPagesJava"/>
-        <activity android:name=".CarrierList" android:parentActivityName=".NavActivity"/>
+        <activity
+            android:name=".CarrierList2"
+            android:parentActivityName=".NavActivity" />
+        <activity
+            android:name=".EcommerceMain"
+            android:parentActivityName=".NavActivity" />
+        <activity
+            android:name=".Shoes1"
+            android:parentActivityName=".ShoesPagesJava" />
+        <activity
+            android:name=".Shoes2"
+            android:parentActivityName=".ShoesPagesJava" />
+        <activity
+            android:name=".Shoes3"
+            android:parentActivityName=".ShoesPagesJava" />
+        <activity
+            android:name=".Shoes4"
+            android:parentActivityName=".ShoesPagesJava" />
+        <activity
+            android:name=".Shoes5"
+            android:parentActivityName=".ShoesPagesJava" />
+        <activity
+            android:name=".Shoes6"
+            android:parentActivityName=".ShoesPagesJava" />
+        <activity
+            android:name=".Bag1"
+            android:parentActivityName=".EcommerceMain" />
+        <activity
+            android:name=".ComesticPagesJava"
+            android:parentActivityName=".EcommerceMain" />
+        <activity
+            android:name=".ShoesPagesJava"
+            android:parentActivityName=".EcommerceMain" />
+        <activity
+            android:name=".BagsPagesJava"
+            android:parentActivityName=".EcommerceMain" />
+        <activity
+            android:name=".Bag2"
+            android:parentActivityName=".BagsPagesJava" />
+        <activity
+            android:name=".Bag3"
+            android:parentActivityName=".BagsPagesJava" />
+        <activity
+            android:name=".Bag4"
+            android:parentActivityName=".BagsPagesJava" />
+        <activity
+            android:name=".Bag5"
+            android:parentActivityName=".BagsPagesJava" />
+        <activity
+            android:name=".Bag6"
+            android:parentActivityName=".BagsPagesJava" />
+        <activity
+            android:name=".Comestic2"
+            android:parentActivityName=".ComesticPagesJava" />
+        <activity
+            android:name=".Comestic1"
+            android:parentActivityName=".ComesticPagesJava" />
+        <activity
+            android:name=".Comestic3"
+            android:parentActivityName=".ComesticPagesJava" />
+        <activity
+            android:name=".Comestic4"
+            android:parentActivityName=".ComesticPagesJava" />
+        <activity
+            android:name=".Comestic5"
+            android:parentActivityName=".ComesticPagesJava" />
+        <activity
+            android:name=".Comestic6"
+            android:parentActivityName=".ComesticPagesJava" />
+        <activity
+            android:name=".CarrierList"
+            android:parentActivityName=".NavActivity" />
         <activity android:name=".ChatActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
