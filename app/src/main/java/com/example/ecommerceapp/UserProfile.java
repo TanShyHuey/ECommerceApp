@@ -9,7 +9,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,6 +17,8 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -33,23 +34,27 @@ public class UserProfile extends AppCompatActivity {
     private EditText fullName, email, phoneNo, password;
     private TextView fullNameLabel, usernameLabel;
 
-    private String _USERNAME, _NAME, _EMAIL, _PHONENO, _PASSWORD;
-    private DatabaseReference reference;
-    private StorageReference storageReference;
+    private String _NAME, _EMAIL, _PHONENO, _PASSWORD;
     private FirebaseStorage storage;
     private Uri imageUri;
     private StorageTask uploadTask;
-    private ImageView profilePic;
+    private ImageView profileImage;
+    private DatabaseReference mDatabase;
+    private FirebaseAuth mAuth;
+    private FirebaseUser mUser;
+    private StorageReference storageReference;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
-        profilePic=findViewById(R.id.profilePic);
-        storage=FirebaseStorage.getInstance();
-        storageReference=FirebaseStorage.getInstance().getReference("uploads");
-        reference = FirebaseDatabase.getInstance().getReference("Users");
+
+        profileImage=findViewById(R.id.profilePic);
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        mAuth = FirebaseAuth.getInstance();
+        mUser = mAuth.getCurrentUser();
+        storageReference = FirebaseStorage.getInstance().getReference();
 
         fullName = findViewById(R.id.full_name_profile);
         email = findViewById(R.id.email_profile);
@@ -60,7 +65,7 @@ public class UserProfile extends AppCompatActivity {
 
         showAllUserData();
 
-        profilePic.setOnClickListener(new View.OnClickListener() {
+        profileImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 choosePicture();
@@ -80,7 +85,7 @@ public class UserProfile extends AppCompatActivity {
         super.onActivityResult(requestCode,resultCode,data);
         if(requestCode==1 && resultCode==RESULT_OK && data!=null && data.getData()!=null){
             imageUri=data.getData();
-            profilePic.setImageURI(imageUri);
+            profileImage.setImageURI(imageUri);
             uploadPicture();
         }
     }
@@ -114,6 +119,7 @@ public class UserProfile extends AppCompatActivity {
                         pd.setMessage("Percentage:"+(int)progressPercent+"%");
                     }
                 });
+
     }
 
     private void showAllUserData() {
@@ -133,7 +139,7 @@ public class UserProfile extends AppCompatActivity {
     }
 
     public void update(View view) {
-        if (isNameChanged() || isPasswordChanged()) {
+        if (isEmailChanged() || isPasswordChanged()) {
             Toast.makeText(this, "Data has been updated", Toast.LENGTH_LONG).show();
         } else
             Toast.makeText(this, "Data is same and cannot be updated.", Toast.LENGTH_LONG).show();
@@ -141,18 +147,30 @@ public class UserProfile extends AppCompatActivity {
 
     private boolean isPasswordChanged() {
         if (!_PASSWORD.equals(password.getText().toString())) {
-            reference.child(_NAME).child("password").setValue(password.getText().toString());
+            mDatabase.child(_NAME).child("password").setValue(password.getText().toString());
             _PASSWORD = password.getText().toString();
+            mUser.updatePassword(_PASSWORD).addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void aVoid) {
+                    Toast.makeText(UserProfile.this, "Password Reset Successully.", Toast.LENGTH_SHORT).show();
+                }
+            });
             return true;
         } else {
             return false;
         }
     }
 
-    private boolean isNameChanged() {
-        if (!_NAME.equals(fullName.getText().toString())) {
-            reference.child(_NAME).child("name").setValue(fullName.getText().toString());
-            _NAME = fullName.getText().toString();
+    private boolean isEmailChanged() {
+        if (!_EMAIL.equals(email.getText().toString())) {
+            mDatabase.child(_EMAIL).child("name").setValue(email.getText().toString());
+            _EMAIL = email.getText().toString();
+            mUser.updateEmail(_EMAIL).addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void aVoid) {
+                    Toast.makeText(UserProfile.this, "Email Reset Successully.", Toast.LENGTH_SHORT).show();
+                }
+            });
             return true;
         } else {
             return false;
