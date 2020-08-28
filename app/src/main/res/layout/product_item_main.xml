@@ -105,6 +105,7 @@
             android:layout_marginBottom="40dp"
             android:onClick="gotolipstick"
             app:srcCompat="@drawable/gererere" />
+
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

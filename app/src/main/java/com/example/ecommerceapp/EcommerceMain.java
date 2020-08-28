@@ -43,7 +43,7 @@ public class EcommerceMain extends AppCompatActivity {
         imageView.setBackgroundResource(image);
 
         v_flipper.addView(imageView);
-        v_flipper.setFlipInterval(4000); //4sec
+        v_flipper.setFlipInterval(3000); //3sec
         v_flipper.setAutoStart(true);
 
         //animation
