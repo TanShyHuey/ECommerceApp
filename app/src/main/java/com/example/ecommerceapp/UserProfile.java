@@ -1,179 +1,176 @@
 package com.example.ecommerceapp;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.ProgressDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
 
-import java.util.UUID;
+import java.io.IOException;
 
-public class UserProfile extends AppCompatActivity {
+public class UserProfile extends AppCompatActivity implements View.OnClickListener {
 
-    private EditText fullName, email, phoneNo, password;
-    private TextView fullNameLabel, usernameLabel;
-
-    private String _NAME, _EMAIL, _PHONENO, _PASSWORD;
-    private FirebaseStorage storage;
-    private Uri imageUri;
-    private StorageTask uploadTask;
-    private ImageView profileImage;
-    private DatabaseReference mDatabase;
-    private FirebaseAuth mAuth;
-    private FirebaseUser mUser;
+    private static final String TAG = UserProfile.class.getSimpleName();
+    Button btnsave;
+    private FirebaseAuth firebaseAuth;
+    private TextView textViewemailname;
+    private DatabaseReference databaseReference;
+    private EditText editTextName;
+    private EditText editTextMail;
+    private EditText editTextPhoneNo;
+    private ImageView profileImageView;
+    private FirebaseStorage firebaseStorage;
+    private static int PICK_IMAGE = 123;
+    Uri imagePath;
     private StorageReference storageReference;
 
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == PICK_IMAGE && resultCode == RESULT_OK && data.getData() != null) {
+            imagePath = data.getData();
+            try {
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imagePath);
+                profileImageView.setImageBitmap(bitmap);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
 
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
+        firebaseAuth = FirebaseAuth.getInstance();
+        if (firebaseAuth.getCurrentUser() == null) {
+            finish();
+            startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
+        }
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+        editTextName = (EditText) findViewById(R.id.full_name_profile);
+        editTextMail = (EditText) findViewById(R.id.email_profile);
+        editTextPhoneNo = (EditText) findViewById(R.id.phone_no_profile);
+        btnsave = (Button) findViewById(R.id.update);
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+        btnsave.setOnClickListener(this);
+        profileImageView = findViewById(R.id.profilePic);
+        firebaseStorage = FirebaseStorage.getInstance();
+        storageReference = firebaseStorage.getReference();
 
-        profileImage=findViewById(R.id.profilePic);
-        mDatabase = FirebaseDatabase.getInstance().getReference();
-        mAuth = FirebaseAuth.getInstance();
-        mUser = mAuth.getCurrentUser();
-        storageReference = FirebaseStorage.getInstance().getReference();
-
-        fullName = findViewById(R.id.full_name_profile);
-        email = findViewById(R.id.email_profile);
-        phoneNo = findViewById(R.id.phone_no_profile);
-        password = findViewById(R.id.password_profile);
-        fullNameLabel = findViewById(R.id.fullname_field);
-        usernameLabel = findViewById(R.id.username_field);
-
-        showAllUserData();
-
-        profileImage.setOnClickListener(new View.OnClickListener() {
+        profileImageView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                choosePicture();
+            public void onClick(View v) {
+                Intent profileIntent = new Intent();
+                profileIntent.setType("image/*");
+                profileIntent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(profileIntent, "Select Image."), PICK_IMAGE);
             }
         });
     }
 
-    private void choosePicture() {
-        Intent intent=new Intent();
-        intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(intent,1);
+    private void userInformation() {
+        String name = editTextName.getText().toString().trim();
+        String surname = editTextMail.getText().toString().trim();
+        String phoneno = editTextPhoneNo.getText().toString().trim();
+        Userinformation userinformation = new Userinformation(name, surname, phoneno);
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+        databaseReference.child(user.getUid()).setValue(userinformation);
+        Toast.makeText(getApplicationContext(), "User information updated", Toast.LENGTH_LONG).show();
     }
 
     @Override
-    protected void onActivityResult(int requestCode,int resultCode,@Nullable Intent data){
-        super.onActivityResult(requestCode,resultCode,data);
-        if(requestCode==1 && resultCode==RESULT_OK && data!=null && data.getData()!=null){
-            imageUri=data.getData();
-            profileImage.setImageURI(imageUri);
-            uploadPicture();
+    public void onClick(View view) {
+        if (view == btnsave) {
+            if (imagePath == null) {
+
+                Drawable drawable = this.getResources().getDrawable(R.drawable.profile);
+                Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.profile);
+                // openSelectProfilePictureDialog();
+                userInformation();
+                // sendUserData();
+                finish();
+                startActivity(new Intent(UserProfile.this, NavActivity.class));
+            } else {
+                userInformation();
+                sendUserData();
+                finish();
+                startActivity(new Intent(UserProfile.this, NavActivity.class));
+            }
         }
     }
 
-    private void uploadPicture() {
-        final ProgressDialog pd=new ProgressDialog(this);
-        pd.setTitle("Uploading Image...");
-        pd.show();
-        final String randomKey= UUID.randomUUID().toString();
-        StorageReference riversRef=storageReference.child("images/"+randomKey);
-        riversRef.putFile(imageUri)
-                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        // Get a URL to the uploaded content
-                        pd.dismiss();
-                        Snackbar.make(findViewById(android.R.id.content),"Image Uploaded.",Snackbar.LENGTH_LONG).show();
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception exception) {
-                        pd.dismiss();
-                        Toast.makeText(getApplicationContext(),"Failed To Upload",Toast.LENGTH_LONG).show();
-                    }
-                })
-                .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>(){
-                    @Override
-                    public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
-                        double progressPercent=(100.00*taskSnapshot.getBytesTransferred()/taskSnapshot.getTotalByteCount());
-                        pd.setMessage("Percentage:"+(int)progressPercent+"%");
-                    }
-                });
-
+    private void sendUserData() {
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        // Get "User UID" from Firebase > Authentification > Users.
+        DatabaseReference databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
+        StorageReference imageReference = storageReference.child(firebaseAuth.getUid()).child("Images").child("Profile Pic"); //User id/Images/Profile Pic.jpg
+        UploadTask uploadTask = imageReference.putFile(imagePath);
+        uploadTask.addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(UserProfile.this, "Error: Uploading profile picture", Toast.LENGTH_SHORT).show();
+            }
+        }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                Toast.makeText(UserProfile.this, "Profile picture uploaded", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
-    private void showAllUserData() {
-        Intent intent = getIntent();
-        _NAME = intent.getStringExtra("name");
-        _EMAIL = intent.getStringExtra("email");
-        _PHONENO = intent.getStringExtra("phoneNo");
-        _PASSWORD = intent.getStringExtra("password");
-
-        fullNameLabel.setText(_NAME);
-        usernameLabel.setText(_EMAIL);
-        fullName.setText(_NAME);
-        email.setText(_EMAIL);
-        phoneNo.setText(_PHONENO);
-        password.setText(_PASSWORD);
-
-    }
-
-    public void update(View view) {
-        if (isEmailChanged() || isPasswordChanged()) {
-            Toast.makeText(this, "Data has been updated", Toast.LENGTH_LONG).show();
-        } else
-            Toast.makeText(this, "Data is same and cannot be updated.", Toast.LENGTH_LONG).show();
-    }
-
-    private boolean isPasswordChanged() {
-        if (!_PASSWORD.equals(password.getText().toString())) {
-            mDatabase.child(_NAME).child("password").setValue(password.getText().toString());
-            _PASSWORD = password.getText().toString();
-            mUser.updatePassword(_PASSWORD).addOnSuccessListener(new OnSuccessListener<Void>() {
-                @Override
-                public void onSuccess(Void aVoid) {
-                    Toast.makeText(UserProfile.this, "Password Reset Successully.", Toast.LENGTH_SHORT).show();
-                }
-            });
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    private boolean isEmailChanged() {
-        if (!_EMAIL.equals(email.getText().toString())) {
-            mDatabase.child(_EMAIL).child("name").setValue(email.getText().toString());
-            _EMAIL = email.getText().toString();
-            mUser.updateEmail(_EMAIL).addOnSuccessListener(new OnSuccessListener<Void>() {
-                @Override
-                public void onSuccess(Void aVoid) {
-                    Toast.makeText(UserProfile.this, "Email Reset Successully.", Toast.LENGTH_SHORT).show();
-                }
-            });
-            return true;
-        } else {
-            return false;
-        }
+    public void openSelectProfilePictureDialog() {
+        AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+        TextView title = new TextView(this);
+        title.setText("Profile Picture");
+        title.setPadding(10, 10, 10, 10);   // Set Position
+        title.setGravity(Gravity.CENTER);
+        title.setTextColor(Color.BLACK);
+        title.setTextSize(20);
+        alertDialog.setCustomTitle(title);
+        TextView msg = new TextView(this);
+        msg.setText("Please select a profile picture \n Tap the sample avatar logo");
+        msg.setGravity(Gravity.CENTER_HORIZONTAL);
+        msg.setTextColor(Color.BLACK);
+        alertDialog.setView(msg);
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                // Perform Action on Button
+            }
+        });
+        new Dialog(getApplicationContext());
+        alertDialog.show();
+        final Button okBT = alertDialog.getButton(AlertDialog.BUTTON_NEUTRAL);
+        LinearLayout.LayoutParams neutralBtnLP = (LinearLayout.LayoutParams) okBT.getLayoutParams();
+        neutralBtnLP.gravity = Gravity.FILL_HORIZONTAL;
+        okBT.setPadding(50, 10, 10, 10);   // Set Position
+        okBT.setTextColor(Color.BLUE);
+        okBT.setLayoutParams(neutralBtnLP);
     }
 }

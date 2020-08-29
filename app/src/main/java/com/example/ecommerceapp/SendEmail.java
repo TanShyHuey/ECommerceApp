@@ -22,6 +22,9 @@ public class SendEmail extends AppCompatActivity {
         message = findViewById(R.id.message);
         button = findViewById(R.id.btn);
 
+        String text = "nolimits@gmail.com";
+        message.setText(text);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

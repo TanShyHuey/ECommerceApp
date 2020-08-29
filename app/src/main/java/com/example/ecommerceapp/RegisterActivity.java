@@ -63,8 +63,9 @@ public class RegisterActivity extends AppCompatActivity {
                 reference = rootNode.getReference("Users");
                 final String name = inputname.getText().toString().trim();
                 final String email = inputEmail.getText().toString().trim();
-                final String password = inputPassword.getText().toString().trim();
                 final String phoneNo = inputPhone.getText().toString().trim();
+                final String password = inputPassword.getText().toString().trim();
+
                 UserHelperClass helperClass = new UserHelperClass(name,email,phoneNo,password);
                 reference.child(name).setValue(helperClass);
                 if (TextUtils.isEmpty(email)) {
@@ -101,8 +102,8 @@ public class RegisterActivity extends AppCompatActivity {
                                     DatabaseReference currentUserDB = mDatabase.child(auth.getCurrentUser().getUid());
                                     currentUserDB.child("Name").setValue(inputname);
                                     currentUserDB.child("Email").setValue(email);
-                                    currentUserDB.child("Password").setValue(password);
                                     currentUserDB.child("Phone").setValue(phoneNo);
+                                    currentUserDB.child("Password").setValue(password);
                                     Toast.makeText(RegisterActivity.this, "createUserWithEmail:onComplete:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
                                     startActivity(new Intent(RegisterActivity.this, NavActivity.class));
                                     finish();
