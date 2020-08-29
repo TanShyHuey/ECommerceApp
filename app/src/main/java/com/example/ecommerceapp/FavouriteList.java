@@ -8,7 +8,7 @@ import android.view.View;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.ecommerceapp.ui.Model.AddToCart;
+
 
 public class FavouriteList extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
@@ -29,8 +29,6 @@ public class FavouriteList extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void gotoCart(View view) {
-        Intent intent = new Intent(this, AddToCart.class);
-        startActivity(intent);
+
     }
-}
+

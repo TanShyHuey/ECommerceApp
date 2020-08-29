@@ -30,7 +30,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:16.0.5'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.google.firebase:firebase-database:16.0.4'
-    implementation 'com.google.firebase:firebase-storage:19.1.1'
+
     implementation 'com.google.android.material:material:1.1.0'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'com.google.firebase:firebase-storage:16.0.4'
@@ -45,8 +45,7 @@ dependencies {
     implementation files('libs/activation.jar')
     implementation files('libs/additionnal.jar')
     implementation files('libs/mail.jar')
-    implementation'com.firebaseui:firebase-ui-database:6.3.0'
-    implementation'com.firebaseui:firebase-ui-storage:0.6.0'
+
 
     implementation 'com.cepheuen.elegant-number-button:lib:1.0.2'
 
