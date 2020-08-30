@@ -39,7 +39,7 @@ public class RegisterActivity extends AppCompatActivity {
         inputEmail = (EditText) findViewById(R.id.email);
         inputname= (EditText) findViewById(R.id.username);
         inputPassword = (EditText) findViewById(R.id.password);
-        inputPhone= (EditText) findViewById(R.id.phone);
+        inputPhone= (EditText) findViewById(R.id.phone_field);
         tvLogin = (TextView) findViewById(R.id.backToLogin);
         tvOtp=(TextView)findViewById(R.id.OTP);
 

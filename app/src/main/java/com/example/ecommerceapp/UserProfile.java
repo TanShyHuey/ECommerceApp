@@ -32,10 +32,8 @@ public class UserProfile extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
     private StorageReference storageReference;
-    private TextView fullName, email;
-    private Button update;
+    private TextView id, email,phone;
     private ImageView profileImage;
-    private EditText umail,upassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,34 +54,12 @@ public class UserProfile extends AppCompatActivity {
             }
         });
 
-        fullName = (TextView) findViewById(R.id.username_field);
+        id = (TextView) findViewById(R.id.userid_field);
         email = (TextView) findViewById(R.id.email_field);
-        fullName.setText(mAuth.getCurrentUser().getUid());
+        phone = (TextView) findViewById(R.id.phone_field);
+        id.setText(mAuth.getCurrentUser().getUid());
         email.setText(mAuth.getCurrentUser().getEmail());
-        umail = (EditText) findViewById(R.id.email_profile) ;
-        upassword = (EditText) findViewById(R.id.phone_no_profile) ;
-        update = (Button) findViewById(R.id.update);
-
-        update.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                final EditText newEmail = new EditText(view.getContext());
-
-                mUser.updateEmail(String.valueOf(newEmail)).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Toast.makeText(UserProfile.this, "Email Updated.", Toast.LENGTH_SHORT).show();
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(UserProfile.this, "Unable to update!.", Toast.LENGTH_SHORT).show();
-                    }
-                });
-
-            }
-        });
-
+        phone.setText(mAuth.getCurrentUser().getPhoneNumber());
         profileImage = (ImageView) findViewById(R.id.profilePic);
 
         profileImage.setOnClickListener(new View.OnClickListener() {
