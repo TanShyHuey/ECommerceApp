@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -22,7 +21,7 @@ public class ChatActivity extends AppCompatActivity {
     private Button btnMsg;
     private EditText inputMessage;
     private RecyclerView msgList;
-    private String msgSenderID, saveCurrentDate, saveCurrentTime;
+    private String msgSenderID, date,time;
     private FirebaseAuth mAuth;
     FirebaseDatabase rootNode;
     DatabaseReference reference;
@@ -47,7 +46,7 @@ public class ChatActivity extends AppCompatActivity {
                 reference = rootNode.getReference("Message");
                 final String message = inputMessage.getText().toString().trim();
 
-                MessageClass messageClass = new MessageClass(message);
+                MessageClass messageClass = new MessageClass(message,date,time,msgSenderID);
                 reference.child(message).setValue(messageClass);
                 if (TextUtils.isEmpty(message)) {
                     Toast.makeText(getApplicationContext(), "Please type a message first...", Toast.LENGTH_SHORT).show();
@@ -55,17 +54,17 @@ public class ChatActivity extends AppCompatActivity {
                 }
                 Calendar calFordDate = Calendar.getInstance();
                 SimpleDateFormat currentDate = new SimpleDateFormat("dd-MMMM-yyyy");
-                saveCurrentDate = currentDate.format(calFordDate.getTime());
+                date = currentDate.format(calFordDate.getTime());
 
                 Calendar calFordTime = Calendar.getInstance();
                 SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm aa");
-                saveCurrentTime = currentTime.format(calFordTime.getTime());
+                time = currentTime.format(calFordTime.getTime());
 
                 DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
                 DatabaseReference currentUserDB = mDatabase.child(mAuth.getCurrentUser().getUid());
                 currentUserDB.child("Message").setValue(inputMessage);
-                currentUserDB.child("Time").setValue(saveCurrentTime);
-                currentUserDB.child("Date").setValue(saveCurrentDate);
+                currentUserDB.child("Time").setValue(time);
+                currentUserDB.child("Date").setValue(date);
                 currentUserDB.child("From").setValue(msgSenderID);
 
                 Toast.makeText(ChatActivity.this, "Message Sent Successfully", Toast.LENGTH_SHORT).show();
