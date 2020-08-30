@@ -12,6 +12,7 @@
         android:layout_height="260dp"
         android:scaleType="centerCrop"
         android:src="@drawable/bag2"/>
+
     <TextView
         android:id="@+id/ProductName"
         android:layout_width="match_parent"
@@ -58,7 +59,6 @@
         android:layout_toRightOf="@+id/textView62"
         tools:layout_editor_absoluteX="103dp"
         tools:layout_editor_absoluteY="362dp" />
-
 
     <TextView
         android:id="@+id/textView44"
@@ -126,7 +126,4 @@
         android:layout_alignParentBottom="true"
         android:textColor="@color/colorWhite"
         android:textSize="18dp"/>
-
-
-
 </RelativeLayout>
