@@ -58,7 +58,7 @@ public class UserProfile extends AppCompatActivity {
 
         fullName = (TextView) findViewById(R.id.username_field);
         email = (TextView) findViewById(R.id.email_field);
-        fullName.setText(mAuth.getCurrentUser().getPhoneNumber());
+        fullName.setText(mAuth.getCurrentUser().getUid());
         email.setText(mAuth.getCurrentUser().getEmail());
         umail = (EditText) findViewById(R.id.email_profile) ;
         upassword = (EditText) findViewById(R.id.phone_no_profile) ;
@@ -67,9 +67,9 @@ public class UserProfile extends AppCompatActivity {
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String newEmail = umail.getText().toString().trim();
-                String newPassword = upassword.getText().toString().trim();
-                mUser.updateEmail(newEmail).addOnSuccessListener(new OnSuccessListener<Void>() {
+                final EditText newEmail = new EditText(view.getContext());
+
+                mUser.updateEmail(String.valueOf(newEmail)).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
                         Toast.makeText(UserProfile.this, "Email Updated.", Toast.LENGTH_SHORT).show();
