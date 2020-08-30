@@ -58,7 +58,7 @@ public class UserProfile extends AppCompatActivity {
 
         fullName = (TextView) findViewById(R.id.username_field);
         email = (TextView) findViewById(R.id.email_field);
-        fullName.setText(mAuth.getCurrentUser().getDisplayName());
+        fullName.setText(mAuth.getCurrentUser().getPhoneNumber());
         email.setText(mAuth.getCurrentUser().getEmail());
         umail = (EditText) findViewById(R.id.email_profile) ;
         upassword = (EditText) findViewById(R.id.phone_no_profile) ;
@@ -69,7 +69,6 @@ public class UserProfile extends AppCompatActivity {
             public void onClick(View view) {
                 String newEmail = umail.getText().toString().trim();
                 String newPassword = upassword.getText().toString().trim();
-                mUser.updatePassword(newPassword);
                 mUser.updateEmail(newEmail).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
