@@ -68,7 +68,6 @@ public class Bag3 extends AppCompatActivity implements AdapterView.OnItemSelecte
                 Item.push().setValue(product);
                 Toast.makeText(Bag3.this,"add to cart Successful",Toast.LENGTH_LONG).show();
             }
-
         });
 
         btn.setOnClickListener(new ElegantNumberButton.OnClickListener() {

@@ -38,43 +38,39 @@ public class ChatActivity extends AppCompatActivity {
         inputMessage = (EditText) findViewById(R.id.chat_message);
         btnMsg = (Button) findViewById(R.id.chat_send);
         btnImage = (ImageView) findViewById(R.id.chat_send_picture);
-        msgList=(RecyclerView)findViewById(R.id.chat_recycler) ;
+        msgList = (RecyclerView) findViewById(R.id.chat_recycler);
 
         btnMsg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SendMessage();
+                rootNode = FirebaseDatabase.getInstance();
+                reference = rootNode.getReference("Message");
+                final String message = inputMessage.getText().toString().trim();
+
+                MessageClass messageClass = new MessageClass(message);
+                reference.child(message).setValue(messageClass);
+                if (TextUtils.isEmpty(message)) {
+                    Toast.makeText(getApplicationContext(), "Please type a message first...", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                Calendar calFordDate = Calendar.getInstance();
+                SimpleDateFormat currentDate = new SimpleDateFormat("dd-MMMM-yyyy");
+                saveCurrentDate = currentDate.format(calFordDate.getTime());
+
+                Calendar calFordTime = Calendar.getInstance();
+                SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm aa");
+                saveCurrentTime = currentTime.format(calFordTime.getTime());
+
+                DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
+                DatabaseReference currentUserDB = mDatabase.child(mAuth.getCurrentUser().getUid());
+                currentUserDB.child("Message").setValue(inputMessage);
+                currentUserDB.child("Time").setValue(saveCurrentTime);
+                currentUserDB.child("Date").setValue(saveCurrentDate);
+                currentUserDB.child("From").setValue(msgSenderID);
+
+                Toast.makeText(ChatActivity.this, "Message Sent Successfully", Toast.LENGTH_SHORT).show();
+
             }
         });
     }
-
-    private void SendMessage() {
-        String messageText=inputMessage.getText().toString();
-        if(TextUtils.isEmpty(messageText))
-        {
-            Toast.makeText(this,"Please type a message first...",Toast.LENGTH_SHORT).show();
-        }
-        else
-        {
-            rootNode = FirebaseDatabase.getInstance();
-
-            Calendar calFordDate=Calendar.getInstance();
-            SimpleDateFormat currentDate=new SimpleDateFormat("dd-MMMM-yyyy");
-            saveCurrentDate=currentDate.format(calFordDate.getTime());
-
-            Calendar calFordTime=Calendar.getInstance();
-            SimpleDateFormat currentTime=new SimpleDateFormat("HH:mm aa");
-            saveCurrentTime=currentTime.format(calFordTime.getTime());
-
-            DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
-            DatabaseReference currentUserDB = mDatabase.child(mAuth.getCurrentUser().getUid());
-            currentUserDB.child("Message").setValue(inputMessage);
-            currentUserDB.child("Time").setValue(saveCurrentTime);
-            currentUserDB.child("Date").setValue(saveCurrentDate);
-            currentUserDB.child("From").setValue(msgSenderID);
-
-            Toast.makeText(ChatActivity.this,"Message Sent Successfully",Toast.LENGTH_SHORT).show();
-
-        }
-            }
-        }
+}
