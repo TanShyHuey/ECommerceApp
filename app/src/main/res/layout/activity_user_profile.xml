@@ -36,7 +36,7 @@
         android:id="@+id/username_field"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/fullname_field"
+        android:layout_below="@id/email_field"
         android:layout_marginTop="200dp"
         android:includeFontPadding="false"
         android:text="No Limits"
@@ -49,7 +49,7 @@
         app:layout_constraintVertical_bias="0.928" />
 
     <TextView
-        android:id="@+id/fullname_field"
+        android:id="@+id/email_field"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"

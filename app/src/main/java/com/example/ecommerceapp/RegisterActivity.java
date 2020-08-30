@@ -83,7 +83,6 @@ public class RegisterActivity extends AppCompatActivity {
                     return;
                 }
 
-
                 //create user
                 auth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {

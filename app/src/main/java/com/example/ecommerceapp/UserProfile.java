@@ -1,176 +1,117 @@
 package com.example.ecommerceapp;
 
-import android.app.Dialog;
-import android.content.DialogInterface;
+import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
-import java.io.IOException;
+public class UserProfile extends AppCompatActivity {
 
-public class UserProfile extends AppCompatActivity implements View.OnClickListener {
-
-    private static final String TAG = UserProfile.class.getSimpleName();
-    Button btnsave;
-    private FirebaseAuth firebaseAuth;
-    private TextView textViewemailname;
-    private DatabaseReference databaseReference;
-    private EditText editTextName;
-    private EditText editTextMail;
-    private EditText editTextPhoneNo;
-    private ImageView profileImageView;
-    private FirebaseStorage firebaseStorage;
-    private static int PICK_IMAGE = 123;
-    Uri imagePath;
+    private DatabaseReference mDatabase;
+    private FirebaseAuth mAuth;
+    private FirebaseUser mUser;
     private StorageReference storageReference;
+    private TextView fullName, email;
+    private Button update;
+    private ImageView profileImage;
+    private EditText uname,umail,uphone;
 
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == PICK_IMAGE && resultCode == RESULT_OK && data.getData() != null) {
-            imagePath = data.getData();
-            try {
-                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imagePath);
-                profileImageView.setImageBitmap(bitmap);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        super.onActivityResult(requestCode, resultCode, data);
-    }
-
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
-        firebaseAuth = FirebaseAuth.getInstance();
-        if (firebaseAuth.getCurrentUser() == null) {
-            finish();
-            startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
-        }
-        databaseReference = FirebaseDatabase.getInstance().getReference();
-        editTextName = (EditText) findViewById(R.id.full_name_profile);
-        editTextMail = (EditText) findViewById(R.id.email_profile);
-        editTextPhoneNo = (EditText) findViewById(R.id.phone_no_profile);
-        btnsave = (Button) findViewById(R.id.update);
-        FirebaseUser user = firebaseAuth.getCurrentUser();
-        btnsave.setOnClickListener(this);
-        profileImageView = findViewById(R.id.profilePic);
-        firebaseStorage = FirebaseStorage.getInstance();
-        storageReference = firebaseStorage.getReference();
 
-        profileImageView.setOnClickListener(new View.OnClickListener() {
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        mAuth = FirebaseAuth.getInstance();
+        mUser = mAuth.getCurrentUser();
+        storageReference = FirebaseStorage.getInstance().getReference();
+
+        StorageReference profileRef = storageReference.child("Users/"+mAuth.getCurrentUser().getUid()+"/profile.jpg");
+        profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
-            public void onClick(View v) {
-                Intent profileIntent = new Intent();
-                profileIntent.setType("image/*");
-                profileIntent.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(Intent.createChooser(profileIntent, "Select Image."), PICK_IMAGE);
+            public void onSuccess(Uri uri) {
+                Picasso.get().load(uri).into(profileImage);
             }
         });
-    }
 
-    private void userInformation() {
-        String name = editTextName.getText().toString().trim();
-        String surname = editTextMail.getText().toString().trim();
-        String phoneno = editTextPhoneNo.getText().toString().trim();
-        Userinformation userinformation = new Userinformation(name, surname, phoneno);
-        FirebaseUser user = firebaseAuth.getCurrentUser();
-        databaseReference.child(user.getUid()).setValue(userinformation);
-        Toast.makeText(getApplicationContext(), "User information updated", Toast.LENGTH_LONG).show();
+        fullName = (TextView) findViewById(R.id.username_field);
+        email = (TextView) findViewById(R.id.email_field);
+        fullName.setText(mAuth.getCurrentUser().getUid());
+        email.setText(mAuth.getCurrentUser().getEmail());
+        uname = (EditText) findViewById(R.id.full_name_profile) ;
+        umail = (EditText) findViewById(R.id.email_profile) ;
+        uphone = (EditText) findViewById(R.id.phone_no_profile) ;
+        update = (Button) findViewById(R.id.update);
+
+        profileImage = (ImageView) findViewById(R.id.profilePic);
+
+        profileImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        profileImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent openGallery = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(openGallery, 1000);
+            }
+        });
     }
 
     @Override
-    public void onClick(View view) {
-        if (view == btnsave) {
-            if (imagePath == null) {
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
-                Drawable drawable = this.getResources().getDrawable(R.drawable.profile);
-                Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.profile);
-                // openSelectProfilePictureDialog();
-                userInformation();
-                // sendUserData();
-                finish();
-                startActivity(new Intent(UserProfile.this, NavActivity.class));
-            } else {
-                userInformation();
-                sendUserData();
-                finish();
-                startActivity(new Intent(UserProfile.this, NavActivity.class));
+        if (requestCode == 1000) {
+            if (resultCode == Activity.RESULT_OK) {
+                Uri imageUri = data.getData();
+                uploadImageToFirebase(imageUri);
             }
         }
     }
 
-    private void sendUserData() {
-        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        // Get "User UID" from Firebase > Authentification > Users.
-        DatabaseReference databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
-        StorageReference imageReference = storageReference.child(firebaseAuth.getUid()).child("Images").child("Profile Pic"); //User id/Images/Profile Pic.jpg
-        UploadTask uploadTask = imageReference.putFile(imagePath);
-        uploadTask.addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(UserProfile.this, "Error: Uploading profile picture", Toast.LENGTH_SHORT).show();
-            }
-        }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+    private void uploadImageToFirebase(Uri imageUri) {
+        //upload image to firebase storage
+        final StorageReference fileRef = storageReference.child("Users/"+mAuth.getCurrentUser().getUid()+"/profile.jpg");
+        fileRef.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                Toast.makeText(UserProfile.this, "Profile picture uploaded", Toast.LENGTH_SHORT).show();
+                fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        Picasso.get().load(uri).into(profileImage);
+                    }
+                });
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(UserProfile.this, "Failed.", Toast.LENGTH_SHORT).show();
             }
         });
-    }
-
-    public void openSelectProfilePictureDialog() {
-        AlertDialog alertDialog = new AlertDialog.Builder(this).create();
-        TextView title = new TextView(this);
-        title.setText("Profile Picture");
-        title.setPadding(10, 10, 10, 10);   // Set Position
-        title.setGravity(Gravity.CENTER);
-        title.setTextColor(Color.BLACK);
-        title.setTextSize(20);
-        alertDialog.setCustomTitle(title);
-        TextView msg = new TextView(this);
-        msg.setText("Please select a profile picture \n Tap the sample avatar logo");
-        msg.setGravity(Gravity.CENTER_HORIZONTAL);
-        msg.setTextColor(Color.BLACK);
-        alertDialog.setView(msg);
-        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int which) {
-                // Perform Action on Button
-            }
-        });
-        new Dialog(getApplicationContext());
-        alertDialog.show();
-        final Button okBT = alertDialog.getButton(AlertDialog.BUTTON_NEUTRAL);
-        LinearLayout.LayoutParams neutralBtnLP = (LinearLayout.LayoutParams) okBT.getLayoutParams();
-        neutralBtnLP.gravity = Gravity.FILL_HORIZONTAL;
-        okBT.setPadding(50, 10, 10, 10);   // Set Position
-        okBT.setTextColor(Color.BLUE);
-        okBT.setLayoutParams(neutralBtnLP);
     }
 }
