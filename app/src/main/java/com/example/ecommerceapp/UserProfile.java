@@ -35,17 +35,18 @@ public class UserProfile extends AppCompatActivity {
     private TextView fullName, email;
     private Button update;
     private ImageView profileImage;
-    private EditText uname,umail,uphone;
+    private EditText umail,upassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
 
-        mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
         storageReference = FirebaseStorage.getInstance().getReference();
+
+        mDatabase = FirebaseDatabase.getInstance().getReference("Users");
 
         StorageReference profileRef = storageReference.child("Users/"+mAuth.getCurrentUser().getUid()+"/profile.jpg");
         profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
@@ -57,12 +58,32 @@ public class UserProfile extends AppCompatActivity {
 
         fullName = (TextView) findViewById(R.id.username_field);
         email = (TextView) findViewById(R.id.email_field);
-        fullName.setText(mAuth.getCurrentUser().getUid());
+        fullName.setText(mAuth.getCurrentUser().getDisplayName());
         email.setText(mAuth.getCurrentUser().getEmail());
-        uname = (EditText) findViewById(R.id.full_name_profile) ;
         umail = (EditText) findViewById(R.id.email_profile) ;
-        uphone = (EditText) findViewById(R.id.phone_no_profile) ;
+        upassword = (EditText) findViewById(R.id.phone_no_profile) ;
         update = (Button) findViewById(R.id.update);
+
+        update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String newEmail = umail.getText().toString().trim();
+                String newPassword = upassword.getText().toString().trim();
+                mUser.updatePassword(newPassword);
+                mUser.updateEmail(newEmail).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(UserProfile.this, "Email Updated.", Toast.LENGTH_SHORT).show();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(UserProfile.this, "Unable to update!.", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+            }
+        });
 
         profileImage = (ImageView) findViewById(R.id.profilePic);
 
