@@ -1,27 +1,27 @@
 package com.example.ecommerceapp;
 
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.HashMap;
 
 
 public class Bag1 extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
@@ -32,9 +32,11 @@ public class Bag1 extends AppCompatActivity implements AdapterView.OnItemSelecte
     private Spinner ShippingList;
     private Spinner ProductSize;
     private TextView productCarrierList;
-    private Button FavouriteProduct;
-    DatabaseReference Item;
+    private Button btnFavouriteProduct;
+    DatabaseReference Item, Referenced;
     product product;
+    Favorite favorite;
+
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
@@ -52,10 +54,10 @@ public class Bag1 extends AppCompatActivity implements AdapterView.OnItemSelecte
         btn = (ElegantNumberButton) findViewById(R.id.Quantity);
         ProductSize=(Spinner) findViewById(R.id.Size);
         ShippingList=(Spinner)findViewById(R.id.Shipping);
-        FavouriteProduct=(Button) findViewById(R.id.Favourite_button);
+        btnFavouriteProduct=(Button) findViewById(R.id.Favourite_button);
 
-
-
+        favorite =new Favorite();
+        Referenced = FirebaseDatabase.getInstance().getReference().child("Favorite");
 
 
         product=new product();
@@ -100,6 +102,20 @@ public class Bag1 extends AppCompatActivity implements AdapterView.OnItemSelecte
         spinner.setOnItemSelectedListener(this);
 
 
+        btnFavouriteProduct.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                favorite.setSize(ProductSize.getSelectedItem().toString());
+                favorite.setProductName(productName.getText().toString().trim());
+                favorite.setProductPrice(productPrice.getText().toString().trim());
+                favorite.setShipping(ShippingList.getSelectedItem().toString());
+                favorite.setQuantity(btn.getNumber());
+                Item.push().setValue(favorite);
+                Toast.makeText(Bag1.this,"add to Favorite Successful",Toast.LENGTH_LONG).show();
+            }
+        });
+
+
     }
 
 
@@ -118,6 +134,8 @@ public class Bag1 extends AppCompatActivity implements AdapterView.OnItemSelecte
     public void setProductCarrierList(TextView productCarrierList) {
         this.productCarrierList = productCarrierList;
     }
+
+
 
 
     public void gotowishlist(View view) {
