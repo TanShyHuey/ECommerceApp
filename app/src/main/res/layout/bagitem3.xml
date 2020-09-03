@@ -118,12 +118,36 @@
 
     <Button
         android:id="@+id/pd_add_to_cart_button"
-        android:layout_width="match_parent"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
-        android:background="@color/colorRed"
-        android:layout_margin="15dp"
-        android:text="@string/add_to_cart"
         android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="14dp"
+        android:background="@color/colorRed"
+        android:text="@string/add_to_cart"
         android:textColor="@color/colorWhite"
-        android:textSize="18dp"/>
+        android:textSize="18dp" />
+
+    <Button
+        android:id="@+id/Favourite_button"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/colorRed"
+        android:text="@string/favourite"
+        android:src="@drawable/ic_baseline_favorite_24"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp" />
 </RelativeLayout>
