@@ -8,7 +8,6 @@ public class UserHelperClass {
         this.email = email;
         this.phoneNo = phoneNo;
         this.password = password;
-
     }
 
     public String getName() {
