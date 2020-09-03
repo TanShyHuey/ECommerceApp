@@ -1,132 +1,215 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/sky240x320"
+    android:background="@drawable/cute"
     tools:context=".EcommerceMain">
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ViewFlipper
-            android:id="@+id/v_flipper"
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
             android:layout_width="match_parent"
-            android:layout_height="177dp"
-            android:layout_marginTop="1dp" >
+            android:layout_height="match_parent">
 
-        </ViewFlipper>
+            <ViewFlipper
+                android:id="@+id/v_flipper"
+                android:layout_width="match_parent"
+                android:layout_height="177dp"
+                android:layout_marginTop="1dp">
 
-        <Button
-            android:id="@+id/button18"
-            android:layout_width="142dp"
-            android:layout_height="49dp"
-            android:layout_below="@+id/v_flipper"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginRight="0dp"
-            android:onClick="gotoShoesPages"
-            android:text="@string/shoes" />
+            </ViewFlipper>
 
-        <Button
-            android:id="@+id/button19"
-            android:layout_width="126dp"
-            android:layout_height="50dp"
-            android:layout_below="@+id/v_flipper"
-            android:layout_marginStart="0dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="0dp"
-            android:layout_toEndOf="@+id/button18"
-            android:layout_toRightOf="@+id/button18"
-            android:onClick="gotoComesticPages"
-            android:text="@string/comestic" />
+            <Button
+                android:id="@+id/button18"
+                android:layout_width="142dp"
+                android:layout_height="49dp"
+                android:layout_below="@+id/v_flipper"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:onClick="gotoShoesPages"
+                android:text="@string/shoes" />
 
-        <Button
-            android:id="@+id/button20"
-            android:layout_width="136dp"
-            android:layout_height="50dp"
-            android:layout_below="@+id/v_flipper"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginRight="0dp"
-            android:layout_toEndOf="@+id/button19"
-            android:layout_toRightOf="@+id/button19"
-            android:onClick="gotoBagsPages"
-            android:text="@string/bags" />
+            <Button
+                android:id="@+id/button19"
+                android:layout_width="126dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/v_flipper"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_toEndOf="@+id/button18"
+                android:layout_toRightOf="@+id/button18"
+                android:onClick="gotoComesticPages"
+                android:text="@string/comestic" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="158dp"
-            android:layout_height="145dp"
-            android:layout_below="@+id/button18"
-            android:layout_marginStart="1dp"
-            android:layout_marginLeft="1dp"
-            android:layout_marginTop="-1dp"
-            android:onClick="gotoShoes1"
-            app:srcCompat="@drawable/shoes1" />
+            <Button
+                android:id="@+id/button20"
+                android:layout_width="136dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/v_flipper"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_toEndOf="@+id/button19"
+                android:layout_toRightOf="@+id/button19"
+                android:onClick="gotoBagsPages"
+                android:text="@string/bags" />
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="wrap_content"
-            android:layout_height="188dp"
-            android:layout_below="@+id/imageView"
-            android:layout_marginTop="60dp"
-            android:onClick="gotoBag1"
-            app:srcCompat="@drawable/bag3" />
+            <ImageView
+                android:id="@+id/imageView"
+                app:srcCompat="@drawable/shoes1"
+                android:layout_width="158dp"
+                android:layout_height="145dp"
+                android:layout_below="@+id/button18"
+                android:layout_marginStart="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginTop="-1dp"
+                android:onClick="gotoShoes1" />
 
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="187dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/button20"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="1dp"
-            android:layout_marginEnd="3dp"
-            android:layout_marginRight="3dp"
-            android:layout_marginBottom="40dp"
-            android:onClick="gotoComestic7"
-            app:srcCompat="@drawable/comestic2" />
+            <ImageView
+                android:id="@+id/imageView3"
+                app:srcCompat="@drawable/bag3"
+                android:layout_width="wrap_content"
+                android:layout_height="188dp"
+                android:layout_below="@+id/imageView"
+                android:layout_marginTop="60dp"
+                android:onClick="gotoBag1" />
 
-        <ImageView
-            android:id="@+id/imageView8"
-            android:layout_width="227dp"
-            android:layout_height="166dp"
-            android:layout_below="@+id/imageView4"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginBottom="40dp"
-            android:onClick="gotolipstick"
-            app:srcCompat="@drawable/gererere" />
+            <ImageView
+                android:id="@+id/imageView4"
+                app:srcCompat="@drawable/comestic2"
+                android:layout_width="187dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/button20"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="40dp"
+                android:onClick="gotoComestic7" />
 
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="75dp"
-            android:layout_height="57dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="2dp"
-            android:layout_marginRight="2dp"
-            android:layout_marginBottom="-6dp"
-            android:background="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:onClick="gotoCartList"
-            app:srcCompat="@drawable/baseline_shopping_cart_black_36dp" />
+            <ImageView
+                android:id="@+id/imageView8"
+                app:srcCompat="@drawable/gererere"
+                android:layout_width="227dp"
+                android:layout_height="166dp"
+                android:layout_below="@+id/imageView4"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="40dp"
+                android:onClick="gotolipstick" />
 
-    </RelativeLayout>
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="75dp"
+                android:layout_height="57dp"
+                android:layout_below="@+id/imageView8"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="1000dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginRight="4dp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:onClick="gotoCartList"
+                app:srcCompat="@drawable/baseline_shopping_cart_black_36dp" />
+
+            <ImageView
+                android:id="@+id/Handbag"
+                android:layout_width="match_parent"
+                android:layout_height="171dp"
+                android:layout_below="@id/imageView3"
+                android:background="@drawable/handbag1"/>
+
+            <TextView
+                android:id="@+id/HotSales"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/hot_sales_product"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/colorRed"
+                android:layout_below="@id/Handbag"/>
+
+            <ImageView
+                android:id="@+id/bag5"
+                android:layout_width="207dp"
+                android:layout_height="155dp"
+                android:layout_below="@id/HotSales"
+                android:background="@drawable/bag5" />
+
+            <ImageView
+                android:layout_width="207dp"
+                android:layout_height="155dp"
+                android:layout_below="@id/bag5"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="-156dp"
+                android:layout_toEndOf="@+id/bag5"
+                android:layout_toRightOf="@+id/bag5"
+                android:background="@drawable/capture6" />
+            <TextView
+                android:id="@+id/NewArrivals"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/bag5"
+                android:text="@string/new_arrival"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/colorRed"/>
+
+            <ImageView
+                android:id="@+id/NewArrivalsShoes"
+                android:layout_width="196dp"
+                android:layout_height="147dp"
+                android:background="@drawable/newarrivals"
+                android:onClick="gotoNewArrivals"
+                android:layout_below="@id/NewArrivals"/>
+
+            <TextView
+                android:id="@+id/TextNewArrivals"
+                android:layout_width="223dp"
+                android:layout_height="146dp"
+                android:layout_below="@id/NewArrivalsShoes"
+                android:text="@string/women_originals_superstars_shoes_rm480"
+                android:textSize="25sp"
+                android:layout_marginStart="5dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="-148dp"
+                android:layout_toEndOf="@+id/NewArrivalsShoes"
+                android:layout_toRightOf="@+id/NewArrivalsShoes" />
+            <ImageView
+                android:id="@+id/NewPoster"
+                android:layout_width="match_parent"
+                android:layout_height="171dp"
+                android:layout_below="@id/TextNewArrivals"
+                android:background="@drawable/maxresdefault"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="171dp"
+                android:layout_below="@id/NewPoster"
+                android:background="@drawable/lipstick_sets_with_smear_vector_realistic__3d_mock_up_advertising_poster_promoting_makeup_premium_products__package_design__color_sample_168154"/>
+
+        </RelativeLayout>
+    </ScrollView>
 
 
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

@@ -100,4 +100,10 @@ public class EcommerceMain extends AppCompatActivity {
 
 
     }
+
+
+    public void gotoNewArrivals(View view) {
+        Intent intent = new Intent(this, Shoes7.class);
+        startActivity(intent);
+    }
 }

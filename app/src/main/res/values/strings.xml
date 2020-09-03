@@ -205,4 +205,10 @@
     <string name="wish_list">Wish List</string>
     <string name="Favourite" />
     <string name="favourite">Favourite</string>
+    <string name="hot_sales_product">Hot Sales Product</string>
+    <string name="new_arrival">New Arrival</string>
+    <string name="women_originals_superstars_shoes_rm480">Women Originals SuperStars Shoes Rm480</string>
+    <string name="women_superstars_shoes">Women SuperStars Shoes</string>
+    <string name="rm480">RM480</string>
+
 </resources>

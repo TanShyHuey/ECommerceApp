@@ -25,6 +25,8 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".ResetActivity" />
         <activity android:name=".NavActivity" />
+        <activity android:name=".Shoes7"
+            android:parentActivityName=".ShoesPagesJava"/>
         <activity
             android:name=".CarrierList2"
             android:parentActivityName=".NavActivity" />
