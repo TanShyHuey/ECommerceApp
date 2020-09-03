@@ -1,11 +1,11 @@
 package com.example.ecommerceapp.ui.Model;
 
+import android.os.Bundle;
+import android.widget.Button;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.Bundle;
-import android.widget.Button;
 
 import com.example.ecommerceapp.R;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -22,6 +22,9 @@ public class AddToCart extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_to_cart);
+
+        getSupportActionBar().setTitle("Cart List");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         recview=(RecyclerView)findViewById(R.id.recview);
         recview.setLayoutManager(new LinearLayoutManager(this));

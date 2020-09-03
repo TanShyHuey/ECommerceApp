@@ -33,12 +33,13 @@ public class Bag1 extends AppCompatActivity implements AdapterView.OnItemSelecte
     private Spinner ProductSize;
     private TextView productCarrierList;
 
+
     private Button btnFavouriteProduct;
     private TextView FavproductName,FavproductPrice;
     private ElegantNumberButton Favbtn;
     private Spinner FavShippingList;
     private Spinner FavProductSize;
-    private TextView FavproductCarrierList;
+
     DatabaseReference Item;
     product product;
     favourite favourite;
@@ -118,6 +119,9 @@ public class Bag1 extends AppCompatActivity implements AdapterView.OnItemSelecte
         btnFavouriteProduct=(Button) findViewById(R.id.Favourite_button);
 
 
+
+
+
         btnFavouriteProduct.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -128,8 +132,12 @@ public class Bag1 extends AppCompatActivity implements AdapterView.OnItemSelecte
                 favourite.setFavQuantity(Favbtn.getNumber());
                 Referenced.push().setValue(favourite);
                 Toast.makeText(Bag1.this,"add to Favorite Successful",Toast.LENGTH_LONG).show();
+
+
             }
         });
+
+
 
 
     }

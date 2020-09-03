@@ -2,12 +2,15 @@ package com.example.ecommerceapp;
 
 
 import android.content.Intent;
+import android.graphics.ColorSpace;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.ecommerceapp.ui.Model.AddToCart;
 
 public class EcommerceMain extends AppCompatActivity {
 
@@ -89,5 +92,12 @@ public class EcommerceMain extends AppCompatActivity {
     public void gotolipstick(View view) {
         Intent intent = new Intent(this, Comestic4.class);
         startActivity(intent);
+    }
+
+    public void gotoCartList(View view) {
+        Intent intent = new Intent(this, AddToCart.class);
+        startActivity(intent);
+
+
     }
 }
