@@ -20,7 +20,6 @@
         android:layout_marginBottom="15dp"
         android:background="@color/colorRed"
         android:text="@string/favourite"
-        android:onClick="gotowishlist"
         android:src="@drawable/ic_baseline_favorite_24"
         android:textColor="@color/colorWhite"
         android:textSize="18sp" />

@@ -32,10 +32,17 @@ public class Bag1 extends AppCompatActivity implements AdapterView.OnItemSelecte
     private Spinner ShippingList;
     private Spinner ProductSize;
     private TextView productCarrierList;
+
     private Button btnFavouriteProduct;
-    DatabaseReference Item, Referenced;
+    private TextView FavproductName,FavproductPrice;
+    private ElegantNumberButton Favbtn;
+    private Spinner FavShippingList;
+    private Spinner FavProductSize;
+    private TextView FavproductCarrierList;
+    DatabaseReference Item;
     product product;
-    Favorite favorite;
+    favourite favourite;
+    DatabaseReference Referenced;
 
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
@@ -56,8 +63,6 @@ public class Bag1 extends AppCompatActivity implements AdapterView.OnItemSelecte
         ShippingList=(Spinner)findViewById(R.id.Shipping);
         btnFavouriteProduct=(Button) findViewById(R.id.Favourite_button);
 
-        favorite =new Favorite();
-        Referenced = FirebaseDatabase.getInstance().getReference().child("Favorite");
 
 
         product=new product();
@@ -101,16 +106,27 @@ public class Bag1 extends AppCompatActivity implements AdapterView.OnItemSelecte
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
 
+        favourite =new favourite();
+        Referenced = FirebaseDatabase.getInstance().getReference().child("Favorite");
+
+
+        FavproductName=(TextView) findViewById(R.id.ProductName);
+        FavproductPrice=(TextView) findViewById(R.id.ProductPrice);
+        Favbtn = (ElegantNumberButton) findViewById(R.id.Quantity);
+        FavProductSize=(Spinner) findViewById(R.id.Size);
+        FavShippingList=(Spinner)findViewById(R.id.Shipping);
+        btnFavouriteProduct=(Button) findViewById(R.id.Favourite_button);
+
 
         btnFavouriteProduct.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                favorite.setSize(ProductSize.getSelectedItem().toString());
-                favorite.setProductName(productName.getText().toString().trim());
-                favorite.setProductPrice(productPrice.getText().toString().trim());
-                favorite.setShipping(ShippingList.getSelectedItem().toString());
-                favorite.setQuantity(btn.getNumber());
-                Item.push().setValue(favorite);
+                favourite.setFavSize(FavProductSize.getSelectedItem().toString());
+                favourite.setFavProductName(FavproductName.getText().toString().trim());
+                favourite.setFavProductPrice(FavproductPrice.getText().toString().trim());
+                favourite.setFavShipping(FavShippingList.getSelectedItem().toString());
+                favourite.setFavQuantity(Favbtn.getNumber());
+                Referenced.push().setValue(favourite);
                 Toast.makeText(Bag1.this,"add to Favorite Successful",Toast.LENGTH_LONG).show();
             }
         });
@@ -138,7 +154,5 @@ public class Bag1 extends AppCompatActivity implements AdapterView.OnItemSelecte
 
 
 
-    public void gotowishlist(View view) {
 
-    }
 }

@@ -215,26 +215,8 @@
         app:srcCompat="@drawable/more_info_png_file_infobox_png_1024"
         tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/textView53"
-        android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/btnBack"
-        android:layout_width="63dp"
-        android:layout_height="60dp"
-        android:onClick="goback"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_back"
-        tools:ignore="VectorDrawableCompat" />
+
 
     <ImageView
         android:id="@+id/imageView26"
@@ -295,14 +277,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/delhivery" />
 
-    <Button
-        android:id="@+id/button15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="gotoec"
-        android:text="Button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/international" />
+
 
 
 

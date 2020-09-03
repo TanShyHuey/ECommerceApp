@@ -193,27 +193,8 @@
         app:srcCompat="@drawable/more_info_png_file_infobox_png_1024"
         tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/textView53"
-        android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/international2"
-        android:layout_width="54dp"
-        android:layout_height="59dp"
-        android:onClick="goback2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_back"
-        tools:ignore="VectorDrawableCompat" />
+
 
     <ImageView
         android:id="@+id/imageView10"

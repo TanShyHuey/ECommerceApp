@@ -1,7 +1,6 @@
 package com.example.ecommerceapp;
 
-public class Favorite
-{
+public class favourite {
     private String FavProductName;
     private String FavQuantity;
     private String FavShipping;
@@ -10,31 +9,28 @@ public class Favorite
     private String FavSize;
     private String FavColor;
 
-    public Favorite() {
-    }
-
-    public String getFavProductNameProductName() {
+    public String getFavProductName() {
         return FavProductName;
     }
 
-    public void setFavProductName(String productName) {
-        FavProductName = productName;
+    public void setFavProductName(String favProductName) {
+        FavProductName = favProductName;
     }
 
     public String getFavQuantity() {
         return FavQuantity;
     }
 
-    public void setFavQuantity(String quantity) {
-        FavQuantity = quantity;
+    public void setFavQuantity(String favQuantity) {
+        FavQuantity = favQuantity;
     }
 
     public String getFavShipping() {
         return FavShipping;
     }
 
-    public void setFavShipping(String shipping) {
-        FavShipping = shipping;
+    public void setFavShipping(String favShipping) {
+        FavShipping = favShipping;
     }
 
     public String getSpinner2() {
@@ -49,23 +45,27 @@ public class Favorite
         return FavProductPrice;
     }
 
-    public void setFavProductPrice(String productPrice) {
-        FavProductPrice = productPrice;
+    public void setFavProductPrice(String favProductPrice) {
+        FavProductPrice = favProductPrice;
     }
 
     public String getFavSize() {
         return FavSize;
     }
 
-    public void setFavSize(String size) {
-        FavSize = size;
+    public void setFavSize(String favSize) {
+        FavSize = favSize;
     }
 
     public String getFavColor() {
         return FavColor;
     }
 
-    public void setFavColor(String color) {
-        FavColor = color;
+    public void setFavColor(String favColor) {
+        FavColor = favColor;
+    }
+
+    public favourite() {
+
     }
 }
