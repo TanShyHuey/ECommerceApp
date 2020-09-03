@@ -19,64 +19,51 @@
 
         <TextView
             android:id="@+id/product_name"
-            android:layout_width="156dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="Product Name"
-            android:textColor="@android:color/white"
-            android:textSize="18dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:text="Product"
+            android:textColor="#131313"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/quantity"
+            android:id="@+id/quantity_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/product_name"
-            android:layout_marginTop="20dp"
-            android:layout_toStartOf="@+id/btnRemove"
-            android:layout_toLeftOf="@+id/btnRemove"
-            android:background="@color/colorAccent"
-            android:padding="8dp"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
-            android:text="0"
-            android:textColor="#000000"
-            android:textSize="25sp" />
+            android:layout_below="@id/product_price"
+            android:layout_marginStart="15dp"
+            android:textColor="#777777"
+            android:text="Quantity:"
+            android:textSize="20dp"
+            android:layout_marginLeft="15dp" />
+
+        <TextView
+            android:id="@+id/quantity"
+            android:layout_marginStart="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_price"
+            android:textColor="#777777"
+            android:textSize="20dp"
+            android:layout_toEndOf="@id/quantity_text"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/quantity_text" />
 
 
         <TextView
             android:id="@+id/product_price"
-            android:layout_width="159dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="30dp"
-            android:gravity="center"
-            android:text="Product Price"
-            android:textColor="@android:color/white"
-            android:textSize="18dp"
-            android:textStyle="bold" />
-
-        <ImageButton
-            android:id="@+id/btnAdd"
-            android:layout_width="33dp"
-            android:layout_height="50dp"
-            android:layout_below="@id/product_name"
-            android:layout_marginTop="20dp"
-            android:layout_toStartOf="@id/quantity"
-            android:layout_toLeftOf="@id/quantity"
-            android:background="@color/colorDarkBlue"
-            android:src="@android:drawable/ic_input_add" />
-
-        <ImageButton
-            android:id="@+id/btnRemove"
-            android:layout_width="33dp"
-            android:layout_height="50dp"
-            android:layout_below="@id/product_name"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="20dp"
-            android:background="@color/colorDarkBlue"
-            android:src="@android:drawable/button_onoff_indicator_on" />
+            android:layout_below="@+id/product_name"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
+            android:text="RM100"
+            android:textColor="#131313"
+            android:textSize="20sp"
+            android:layout_marginLeft="15dp" />
 
     </RelativeLayout>
 

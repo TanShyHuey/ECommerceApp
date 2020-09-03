@@ -35,7 +35,7 @@ public class Payment extends AppCompatActivity {
         email = (EditText) findViewById(R.id.editEmail);
         phone = (EditText) findViewById(R.id.editPhone);
         notes = (EditText) findViewById(R.id.editNote);
-        btnConOrder = (Button) findViewById(R.id.btnConOrder);
+        btnConOrder = (Button) findViewById(R.id.btnConfirmOrder);
         payDetail=new PayDetail();
         reference = FirebaseDatabase.getInstance(). getReference(). child("PayDetail");
         reference.addValueEventListener(new ValueEventListener() {
@@ -51,14 +51,14 @@ public class Payment extends AppCompatActivity {
             }
         });
 
+        final String Name = name.getText().toString();
+        final String Address = address.getText().toString();
+        final String Email = email.getText().toString();
+        final String Phone = phone.getText().toString();
+
         btnConOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final String Name = name.getText().toString();
-                final String Address = address.getText().toString();
-                final String Email = email.getText().toString();
-                final String Phone = phone.getText().toString();
-
                 if(TextUtils.isEmpty(Name)){
                     Toast.makeText(getApplicationContext(), "Enter your name pls!", Toast.LENGTH_SHORT).show();
                     return;

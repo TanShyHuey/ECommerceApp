@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.ecommerceapp.ui.Model.AddToCart;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class NavActivity extends AppCompatActivity {
@@ -45,7 +46,7 @@ public class NavActivity extends AppCompatActivity {
         tvContact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(NavActivity.this, ChatActivity.class));
+                startActivity(new Intent(NavActivity.this, AddToCart.class));
             }
         });
 

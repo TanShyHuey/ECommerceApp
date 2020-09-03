@@ -6,26 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.Model.AddToCart">
 
-    <RelativeLayout
-        android:id="@+id/r111"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/colorPrimaryDark"
-        android:layout_alignParentTop="true">
-
-        <TextView
-            android:id="@+id/total_price"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Total Price = "
-            android:textColor="@android:color/white"
-            android:textSize="20dp"
-            android:textAlignment="center"
-            android:layout_marginTop="10dp"
-            android:gravity="center_horizontal" />
-
-    </RelativeLayout>
-
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recview"
@@ -33,6 +13,7 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/r111"
         android:layout_above="@+id/next_process_btn"
+        tools:listitem="@layout/addcartlayout"
         />
 
     <Button
@@ -45,5 +26,7 @@
         android:textColor="@android:color/white"
         android:textSize="20dp"
         />
+
+
 
 </RelativeLayout>
