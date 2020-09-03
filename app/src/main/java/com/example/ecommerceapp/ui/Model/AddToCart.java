@@ -4,11 +4,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.ecommerceapp.AboutUsActivity;
+import com.example.ecommerceapp.NavActivity;
 import com.example.ecommerceapp.Payment;
 import com.example.ecommerceapp.R;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -28,6 +31,8 @@ public class AddToCart extends AppCompatActivity
 
         getSupportActionBar().setTitle("Cart List");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        btnNext=(Button) findViewById(R.id.next_process_btn);
 
         recview=(RecyclerView)findViewById(R.id.recview);
         recview.setLayoutManager(new LinearLayoutManager(this));

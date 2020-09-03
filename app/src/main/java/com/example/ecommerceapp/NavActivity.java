@@ -46,7 +46,7 @@ public class NavActivity extends AppCompatActivity {
         tvContact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(NavActivity.this,ChatActivity .class));
+                startActivity(new Intent(NavActivity.this,ChatActivity.class));
             }
         });
 
