@@ -12,13 +12,13 @@
         android:layout_width="match_parent"
         android:layout_height="260dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/bag3"/>
+        android:src="@drawable/fashionbag"/>
     <TextView
         android:id="@+id/ProductName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_details"
-        android:text="@string/round_pillow_bag"
+        android:text="@string/new_europe_fashion_trend_bag_female_handbag_fashion_girls_shoulder_bag_lipstick_crossbody_bag"
         android:textSize="15sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -29,11 +29,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_details"
-        android:text="@string/rm5_90"
-        android:textSize="15sp"
-        android:textStyle="bold"
+        android:layout_marginTop="38dp"
         android:gravity="center"
-        android:layout_marginTop="20dp"/>
+        android:text="@string/rm150"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView62"

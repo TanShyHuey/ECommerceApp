@@ -11,13 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="260dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/comestic2"/>
+        android:src="@drawable/dior"/>
     <TextView
         android:id="@+id/ProductName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_details"
-        android:text="@string/matte_lipstick"
+        android:text="Dior Lipstick"
         android:textSize="15sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -28,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_details"
-        android:text="@string/rm10_99"
+        android:text="@string/rm299"
         android:textSize="15sp"
         android:textStyle="bold"
         android:gravity="center"

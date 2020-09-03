@@ -68,51 +68,50 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                app:srcCompat="@drawable/shoes1"
-                android:layout_width="158dp"
-                android:layout_height="145dp"
+                android:layout_width="200dp"
+                android:layout_height="177dp"
                 android:layout_below="@+id/button18"
                 android:layout_marginStart="1dp"
                 android:layout_marginLeft="1dp"
-                android:layout_marginTop="-1dp"
-                android:onClick="gotoShoes1" />
+                android:layout_marginTop="0dp"
+                android:onClick="gotoShoes1"
+                app:srcCompat="@drawable/shoes8" />
 
             <ImageView
                 android:id="@+id/imageView3"
-                app:srcCompat="@drawable/bag3"
-                android:layout_width="wrap_content"
-                android:layout_height="188dp"
+                android:layout_width="196dp"
+                android:layout_height="189dp"
                 android:layout_below="@+id/imageView"
-                android:layout_marginTop="60dp"
-                android:onClick="gotoBag1" />
+                android:layout_marginTop="0dp"
+                android:onClick="gotoBag1"
+                app:srcCompat="@drawable/fashionbag" />
 
             <ImageView
                 android:id="@+id/imageView4"
-                app:srcCompat="@drawable/comestic2"
-                android:layout_width="187dp"
-                android:layout_height="wrap_content"
+                android:layout_width="229dp"
+                android:layout_height="179dp"
                 android:layout_below="@+id/button20"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="1dp"
-                android:layout_marginEnd="3dp"
-                android:layout_marginRight="3dp"
+                android:layout_marginTop="-4dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
                 android:layout_marginBottom="40dp"
-                android:onClick="gotoComestic7" />
+                android:onClick="gotoComestic7"
+                app:srcCompat="@drawable/dior" />
 
             <ImageView
                 android:id="@+id/imageView8"
-                app:srcCompat="@drawable/gererere"
-                android:layout_width="227dp"
-                android:layout_height="166dp"
-                android:layout_below="@+id/imageView4"
+                android:layout_width="225dp"
+                android:layout_height="197dp"
+                android:layout_above="@+id/Handbag"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="40dp"
-                android:onClick="gotolipstick" />
+                android:layout_marginEnd="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="-1dp"
+                android:onClick="gotolipstick"
+                app:srcCompat="@drawable/ysl_the_mats_2016" />
 
             <ImageButton
                 android:id="@+id/imageButton"
@@ -151,6 +150,7 @@
                 android:id="@+id/bag5"
                 android:layout_width="207dp"
                 android:layout_height="155dp"
+                android:onClick="gotoBag5"
                 android:layout_below="@id/HotSales"
                 android:background="@drawable/bag5" />
 
@@ -163,7 +163,8 @@
                 android:layout_marginTop="-156dp"
                 android:layout_toEndOf="@+id/bag5"
                 android:layout_toRightOf="@+id/bag5"
-                android:background="@drawable/capture6" />
+                android:onClick="gotoComestic6"
+                android:background="@drawable/ysl_the_mats_2016" />
             <TextView
                 android:id="@+id/NewArrivals"
                 android:layout_width="match_parent"

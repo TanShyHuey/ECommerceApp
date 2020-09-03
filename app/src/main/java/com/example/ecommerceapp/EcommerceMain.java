@@ -106,4 +106,12 @@ public class EcommerceMain extends AppCompatActivity {
         Intent intent = new Intent(this, Shoes7.class);
         startActivity(intent);
     }
+    public void gotoBag5(View view) {
+        Intent intent = new Intent(this, Bag5.class);
+        startActivity(intent);
+    }
+    public void gotoComestic6(View view) {
+        Intent intent = new Intent(this, Comestic4.class);
+        startActivity(intent);
+    }
 }

@@ -11,28 +11,29 @@
         android:layout_width="match_parent"
         android:layout_height="260dp"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/gererere"/>
+        app:srcCompat="@drawable/ysl_the_mats_2016"/>
+
     <TextView
         android:id="@+id/ProductName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_details"
-        android:text="@string/heybeautys_moist_lipstick_water_lip_tint_fashion_no_fade_glossy_moisturizing_rouge"
-        android:textSize="15sp"
-        android:textStyle="bold"
+        android:layout_marginTop="0dp"
         android:gravity="center"
-        android:layout_marginTop="0dp"/>
+        android:text="@string/ysl_rouge_pur_couture"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/ProductPrice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_details"
-        android:text="@string/rm4_90"
-        android:textSize="15sp"
-        android:textStyle="bold"
+        android:layout_marginTop="19dp"
         android:gravity="center"
-        android:layout_marginTop="40dp"/>
+        android:text="@string/rm199"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView62"

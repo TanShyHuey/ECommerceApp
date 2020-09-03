@@ -9,15 +9,15 @@
     <ImageView
         android:id="@+id/product_image_details"
         android:layout_width="match_parent"
-        android:layout_height="260dp"
+        android:layout_height="wrap_content"
         android:scaleType="centerCrop"
-        android:src="@drawable/shoes1"/>
+        android:src="@drawable/shoes8" />
     <TextView
         android:id="@+id/ProductName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_details"
-        android:text="@string/women_sneakers"
+        android:text="@string/ultraboost_summer_rdy_shoes"
         android:textSize="15sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -28,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_details"
-        android:text="@string/rm29_90"
+        android:text="@string/rm780"
         android:textSize="15sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -66,7 +66,7 @@
         android:layout_height="39dp"
         android:layout_below="@+id/textView62"
         android:layout_marginTop="13dp"
-        android:text="@string/quantity"
+        android:text="Quantity"
         android:textSize="22sp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="16dp"
