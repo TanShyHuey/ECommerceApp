@@ -3,6 +3,7 @@ package com.example.ecommerceapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -23,6 +25,7 @@ public class Payment extends AppCompatActivity {
     PayDetail payDetail;
     FirebaseDatabase database;
     DatabaseReference reference;
+    FirebaseAuth auth;
     long maxed =0;
 
     @Override
@@ -51,34 +54,43 @@ public class Payment extends AppCompatActivity {
             }
         });
 
-        final String Name = name.getText().toString();
-        final String Address = address.getText().toString();
-        final String Email = email.getText().toString();
-        final String Phone = phone.getText().toString();
 
         btnConOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(TextUtils.isEmpty(Name)){
-                    Toast.makeText(getApplicationContext(), "Enter your name pls!", Toast.LENGTH_SHORT).show();
+                database = FirebaseDatabase.getInstance();
+                reference = database.getReference("Payment Detail");
+                final String pname = name.getText().toString();
+                final String pphone = phone.getText().toString();
+                final String pemail = email.getText().toString();
+                final String paddress = address.getText().toString();
+                final String pnotes = notes.getText().toString();
+
+
+                PayDetail payDetail = new PayDetail(pname,pphone,pemail,paddress,pnotes);
+                reference.child(pname).setValue(payDetail);
+                if(TextUtils.isEmpty(pname)){
+                    name.setError("Enter your your name pls!");
                     return;
                 }
-                if(TextUtils.isEmpty(Address)){
+                if(TextUtils.isEmpty(paddress)){
                     Toast.makeText(getApplicationContext(), "Enter your address pls!", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if(TextUtils.isEmpty(Email)){
+                if(TextUtils.isEmpty(pemail)){
                     Toast.makeText(getApplicationContext(), "Enter your email pls!", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if(TextUtils.isEmpty(Phone)){
+                if(TextUtils.isEmpty(pphone)){
                     Toast.makeText(getApplicationContext(), "Enter your phone number pls!", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                else {
-                    reference.child(String.valueOf(maxed +1)).setValue(payDetail);
-                    Toast.makeText(getApplicationContext(), "Payment done!", Toast.LENGTH_SHORT).show();
-                }
+
+                Toast.makeText(getApplicationContext(), "Payment done!", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(Payment.this, NavActivity.class));
+                finish();
+
+
             }
         });
 
