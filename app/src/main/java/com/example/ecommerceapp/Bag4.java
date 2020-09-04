@@ -30,8 +30,18 @@ public class Bag4 extends AppCompatActivity implements AdapterView.OnItemSelecte
     private Spinner ShippingList;
     private Spinner ProductSize;
     private TextView productCarrierList;
+
+    private Button btnFavouriteProduct;
+    private TextView FavproductName,FavproductPrice;
+    private ElegantNumberButton Favbtn;
+    private Spinner FavShippingList;
+    private Spinner FavProductSize;
+
     DatabaseReference Item;
     product product;
+    favourite favourite;
+    DatabaseReference Referenced;
+
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
@@ -49,7 +59,7 @@ public class Bag4 extends AppCompatActivity implements AdapterView.OnItemSelecte
         btn = (ElegantNumberButton) findViewById(R.id.Quantity);
         ProductSize=(Spinner) findViewById(R.id.Size);
         ShippingList=(Spinner)findViewById(R.id.Shipping);
-
+        btnFavouriteProduct=(Button) findViewById(R.id.Favourite_button);
 
 
         product=new product();
@@ -92,6 +102,32 @@ public class Bag4 extends AppCompatActivity implements AdapterView.OnItemSelecte
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
+        favourite =new favourite();
+        Referenced = FirebaseDatabase.getInstance().getReference().child("Favorite");
+
+
+        FavproductName=(TextView) findViewById(R.id.ProductName);
+        FavproductPrice=(TextView) findViewById(R.id.ProductPrice);
+        Favbtn = (ElegantNumberButton) findViewById(R.id.Quantity);
+        FavProductSize=(Spinner) findViewById(R.id.Size);
+        FavShippingList=(Spinner)findViewById(R.id.Shipping);
+        btnFavouriteProduct=(Button) findViewById(R.id.Favourite_button);
+
+
+        btnFavouriteProduct.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                favourite.setFavSize(FavProductSize.getSelectedItem().toString());
+                favourite.setFavProductName(FavproductName.getText().toString().trim());
+                favourite.setFavProductPrice(FavproductPrice.getText().toString().trim());
+                favourite.setFavShipping(FavShippingList.getSelectedItem().toString());
+                favourite.setFavQuantity(Favbtn.getNumber());
+                Referenced.push().setValue(favourite);
+                Toast.makeText(Bag4.this,"add to Favorite Successful",Toast.LENGTH_LONG).show();
+
+
+            }
+        });
 
 
     }
