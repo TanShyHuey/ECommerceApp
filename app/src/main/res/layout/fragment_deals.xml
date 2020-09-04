@@ -13,5 +13,6 @@
         android:text="@string/title_deals"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="340dp" />
+        tools:layout_editor_absoluteY="340dp"
+        tools:listitem="@layout/activity_nav"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
