@@ -3,56 +3,54 @@ package com.example.ecommerceapp;
 public class Favorite_model {
     String productName, productPrice, quantity, shipping, size;
 
-    Favorite_model()
-    {
-
+    public Favorite_model() {
     }
 
-    public Favorite_model(String productName1, String productPrice1, String quantity1, String shipping1, String size1) {
-        this.productName = productName1;
-        this.productPrice = productPrice1;
-        this.quantity = quantity1;
-        this.shipping = shipping1;
-        this.size = size1;
+    public Favorite_model(String productName, String productPrice, String quantity, String shipping, String size) {
+        this.productName = productName;
+        this.productPrice = productPrice;
+        this.quantity = quantity;
+        this.shipping = shipping;
+        this.size = size;
     }
 
-    public String getProductName1() {
+    public String getProductName() {
         return productName;
     }
 
-    public void setProductName1(String productName) {
+    public void setProductName(String productName) {
         this.productName = productName;
     }
 
-    public String getProductPrice1() {
+    public String getProductPrice() {
         return productPrice;
     }
 
-    public void setProductPrice1(String productPrice1) {
-        this.productPrice = productPrice1;
+    public void setProductPrice(String productPrice) {
+        this.productPrice = productPrice;
     }
 
-    public String getQuantity1() {
+    public String getQuantity() {
         return quantity;
     }
 
-    public void setQuantity1(String quantity1) {
-        this.quantity = quantity1;
+    public void setQuantity(String quantity) {
+        this.quantity = quantity;
     }
 
-    public String getShipping1() {
+    public String getShipping() {
         return shipping;
     }
 
-    public void setShipping1(String shipping1) {
-        this.shipping = shipping1;
+    public void setShipping(String shipping) {
+        this.shipping = shipping;
     }
 
-    public String getSize1() {
+    public String getSize() {
         return size;
     }
 
-    public void setSize1(String size1) {
-        this.size = size1;
+    public void setSize(String size) {
+        this.size = size;
     }
 }

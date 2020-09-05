@@ -12,31 +12,31 @@ import com.example.ecommerceapp.ui.Model.model;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
-public class FavoriteAdapter extends FirebaseRecyclerAdapter<model,FavoriteAdapter.viewHolder>{
-    public FavoriteAdapter(@NonNull FirebaseRecyclerOptions<model> options) {
+public class FavoriteAdapter extends FirebaseRecyclerAdapter<Favorite_model,FavoriteAdapter.FavviewHolder>{
+    public FavoriteAdapter(@NonNull FirebaseRecyclerOptions<Favorite_model> options) {
         super(options);
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull FavoriteAdapter.viewHolder holder, int position, @NonNull model model)
+    protected void onBindViewHolder(@NonNull FavoriteAdapter.FavviewHolder holder, int position, @NonNull Favorite_model Favorite_model)
     {
-        holder.productName.setText(model.getProductName());
-        holder.productPrice.setText(model.getProductPrice());
-        holder.quantity.setText(model.getQuantity());
+        holder.productName.setText(Favorite_model.getProductName());
+        holder.productPrice.setText(Favorite_model.getProductPrice());
+        holder.quantity.setText(Favorite_model.getQuantity());
     }
 
     @NonNull
     @Override
-    public FavoriteAdapter.viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public FavoriteAdapter.FavviewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.favorproduct,parent,false);
-        return new FavoriteAdapter.viewHolder(view);
+        return new FavoriteAdapter.FavviewHolder(view);
     }
 
-    class viewHolder extends RecyclerView.ViewHolder
+    class FavviewHolder extends RecyclerView.ViewHolder
     {
         TextView productName, productPrice, quantity;
 
-        public viewHolder(@NonNull View itemView)
+        public FavviewHolder(@NonNull View itemView)
         {
             super(itemView);
             productName=(TextView)itemView.findViewById(R.id.product_name);
