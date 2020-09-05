@@ -114,7 +114,7 @@ public class Bag1 extends AppCompatActivity implements AdapterView.OnItemSelecte
         FavproductName=(TextView) findViewById(R.id.ProductName);
         FavproductPrice=(TextView) findViewById(R.id.ProductPrice);
         Favbtn = (ElegantNumberButton) findViewById(R.id.Quantity);
-        FavProductSize=(Spinner) findViewById(R.id.Size);
+     //   FavProductSize=(Spinner) findViewById(R.id.Size);
         FavShippingList=(Spinner)findViewById(R.id.Shipping);
         btnFavouriteProduct=(Button) findViewById(R.id.Favourite_button);
 
@@ -125,7 +125,7 @@ public class Bag1 extends AppCompatActivity implements AdapterView.OnItemSelecte
         btnFavouriteProduct.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                favourite.setFavSize(FavProductSize.getSelectedItem().toString());
+//                favourite.setFavSize(FavProductSize.getSelectedItem().toString());
                 favourite.setFavProductName(FavproductName.getText().toString().trim());
                 favourite.setFavProductPrice(FavproductPrice.getText().toString().trim());
                 favourite.setFavShipping(FavShippingList.getSelectedItem().toString());
