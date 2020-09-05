@@ -209,6 +209,20 @@
                 android:layout_below="@id/NewPoster"
                 android:background="@drawable/lipstick_sets_with_smear_vector_realistic__3d_mock_up_advertising_poster_promoting_makeup_premium_products__package_design__color_sample_168154"/>
 
+            <ImageView
+                android:id="@+id/favoriteList"
+                android:layout_width="75dp"
+                android:layout_height="57dp"
+                android:layout_below="@+id/imageView8"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="1005dp"
+                android:layout_marginEnd="352dp"
+                android:layout_marginRight="352dp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                app:srcCompat="@drawable/baseline_favorite_black_36dp" />
+
         </RelativeLayout>
     </ScrollView>
 
