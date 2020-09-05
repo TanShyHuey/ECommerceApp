@@ -50,11 +50,12 @@ public class ChatActivity extends AppCompatActivity {
         msgList = (RecyclerView) findViewById(R.id.chat_recycler);
 
 
+
         btnMsg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 rootNode = FirebaseDatabase.getInstance();
-                reference = rootNode.getReference("Message").child(mAuth.getCurrentUser().getUid()) ;
+                reference = rootNode.getReference("Message").child(mAuth.getCurrentUser().getUid());
 
                 String message = inputMessage.getText().toString().trim();
 
