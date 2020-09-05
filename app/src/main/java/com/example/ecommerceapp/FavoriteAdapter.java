@@ -7,8 +7,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import com.example.ecommerceapp.ui.Model.cartAdapter;
-import com.example.ecommerceapp.ui.Model.model;
+import com.example.ecommerceapp.Favorite_model;
+import com.example.ecommerceapp.FavoriteAdapter;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
