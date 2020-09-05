@@ -1,5 +1,6 @@
 package com.example.ecommerceapp.ui.Model;
 
+import android.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,11 +20,12 @@ public class cartAdapter extends FirebaseRecyclerAdapter<model,cartAdapter.viewH
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull viewHolder holder, int position, @NonNull model model)
+    protected void onBindViewHolder(@NonNull viewHolder holder, int position, @NonNull final model model)
     {
         holder.productName.setText(model.getProductName());
         holder.productPrice.setText(model.getProductPrice());
         holder.quantity.setText(model.getQuantity());
+
     }
 
     @NonNull
