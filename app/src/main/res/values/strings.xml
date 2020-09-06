@@ -221,4 +221,8 @@
     <string name="payment_name">Payment name</string>
     <string name="payment_address">Payment address</string>
 
+    <string name="navigation_carrierlist">CarrierList</string>
+    <string name="navigation_favoritelist">FavoriteList</string>
+    <string name="navigation_cartlist">CartList</string>
+
 </resources>
