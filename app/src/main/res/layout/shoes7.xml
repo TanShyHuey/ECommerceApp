@@ -7,17 +7,17 @@
     tools:context=".Shoes7">
 
     <ImageView
-        android:id="@+id/product_image_details"
+        android:id="@+id/product_image_details7"
         android:layout_width="match_parent"
         android:layout_height="260dp"
         android:scaleType="centerCrop"
         android:src="@drawable/newarrivals"/>
 
     <TextView
-        android:id="@+id/ProductName"
+        android:id="@+id/ProductName7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/product_image_details"
+        android:layout_below="@+id/product_image_details7"
         android:layout_marginTop="0dp"
         android:gravity="center"
         android:text="@string/women_superstars_shoes"
@@ -25,10 +25,10 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/ProductPrice"
+        android:id="@+id/ProductPrice7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/product_image_details"
+        android:layout_below="@+id/product_image_details7"
         android:text="@string/rm480"
         android:textSize="15sp"
         android:textStyle="bold"
@@ -36,10 +36,10 @@
         android:layout_marginTop="20dp"/>
 
     <TextView
-        android:id="@+id/textView62"
+        android:id="@+id/textView627"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ProductPrice"
+        android:layout_below="@+id/ProductPrice7"
         android:layout_marginTop="2dp"
         android:text="@string/Shipping"
         android:textSize="22sp"
@@ -48,10 +48,10 @@
         tools:layout_editor_absoluteY="362dp" />
 
     <Spinner
-        android:id="@+id/Shipping"
+        android:id="@+id/Shipping7"
         android:layout_width="153dp"
         android:layout_height="41dp"
-        android:layout_below="@+id/ProductPrice"
+        android:layout_below="@+id/ProductPrice7"
         android:layout_marginStart="2dp"
         android:layout_marginLeft="2dp"
         android:layout_marginTop="1dp"
@@ -62,10 +62,10 @@
 
 
     <TextView
-        android:id="@+id/textView44"
+        android:id="@+id/textView447"
         android:layout_width="109dp"
         android:layout_height="39dp"
-        android:layout_below="@+id/textView62"
+        android:layout_below="@+id/textView627"
         android:layout_marginTop="13dp"
         android:text="Quantity"
         android:textSize="22sp"
@@ -74,10 +74,10 @@
         tools:layout_editor_absoluteY="427dp" />
 
     <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
-        android:id="@+id/Quantity"
+        android:id="@+id/Quantity7"
         android:layout_width="183dp"
         android:layout_height="45dp"
-        android:layout_below="@+id/Shipping"
+        android:layout_below="@+id/Shipping7"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_marginStart="-2dp"
@@ -85,17 +85,17 @@
         android:layout_marginTop="1dp"
         android:layout_marginEnd="122dp"
         android:layout_marginRight="122dp"
-        android:layout_toEndOf="@+id/textView44"
-        android:layout_toRightOf="@+id/textView44"
+        android:layout_toEndOf="@+id/textView447"
+        android:layout_toRightOf="@+id/textView447"
         android:gravity="center"
         tools:layout_editor_absoluteX="125dp"
         tools:layout_editor_absoluteY="427dp" />
 
     <TextView
-        android:id="@+id/Shoessize"
+        android:id="@+id/Shoessize7"
         android:layout_width="109dp"
         android:layout_height="39dp"
-        android:layout_below="@+id/textView62"
+        android:layout_below="@+id/textView627"
         android:layout_marginTop="61dp"
         android:text="@string/size"
         android:textSize="22sp"
@@ -104,20 +104,20 @@
         tools:layout_editor_absoluteY="427dp" />
 
     <Spinner
-        android:id="@+id/ShoesSize"
+        android:id="@+id/ShoesSize7"
         android:layout_width="153dp"
         android:layout_height="41dp"
-        android:layout_below="@+id/Quantity"
+        android:layout_below="@+id/Quantity7"
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
         android:layout_marginTop="3dp"
-        android:layout_toEndOf="@+id/Shoessize"
-        android:layout_toRightOf="@+id/Shoessize"
+        android:layout_toEndOf="@+id/Shoessize7"
+        android:layout_toRightOf="@+id/Shoessize7"
         tools:layout_editor_absoluteX="103dp"
         tools:layout_editor_absoluteY="362dp" />
 
     <Button
-        android:id="@+id/pd_add_to_cart_button"
+        android:id="@+id/pd_add_to_cart_button7"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -133,7 +133,7 @@
         android:textSize="18dp" />
 
     <Button
-        android:id="@+id/Favourite_button"
+        android:id="@+id/Favourite_button7"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"

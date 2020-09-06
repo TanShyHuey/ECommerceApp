@@ -39,7 +39,7 @@ public class Bag4 extends AppCompatActivity implements AdapterView.OnItemSelecte
 
     DatabaseReference Item;
     product product;
-    favourite favourite;
+    Favmodel favourite;
     DatabaseReference Referenced;
 
 
@@ -102,7 +102,7 @@ public class Bag4 extends AppCompatActivity implements AdapterView.OnItemSelecte
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
-        favourite =new favourite();
+        favourite =new Favmodel();
         Referenced = FirebaseDatabase.getInstance().getReference().child("Favorite");
 
 
@@ -116,10 +116,10 @@ public class Bag4 extends AppCompatActivity implements AdapterView.OnItemSelecte
         btnFavouriteProduct.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                favourite.setFavProductName(FavproductName.getText().toString().trim());
-                favourite.setFavProductPrice(FavproductPrice.getText().toString().trim());
-                favourite.setFavShipping(FavShippingList.getSelectedItem().toString());
-                favourite.setFavQuantity(Favbtn.getNumber());
+                favourite.setName(FavproductName.getText().toString().trim());
+                favourite.setPrices(FavproductPrice.getText().toString().trim());
+              //  favourite.setFavShipping(FavShippingList.getSelectedItem().toString());
+              //  favourite.setFavQuantity(Favbtn.getNumber());
                 Referenced.push().setValue(favourite);
                 Toast.makeText(Bag4.this,"add to Favorite Successful",Toast.LENGTH_LONG).show();
 

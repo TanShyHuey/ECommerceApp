@@ -41,7 +41,7 @@ public class Shoes6 extends AppCompatActivity implements AdapterView.OnItemSelec
 
     DatabaseReference Item;
     product product;
-    favourite favourite;
+    Favmodel favourite;
     DatabaseReference Referenced;
 
 
@@ -106,7 +106,7 @@ public class Shoes6 extends AppCompatActivity implements AdapterView.OnItemSelec
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
 
-        favourite =new favourite();
+        favourite =new Favmodel();
         Referenced = FirebaseDatabase.getInstance().getReference().child("Favorite");
 
         FavproductName=(TextView) findViewById(R.id.ProductName);
@@ -118,10 +118,9 @@ public class Shoes6 extends AppCompatActivity implements AdapterView.OnItemSelec
         btnFavouriteProduct.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                favourite.setFavProductName(FavproductName.getText().toString().trim());
-                favourite.setFavProductPrice(FavproductPrice.getText().toString().trim());
-                favourite.setFavShipping(FavShippingList.getSelectedItem().toString());
-                favourite.setFavQuantity(Favbtn.getNumber());
+                favourite.setName(FavproductName.getText().toString().trim());
+                favourite.setPrices(FavproductPrice.getText().toString().trim());
+
                 Referenced.push().setValue(favourite);
                 Toast.makeText(Shoes6.this,"add to Favorite Successful",Toast.LENGTH_LONG).show();
 
