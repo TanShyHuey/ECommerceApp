@@ -39,7 +39,7 @@ public class Bag4 extends AppCompatActivity implements AdapterView.OnItemSelecte
 
     DatabaseReference Item;
     product product;
-    favourite favourite;
+    Favmodel favourite;
     DatabaseReference Referenced;
 
 
@@ -53,13 +53,13 @@ public class Bag4 extends AppCompatActivity implements AdapterView.OnItemSelecte
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        productName=(TextView) findViewById(R.id.ProductName);
-        productPrice=(TextView) findViewById(R.id.ProductPrice);
-        addToCartButton=(Button) findViewById(R.id.pd_add_to_cart_button);
-        btn = (ElegantNumberButton) findViewById(R.id.Quantity);
-        ProductSize=(Spinner) findViewById(R.id.Size);
-        ShippingList=(Spinner)findViewById(R.id.Shipping);
-        btnFavouriteProduct=(Button) findViewById(R.id.Favourite_button);
+        productName=(TextView) findViewById(R.id.ProductNameb4);
+        productPrice=(TextView) findViewById(R.id.ProductPriceb4);
+        addToCartButton=(Button) findViewById(R.id.pd_add_to_cart_buttonb4);
+        btn = (ElegantNumberButton) findViewById(R.id.Quantityb4);
+        ProductSize=(Spinner) findViewById(R.id.Sizeb4);
+        ShippingList=(Spinner)findViewById(R.id.Shippingb4);
+        btnFavouriteProduct=(Button) findViewById(R.id.Favourite_buttonb4);
 
 
         product=new product();
@@ -91,35 +91,35 @@ public class Bag4 extends AppCompatActivity implements AdapterView.OnItemSelecte
             }
         });
 
-        Spinner spinner = findViewById(R.id.Shipping);
+        Spinner spinner = findViewById(R.id.Shippingb4);
         ArrayAdapter<CharSequence> adapter= ArrayAdapter.createFromResource(this,R.array.carrierlist,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
 
-        spinner = findViewById(R.id.Size);
+        spinner = findViewById(R.id.Sizeb4);
         adapter = ArrayAdapter.createFromResource(this, R.array.sizelist, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
-        favourite =new favourite();
+        favourite =new Favmodel();
         Referenced = FirebaseDatabase.getInstance().getReference().child("Favorite");
 
 
-        FavproductName=(TextView) findViewById(R.id.ProductName);
-        FavproductPrice=(TextView) findViewById(R.id.ProductPrice);
-        Favbtn = (ElegantNumberButton) findViewById(R.id.Quantity);
-        FavShippingList=(Spinner)findViewById(R.id.Shipping);
-        btnFavouriteProduct=(Button) findViewById(R.id.Favourite_button);
+        FavproductName=(TextView) findViewById(R.id.ProductNameb4);
+        FavproductPrice=(TextView) findViewById(R.id.ProductPriceb4);
+        Favbtn = (ElegantNumberButton) findViewById(R.id.Quantityb4);
+        FavShippingList=(Spinner)findViewById(R.id.Shippingb4);
+        btnFavouriteProduct=(Button) findViewById(R.id.Favourite_buttonb4);
 
 
         btnFavouriteProduct.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                favourite.setFavProductName(FavproductName.getText().toString().trim());
-                favourite.setFavProductPrice(FavproductPrice.getText().toString().trim());
-                favourite.setFavShipping(FavShippingList.getSelectedItem().toString());
-                favourite.setFavQuantity(Favbtn.getNumber());
+                favourite.setName(FavproductName.getText().toString().trim());
+                favourite.setPrices(FavproductPrice.getText().toString().trim());
+              //  favourite.setFavShipping(FavShippingList.getSelectedItem().toString());
+              //  favourite.setFavQuantity(Favbtn.getNumber());
                 Referenced.push().setValue(favourite);
                 Toast.makeText(Bag4.this,"add to Favorite Successful",Toast.LENGTH_LONG).show();
 

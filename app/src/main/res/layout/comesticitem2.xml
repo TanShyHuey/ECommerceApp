@@ -7,17 +7,17 @@
     tools:context=".Comestic4">
 
     <ImageView
-        android:id="@+id/product_image_details"
+        android:id="@+id/product_image_detailsc2"
         android:layout_width="match_parent"
         android:layout_height="260dp"
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/ysl_the_mats_2016"/>
 
     <TextView
-        android:id="@+id/ProductName"
+        android:id="@+id/ProductNamec2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/product_image_details"
+        android:layout_below="@+id/product_image_detailsc2"
         android:layout_marginTop="0dp"
         android:gravity="center"
         android:text="@string/ysl_rouge_pur_couture"
@@ -25,10 +25,10 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/ProductPrice"
+        android:id="@+id/ProductPricec2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/product_image_details"
+        android:layout_below="@+id/product_image_detailsc2"
         android:layout_marginTop="19dp"
         android:gravity="center"
         android:text="@string/rm199"
@@ -39,7 +39,7 @@
         android:id="@+id/textView62"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ProductPrice"
+        android:layout_below="@+id/ProductPricec2"
         android:layout_marginTop="2dp"
         android:text="@string/Shipping"
         android:textSize="22sp"
@@ -48,10 +48,10 @@
         tools:layout_editor_absoluteY="362dp" />
 
     <Spinner
-        android:id="@+id/Shipping"
+        android:id="@+id/Shippingc2"
         android:layout_width="153dp"
         android:layout_height="41dp"
-        android:layout_below="@+id/ProductPrice"
+        android:layout_below="@+id/ProductPricec2"
         android:layout_marginStart="2dp"
         android:layout_marginLeft="2dp"
         android:layout_marginTop="1dp"
@@ -74,10 +74,10 @@
         tools:layout_editor_absoluteY="427dp" />
 
     <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
-        android:id="@+id/Quantity"
+        android:id="@+id/Quantityc2"
         android:layout_width="183dp"
         android:layout_height="45dp"
-        android:layout_below="@+id/Shipping"
+        android:layout_below="@+id/Shippingc2"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_marginStart="-2dp"
@@ -104,10 +104,10 @@
         tools:layout_editor_absoluteY="427dp" />
 
     <Spinner
-        android:id="@+id/Color"
+        android:id="@+id/Colorc2"
         android:layout_width="153dp"
         android:layout_height="41dp"
-        android:layout_below="@+id/Quantity"
+        android:layout_below="@+id/Quantityc2"
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
         android:layout_marginTop="3dp"
@@ -117,7 +117,7 @@
         tools:layout_editor_absoluteY="362dp" />
 
     <Button
-        android:id="@+id/pd_add_to_cart_button"
+        android:id="@+id/pd_add_to_cart_buttonc2"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -130,10 +130,10 @@
         android:background="@color/colorRed"
         android:text="@string/add_to_cart"
         android:textColor="@color/colorWhite"
-        android:textSize="18dp" />
+        android:textSize="18sp" />
 
     <Button
-        android:id="@+id/Favourite_button"
+        android:id="@+id/Favourite_buttonc2"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"

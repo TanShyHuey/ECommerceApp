@@ -40,7 +40,7 @@ public class Shoes7 extends AppCompatActivity implements AdapterView.OnItemSelec
 
     DatabaseReference Item;
     product product;
-    favourite favourite;
+    Favmodel favourite;
     DatabaseReference Referenced;
 
 
@@ -54,13 +54,13 @@ public class Shoes7 extends AppCompatActivity implements AdapterView.OnItemSelec
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        productName=(TextView) findViewById(R.id.ProductName);
-        productPrice=(TextView) findViewById(R.id.ProductPrice);
-        addToCartButton=(Button) findViewById(R.id.pd_add_to_cart_button);
-        btn = (ElegantNumberButton) findViewById(R.id.Quantity);
-        ShippingList=(Spinner)findViewById(R.id.Shipping);
-        SizeShoes=(Spinner) findViewById(R.id.ShoesSize);
-        btnFavouriteProduct=(Button) findViewById(R.id.Favourite_button);
+        productName=(TextView) findViewById(R.id.ProductName7);
+        productPrice=(TextView) findViewById(R.id.ProductPrice7);
+        addToCartButton=(Button) findViewById(R.id.pd_add_to_cart_button7);
+        btn = (ElegantNumberButton) findViewById(R.id.Quantity7);
+        ShippingList=(Spinner)findViewById(R.id.Shipping7);
+        SizeShoes=(Spinner) findViewById(R.id.ShoesSize7);
+        btnFavouriteProduct=(Button) findViewById(R.id.Favourite_button7);
 
 
 
@@ -93,34 +93,27 @@ public class Shoes7 extends AppCompatActivity implements AdapterView.OnItemSelec
             }
         });
 
-        Spinner spinner = findViewById(R.id.Shipping);
-        ArrayAdapter<CharSequence> adapter= ArrayAdapter.createFromResource(this,R.array.carrierlist,android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
+       Spinner spinner = findViewById(R.id.Shipping7);
+       ArrayAdapter<CharSequence> adapter= ArrayAdapter.createFromResource(this,R.array.carrierlist,android.R.layout.simple_spinner_item);
+       adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+       spinner.setAdapter(adapter);
+       spinner.setOnItemSelectedListener(this);
 
-        spinner = findViewById(R.id.ShoesSize);
-        adapter = ArrayAdapter.createFromResource(this, R.array.shoesSize, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
+       spinner = findViewById(R.id.ShoesSize7);
+       adapter = ArrayAdapter.createFromResource(this, R.array.shoesSize, android.R.layout.simple_spinner_item);
+       adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+       spinner.setAdapter(adapter);
+       spinner.setOnItemSelectedListener(this);
 
-        favourite =new favourite();
+        favourite =new Favmodel();
         Referenced = FirebaseDatabase.getInstance().getReference().child("Favorite");
-
-        FavproductName=(TextView) findViewById(R.id.ProductName);
-        FavproductPrice=(TextView) findViewById(R.id.ProductPrice);
-        Favbtn = (ElegantNumberButton) findViewById(R.id.Quantity);
-        FavShippingList=(Spinner)findViewById(R.id.Shipping);
-        btnFavouriteProduct=(Button) findViewById(R.id.Favourite_button);
 
         btnFavouriteProduct.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                favourite.setFavProductName(FavproductName.getText().toString().trim());
-                favourite.setFavProductPrice(FavproductPrice.getText().toString().trim());
-                favourite.setFavShipping(FavShippingList.getSelectedItem().toString());
-                favourite.setFavQuantity(Favbtn.getNumber());
+                favourite.setName(productName.getText().toString().trim());
+                favourite.setPrices(productPrice.getText().toString().trim());
+
                 Referenced.push().setValue(favourite);
                 Toast.makeText(Shoes7.this,"add to Favorite Successful",Toast.LENGTH_LONG).show();
 

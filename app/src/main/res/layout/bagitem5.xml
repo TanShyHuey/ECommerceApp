@@ -7,16 +7,16 @@
     tools:context=".Bag5">
 
     <ImageView
-        android:id="@+id/product_image_details"
+        android:id="@+id/product_image_detailsb5"
         android:layout_width="match_parent"
         android:layout_height="260dp"
         android:scaleType="centerCrop"
         android:src="@drawable/bag5"/>
     <TextView
-        android:id="@+id/ProductName"
+        android:id="@+id/ProductNameb5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/product_image_details"
+        android:layout_below="@+id/product_image_detailsb5"
         android:text="@string/crossbody_bag"
         android:textSize="15sp"
         android:textStyle="bold"
@@ -24,10 +24,10 @@
         android:layout_marginTop="0dp"/>
 
     <TextView
-        android:id="@+id/ProductPrice"
+        android:id="@+id/ProductPriceb5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/product_image_details"
+        android:layout_below="@+id/product_image_detailsb5"
         android:text="@string/rm19_90"
         android:textSize="15sp"
         android:textStyle="bold"
@@ -38,7 +38,7 @@
         android:id="@+id/textView62"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ProductPrice"
+        android:layout_below="@+id/ProductPriceb5"
         android:layout_marginTop="2dp"
         android:text="@string/Shipping"
         android:textSize="22sp"
@@ -47,10 +47,10 @@
         tools:layout_editor_absoluteY="362dp" />
 
     <Spinner
-        android:id="@+id/Shipping"
+        android:id="@+id/Shippingb5"
         android:layout_width="153dp"
         android:layout_height="41dp"
-        android:layout_below="@+id/ProductPrice"
+        android:layout_below="@+id/ProductPriceb5"
         android:layout_marginStart="2dp"
         android:layout_marginLeft="2dp"
         android:layout_marginTop="1dp"
@@ -73,10 +73,10 @@
         tools:layout_editor_absoluteY="427dp" />
 
     <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
-        android:id="@+id/Quantity"
+        android:id="@+id/Quantityb5"
         android:layout_width="183dp"
         android:layout_height="45dp"
-        android:layout_below="@+id/Shipping"
+        android:layout_below="@+id/Shippingb5"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_marginStart="-2dp"
@@ -103,10 +103,10 @@
         tools:layout_editor_absoluteY="427dp" />
 
     <Spinner
-        android:id="@+id/Size"
+        android:id="@+id/Sizeb5"
         android:layout_width="153dp"
         android:layout_height="41dp"
-        android:layout_below="@+id/Quantity"
+        android:layout_below="@+id/Quantityb5"
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
         android:layout_marginTop="3dp"
@@ -116,7 +116,7 @@
         tools:layout_editor_absoluteY="362dp" />
 
     <Button
-        android:id="@+id/pd_add_to_cart_button"
+        android:id="@+id/pd_add_to_cart_buttonb5"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -129,10 +129,10 @@
         android:background="@color/colorRed"
         android:text="@string/add_to_cart"
         android:textColor="@color/colorWhite"
-        android:textSize="18dp" />
+        android:textSize="18sp" />
 
     <Button
-        android:id="@+id/Favourite_button"
+        android:id="@+id/Favourite_buttonb5"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"

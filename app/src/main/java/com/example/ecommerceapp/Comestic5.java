@@ -39,7 +39,7 @@ public class Comestic5 extends AppCompatActivity implements AdapterView.OnItemSe
 
     DatabaseReference Item;
     product product;
-    favourite favourite;
+    Favmodel favourite;
     DatabaseReference Referenced;
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
@@ -52,13 +52,13 @@ public class Comestic5 extends AppCompatActivity implements AdapterView.OnItemSe
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        productName=(TextView) findViewById(R.id.ProductName);
-        productPrice=(TextView) findViewById(R.id.ProductPrice);
-        addToCartButton=(Button) findViewById(R.id.pd_add_to_cart_button);
-        btn = (ElegantNumberButton) findViewById(R.id.Quantity);
-        ShippingList=(Spinner)findViewById(R.id.Shipping);
-        ProductColor=(Spinner) findViewById(R.id.Color);
-        btnFavouriteProduct=(Button) findViewById(R.id.Favourite_button);
+        productName=(TextView) findViewById(R.id.ProductNamec6);
+        productPrice=(TextView) findViewById(R.id.ProductPricec6);
+        addToCartButton=(Button) findViewById(R.id.pd_add_to_cart_buttonc6);
+        btn = (ElegantNumberButton) findViewById(R.id.Quantityc6);
+        ShippingList=(Spinner)findViewById(R.id.Shippingc6);
+        ProductColor=(Spinner) findViewById(R.id.Colorc6);
+        btnFavouriteProduct=(Button) findViewById(R.id.Favourite_buttonc6);
 
 
 
@@ -91,34 +91,33 @@ public class Comestic5 extends AppCompatActivity implements AdapterView.OnItemSe
             }
         });
 
-        Spinner spinner = findViewById(R.id.Shipping);
+        Spinner spinner = findViewById(R.id.Shippingc6);
         ArrayAdapter<CharSequence> adapter= ArrayAdapter.createFromResource(this,R.array.carrierlist,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
 
-        spinner = findViewById(R.id.Color);
+        spinner = findViewById(R.id.Colorc6);
         adapter = ArrayAdapter.createFromResource(this, R.array.colorlist, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
 
-        favourite =new favourite();
+        favourite =new Favmodel();
         Referenced = FirebaseDatabase.getInstance().getReference().child("Favorite");
 
-        FavproductName=(TextView) findViewById(R.id.ProductName);
-        FavproductPrice=(TextView) findViewById(R.id.ProductPrice);
-        Favbtn = (ElegantNumberButton) findViewById(R.id.Quantity);
-        FavShippingList=(Spinner)findViewById(R.id.Shipping);
-        btnFavouriteProduct=(Button) findViewById(R.id.Favourite_button);
+        FavproductName=(TextView) findViewById(R.id.ProductNamec6);
+        FavproductPrice=(TextView) findViewById(R.id.ProductPricec6);
+        Favbtn = (ElegantNumberButton) findViewById(R.id.Quantityc6);
+        FavShippingList=(Spinner)findViewById(R.id.Shippingc6);
+        btnFavouriteProduct=(Button) findViewById(R.id.Favourite_buttonc6);
 
         btnFavouriteProduct.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                favourite.setFavProductName(FavproductName.getText().toString().trim());
-                favourite.setFavProductPrice(FavproductPrice.getText().toString().trim());
-                favourite.setFavShipping(FavShippingList.getSelectedItem().toString());
-                favourite.setFavQuantity(Favbtn.getNumber());
+                favourite.setName(FavproductName.getText().toString().trim());
+                favourite.setPrices(FavproductPrice.getText().toString().trim());
+
                 Referenced.push().setValue(favourite);
                 Toast.makeText(Comestic5.this,"add to Favorite Successful",Toast.LENGTH_LONG).show();
 
