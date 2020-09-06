@@ -4,25 +4,30 @@ package com.example.ecommerceapp;
 import android.content.Intent;
 import android.graphics.ColorSpace;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
-import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.example.ecommerceapp.ui.Model.AddToCart;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class EcommerceMain extends AppCompatActivity {
 
     ViewFlipper v_flipper;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.product_item_main);
+
+
 
         getSupportActionBar().setTitle("No Limits");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -30,30 +35,6 @@ public class EcommerceMain extends AppCompatActivity {
         int images[]={R.drawable.slide1,R.drawable.slide2,R.drawable.slide4};
 
         v_flipper =findViewById(R.id.v_flipper);
-
-        BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
-
-        bottomNavigationView.setSelectedItemId(R.id.deals);
-
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch (menuItem.getItemId()){
-                    case R.id.deals:
-                        return true;
-                    case R.id.addtocart:
-                        startActivity(new Intent(getApplicationContext(),AddToCart.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.myaccount:
-                        startActivity(new Intent(getApplicationContext(),NavActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                }
-
-                return false;
-            }
-        });
 
         //for loop
 
@@ -67,6 +48,8 @@ public class EcommerceMain extends AppCompatActivity {
         }
 
     }
+
+
 
     public void flipperImages(int image){
         ImageView imageView = new ImageView(this);
@@ -146,6 +129,40 @@ public class EcommerceMain extends AppCompatActivity {
         startActivity(intent);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+
+        getMenuInflater().inflate(R.menu.menu_main,menu);
+        return true;
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
 
 
+        int id =item.getItemId();
+
+
+        if(id== R.id.navigation_carrierlist){
+            Intent myintent=new Intent(EcommerceMain.this,CarrierList.class);
+            startActivity(myintent);
+            return false;
+        }
+        if(id==R.id.navigation_cartlist){
+            Intent myintent=new Intent(EcommerceMain.this,AddToCart.class);
+            startActivity(myintent);
+            return false;
+
+        }
+        if(id==R.id.navigation_favoritelist){
+            Intent myintent=new Intent(EcommerceMain.this,FavoriteProduct.class);
+            startActivity(myintent);
+            return false;
+
+        }
+        
+       return super.onOptionsItemSelected(item);
+
+    }
 }

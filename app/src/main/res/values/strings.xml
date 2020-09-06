@@ -222,5 +222,11 @@
     <string name="payment_address">Payment address</string>
     <string name="payment_phone">Payment phone</string>
     <string name="history_payment_detail">History Payment Detail</string>
+    <string name="email">email</string>
+    <string name="history_payemnt">History Payemnt</string>
+
+    <string name="navigation_carrierlist">CarrierList</string>
+    <string name="navigation_favoritelist">FavoriteList</string>
+    <string name="navigation_cartlist">CartList</string>
 
 </resources>

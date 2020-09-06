@@ -1,23 +1,22 @@
 package com.example.ecommerceapp;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
+import android.os.Message;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.ecommerceapp.ui.Feedback.FeedbackActivity;
 import com.example.ecommerceapp.ui.Model.AddToCart;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class NavActivity extends AppCompatActivity {
 
-    private TextView tvLogout,tvAbout,tvContact;
-    private ImageView profile ;
+    private TextView tvLogout,tvAbout,tvhistorypayment ;
+    private ImageView profile ,message,chat,feedback;
     private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +25,11 @@ public class NavActivity extends AppCompatActivity {
 
         tvLogout = (TextView) findViewById(R.id.aalogout);
         tvAbout=(TextView)findViewById(R.id.about);
-        tvContact=(TextView)findViewById(R.id.contact);
+        tvhistorypayment=(TextView)findViewById(R.id.historypayment);
         profile=(ImageView)findViewById(R.id.imageView7);
-
+        message=(ImageView)findViewById(R.id.imageViewmessage);
+        chat=(ImageView)findViewById(R.id.imageViewchat);
+        feedback =(ImageView)findViewById(R.id.imageViewFeedback);
         mAuth = FirebaseAuth.getInstance();
 
         tvLogout.setOnClickListener(new View.OnClickListener() {
@@ -39,6 +40,32 @@ public class NavActivity extends AppCompatActivity {
             }
         });
 
+        tvLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NavActivity.this, LoginActivity.class));
+                mAuth.signOut();
+            }
+        });
+        chat .setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NavActivity.this, ChatActivity.class));
+            }
+        });
+        message.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NavActivity.this, SendEmail.class));
+            }
+        });
+        feedback .setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NavActivity.this, FeedbackActivity.class));
+            }
+        });
+
         tvAbout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,10 +73,10 @@ public class NavActivity extends AppCompatActivity {
             }
         });
 
-        tvContact.setOnClickListener(new View.OnClickListener() {
+        tvhistorypayment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(NavActivity.this,ChatActivity.class));
+                startActivity(new Intent(NavActivity.this,HistoryPayment.class));
             }
         });
 
@@ -57,34 +84,6 @@ public class NavActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(NavActivity.this, UserProfile.class));
-            }
-        });
-
-
-
-        BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
-
-        bottomNavigationView.setSelectedItemId(R.id.);
-
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch (menuItem.getItemId()){
-                    case R.id.deals:
-                        startActivity(new Intent(getApplicationContext(),EcommerceMain.class));
-                        overridePendingTransition(0,0);
-
-                        return true;
-                    case R.id.addtocart:
-                        startActivity(new Intent(getApplicationContext(),AddToCart.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.myaccount:
-
-                        return true;
-                }
-
-                return false;
             }
         });
     }
