@@ -8,8 +8,8 @@ android:layout_margin="10dp"
 app:cardElevation="15dp">
 
     <RelativeLayout
-        android:layout_width="379dp"
-        android:layout_height="175dp"
+        android:layout_width="384dp"
+        android:layout_height="192dp"
         android:background="#DDEAF4"
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -47,13 +47,26 @@ app:cardElevation="15dp">
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/product_hphone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="122dp"
+            android:text="@string/payment_phone"
+            android:textColor="#131313"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
             android:id="@+id/product_hname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_marginStart="15dp"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="95dp"
+            android:layout_marginTop="90dp"
             android:text="@string/payment_name"
             android:textColor="#131313"
             android:textSize="20sp"
