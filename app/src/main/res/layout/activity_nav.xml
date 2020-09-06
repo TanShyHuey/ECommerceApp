@@ -42,7 +42,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="120dp"
-            android:layout_marginLeft="100dp"
+            android:layout_marginLeft="50dp"
             android:layout_marginTop="22dp"
             android:src="@drawable/ic_action_message"
             app:layout_constraintTop_toBottomOf="@+id/cardView" />
@@ -81,7 +81,7 @@
         android:layout_marginTop="5dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:srcCompat="@drawable/ic_action_location" />
+        app:srcCompat="@drawable/ic_baseline_history" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -105,25 +105,58 @@
         app:srcCompat="@drawable/ic_action_list" />
 
     <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="76dp"
-        android:layout_height="59dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:srcCompat="@drawable/ic_action_setting" />
-
-    <ImageView
         android:id="@+id/imageView6"
         android:layout_width="77dp"
         android:layout_height="56dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
         app:srcCompat="@drawable/ic_action_terms"
         tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/aalogout"
+        android:layout_width="139dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="112dp"
+        android:layout_marginRight="112dp"
+        android:text="@string/logout"
+        android:textColor="#000000"
+        android:textSize="27sp"
+        android:textStyle="normal"
+        app:fontFamily="serif"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/about" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="152dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="24dp"
+        android:onClick="gotoproductpages"
+        android:text="@string/deals"
+        android:textColor="#090808"
+        android:textSize="27sp"
+        android:textStyle="normal"
+        app:fontFamily="serif"
+        app:layout_constraintStart_toEndOf="@+id/imageView25"
+        app:layout_constraintTop_toBottomOf="@+id/aalogout" />
+
+    <ImageView
+        android:id="@+id/imageView25"
+        android:layout_width="69dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6"
+        app:srcCompat="@drawable/shoopingcarticon" />
 
     <TextView
         android:id="@+id/carrier"
@@ -142,13 +175,13 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
     <TextView
-        android:id="@+id/contact"
-        android:layout_width="157dp"
-        android:layout_height="49dp"
+        android:id="@+id/historypayment"
+        android:layout_width="242dp"
+        android:layout_height="53dp"
         android:layout_marginTop="5dp"
-        android:layout_marginEnd="104dp"
-        android:layout_marginRight="104dp"
-        android:text="@string/contact_us"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:text="@string/history_payemnt"
         android:textColor="#020202"
         android:textSize="27sp"
         android:textStyle="normal"
@@ -160,46 +193,16 @@
         android:id="@+id/about"
         android:layout_width="148dp"
         android:layout_height="48dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="112dp"
-        android:layout_marginRight="112dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginRight="120dp"
         android:text="@string/about_us"
         android:textColor="#090808"
         android:textSize="27sp"
         android:textStyle="normal"
         app:fontFamily="serif"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contact" />
-
-    <TextView
-        android:id="@+id/setting"
-        android:layout_width="151dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="112dp"
-        android:layout_marginRight="112dp"
-        android:text="@string/setting"
-        android:textColor="#000000"
-        android:textSize="27sp"
-        android:textStyle="normal"
-        app:fontFamily="serif"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/about" />
-
-    <TextView
-        android:id="@+id/aalogout"
-        android:layout_width="139dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="124dp"
-        android:layout_marginRight="124dp"
-        android:text="@string/logout"
-        android:textColor="#000000"
-        android:textSize="27sp"
-        android:textStyle="normal"
-        app:fontFamily="serif"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/setting" />
+        app:layout_constraintTop_toBottomOf="@+id/historypayment" />
 
     <ImageView
         android:id="@+id/imageView7"
@@ -212,31 +215,5 @@
         app:layout_constraintTop_toTopOf="@+id/view"
         app:layout_constraintVertical_bias="0.024"
         app:srcCompat="@drawable/profile" />
-
-    <ImageView
-        android:id="@+id/imageView25"
-        android:layout_width="69dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="37dp"
-        android:layout_marginLeft="37dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6"
-        app:srcCompat="@drawable/shoopingcarticon" />
-
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="152dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginLeft="44dp"
-        android:layout_marginTop="18dp"
-        android:onClick="gotoproductpages"
-        android:text="@string/deals"
-        android:textColor="#090808"
-        android:textSize="27sp"
-        android:textStyle="normal"
-        app:fontFamily="serif"
-        app:layout_constraintStart_toEndOf="@+id/imageView25"
-        app:layout_constraintTop_toBottomOf="@+id/aalogout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

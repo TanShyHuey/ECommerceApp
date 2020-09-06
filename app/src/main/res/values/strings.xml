@@ -223,5 +223,6 @@
     <string name="payment_phone">Payment phone</string>
     <string name="history_payment_detail">History Payment Detail</string>
     <string name="email">email</string>
+    <string name="history_payemnt">History Payemnt</string>
 
 </resources>

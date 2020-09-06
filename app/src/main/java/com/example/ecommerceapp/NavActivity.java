@@ -15,7 +15,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class NavActivity extends AppCompatActivity {
 
-    private TextView tvLogout,tvAbout,tvContact;
+    private TextView tvLogout,tvAbout,tvhistorypayment ;
     private ImageView profile ,message,chat,feedback;
     private FirebaseAuth mAuth;
     @Override
@@ -25,12 +25,20 @@ public class NavActivity extends AppCompatActivity {
 
         tvLogout = (TextView) findViewById(R.id.aalogout);
         tvAbout=(TextView)findViewById(R.id.about);
-        tvContact=(TextView)findViewById(R.id.contact);
+        tvhistorypayment=(TextView)findViewById(R.id.historypayment);
         profile=(ImageView)findViewById(R.id.imageView7);
         message=(ImageView)findViewById(R.id.imageViewmessage);
         chat=(ImageView)findViewById(R.id.imageViewchat);
         feedback =(ImageView)findViewById(R.id.imageViewFeedback);
         mAuth = FirebaseAuth.getInstance();
+
+        tvLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NavActivity.this, LoginActivity.class));
+                mAuth.signOut();
+            }
+        });
 
         tvLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,25 +66,17 @@ public class NavActivity extends AppCompatActivity {
             }
         });
 
-        tvLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(NavActivity.this, LoginActivity.class));
-                mAuth.signOut();
-            }
-        });
-
         tvAbout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(NavActivity.this, SendEmail.class));
+                startActivity(new Intent(NavActivity.this, AboutUsActivity.class));
             }
         });
 
-        tvContact.setOnClickListener(new View.OnClickListener() {
+        tvhistorypayment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(NavActivity.this,FeedbackActivity.class));
+                startActivity(new Intent(NavActivity.this,HistoryPayment.class));
             }
         });
 
