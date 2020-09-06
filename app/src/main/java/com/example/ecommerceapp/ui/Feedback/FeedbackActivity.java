@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -42,10 +43,22 @@ public class FeedbackActivity extends AppCompatActivity {
                 final String name = fbname.getText().toString().trim();
                 final String email = fbemail.getText().toString().trim();
                 final String message = fbmessage.getText().toString().trim();
+
+                if(TextUtils.isEmpty(name)){
+                    Toast.makeText(getApplicationContext(), "Enter pls your name !", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(TextUtils.isEmpty(email)){
+                    Toast.makeText(getApplicationContext(), "Enter pls your email !", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(TextUtils.isEmpty(message )){
+                    Toast.makeText(getApplicationContext(), "Enter pls your message !", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 feedbackClass= new FeedbackClass(name,email,message);
                 reff.child(name).setValue(feedbackClass);
-
-
                 Toast.makeText(FeedbackActivity.this,"Save Feedback Successful",Toast.LENGTH_LONG).show();
                 startActivity(new Intent(FeedbackActivity .this, NavActivity.class));
                 finish();
