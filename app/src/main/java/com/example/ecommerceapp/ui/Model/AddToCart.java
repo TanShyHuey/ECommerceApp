@@ -67,3 +67,25 @@ public class AddToCart extends AppCompatActivity
         adapter.startListening();
     }
 }
+
+
+
+// holder.itemView.setOnClickListener(new View.OnClickListener() {
+//@Override
+//public void onClick(View view) {
+//        CharSequence options[] = new CharSequence[]
+//        {
+//        "Remove","Edit"
+//        };
+//        AlertDialog.Builder builder = new AlertDialog.Builder(AddToCart.this);
+//        builder.setTitle("Cart Option:");
+//
+//        builder.setItems(options, new DialogInterface.OnClickListener() {
+//@Override
+//public void onClick(DialogInterface dialogInterface, int i) {
+//
+//        }
+//        })
+//
+//        }
+//        });

@@ -1,6 +1,7 @@
 package com.example.ecommerceapp.ui.Model;
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +26,6 @@ public class cartAdapter extends FirebaseRecyclerAdapter<model,cartAdapter.viewH
         holder.productName.setText(model.getProductName());
         holder.productPrice.setText(model.getProductPrice());
         holder.quantity.setText(model.getQuantity());
-
     }
 
     @NonNull
