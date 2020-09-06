@@ -225,4 +225,8 @@
     <string name="email">email</string>
     <string name="history_payemnt">History Payemnt</string>
 
+    <string name="navigation_carrierlist">CarrierList</string>
+    <string name="navigation_favoritelist">FavoriteList</string>
+    <string name="navigation_cartlist">CartList</string>
+
 </resources>
