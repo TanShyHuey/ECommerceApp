@@ -104,13 +104,13 @@ public class Comestic2 extends AppCompatActivity implements AdapterView.OnItemSe
         favourite =new Favmodel();
         Referenced = FirebaseDatabase.getInstance().getReference().child("Favorite");
 
-        FavproductName=(TextView) findViewById(R.id.ProductNamec2);
-        FavproductPrice=(TextView) findViewById(R.id.ProductPricec2);
-        Favbtn = (ElegantNumberButton) findViewById(R.id.Quantityc2);
-        FavShippingList=(Spinner)findViewById(R.id.Shippingc2);
-        btnFavouriteProduct=(Button) findViewById(R.id.Favourite_buttonc2);
+        FavproductName=(TextView) findViewById(R.id.ProductNamec1);
+        FavproductPrice=(TextView) findViewById(R.id.ProductPricec1);
+        Favbtn = (ElegantNumberButton) findViewById(R.id.Quantityc1);
+        FavShippingList=(Spinner)findViewById(R.id.Shippingc1);
+        btnFavouriteProduct=(Button) findViewById(R.id.Favourite_buttonc1);
 
-        btnFavouriteProduct.setOnClickListener(new View.OnClickListener(){
+        btnFavouriteProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 favourite.setName(FavproductName.getText().toString().trim());
@@ -118,10 +118,12 @@ public class Comestic2 extends AppCompatActivity implements AdapterView.OnItemSe
 
                 Referenced.push().setValue(favourite);
                 Toast.makeText(Comestic2.this,"add to Favorite Successful",Toast.LENGTH_LONG).show();
-
-
             }
         });
+
+
+
+
 
 
     }
