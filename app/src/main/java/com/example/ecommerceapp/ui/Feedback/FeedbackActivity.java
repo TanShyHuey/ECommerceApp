@@ -6,8 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.ecommerceapp.MessageClass;
 import com.example.ecommerceapp.R;
+import com.example.ecommerceapp.UserHelperClass;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
@@ -17,6 +20,7 @@ public class FeedbackActivity extends AppCompatActivity {
     private Button btnsavefb;
     DatabaseReference reff;
     FirebaseDatabase database;
+    FeedbackClass feedbackClass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,18 +31,40 @@ public class FeedbackActivity extends AppCompatActivity {
         fbemail = (EditText) findViewById(R.id.email_feedback);
         fbmessage = (EditText) findViewById(R.id.feedback_message);
         btnsavefb  = (Button) findViewById(R.id.btnsavefb);
-    }
+        feedbackClass = new FeedbackClass();
+        reff = FirebaseDatabase.getInstance().getReference().child("Feeback");
+        btnsavefb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final String name = fbname.getText().toString().trim();
+                final String email = fbemail.getText().toString().trim();
+                final String message = fbmessage.getText().toString().trim();
+                feedbackClass= new FeedbackClass(name,email,message);
+                reff.child(name).setValue(feedbackClass);
 
-    public void savefeedback(View view) {
-        database = FirebaseDatabase.getInstance();
-        reff = database.getReference("Feedback");
-        final String name = fbname.getText().toString();
-        final String email = fbemail.getText().toString();
-        final String message = fbmessage.getText().toString();
-//        reff= FirebaseDatabase.getInstance().getReference().child("Product");
-//        reff = FirebaseDatabase.getInstance(). getReference(). child("FeedbackClass");
-//        reff.addValueEventListener(new ValueEventListener() {
 
+                Toast.makeText(FeedbackActivity.this,"Save Feedback Successful",Toast.LENGTH_LONG).show();
+            }
+    });
 
-        }
+};
 }
+
+//    public void savefeedback(View view) {
+//        database = FirebaseDatabase.getInstance();
+//        reff = database.getReference("Feedback");
+//        final String name = fbname.getText().toString();
+//        final String email = fbemail.getText().toString();
+//        final String message = fbmessage.getText().toString();
+//
+//
+//
+//
+////        reff= FirebaseDatabase.getInstance().getReference().child("Product");
+////        reff = FirebaseDatabase.getInstance(). getReference(). child("FeedbackClass");
+////        reff.addValueEventListener(new ValueEventListener() {
+//
+
+ //       });
+   // }
+
