@@ -53,13 +53,13 @@ public class Shoes2 extends AppCompatActivity implements AdapterView.OnItemSelec
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        productName=(TextView) findViewById(R.id.ProductName);
-        productPrice=(TextView) findViewById(R.id.ProductPrice);
-        addToCartButton=(Button) findViewById(R.id.pd_add_to_cart_button);
-        btn = (ElegantNumberButton) findViewById(R.id.Quantity);
-        ShippingList=(Spinner)findViewById(R.id.Shipping);
-        SizeShoes=(Spinner) findViewById(R.id.ShoesSize);
-        btnFavouriteProduct=(Button) findViewById(R.id.Favourite_button);
+        productName=(TextView) findViewById(R.id.ProductName2);
+        productPrice=(TextView) findViewById(R.id.ProductPrice2);
+        addToCartButton=(Button) findViewById(R.id.pd_add_to_cart_button2);
+        btn = (ElegantNumberButton) findViewById(R.id.Quantity2);
+        ShippingList=(Spinner)findViewById(R.id.Shipping2);
+        SizeShoes=(Spinner) findViewById(R.id.ShoesSize2);
+        btnFavouriteProduct=(Button) findViewById(R.id.Favourite_button2);
 
 
 
@@ -92,13 +92,13 @@ public class Shoes2 extends AppCompatActivity implements AdapterView.OnItemSelec
             }
         });
 
-        Spinner spinner = findViewById(R.id.Shipping);
+        Spinner spinner = findViewById(R.id.Shipping2);
         ArrayAdapter<CharSequence> adapter= ArrayAdapter.createFromResource(this,R.array.carrierlist,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
 
-        spinner = findViewById(R.id.ShoesSize);
+        spinner = findViewById(R.id.ShoesSize2);
         adapter = ArrayAdapter.createFromResource(this, R.array.shoesSize, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
@@ -106,12 +106,12 @@ public class Shoes2 extends AppCompatActivity implements AdapterView.OnItemSelec
         favourite =new Favmodel();
         Referenced = FirebaseDatabase.getInstance().getReference().child("Favorite");
 
-        FavproductName=(TextView) findViewById(R.id.ProductName);
-        FavproductPrice=(TextView) findViewById(R.id.ProductPrice);
-        Favbtn = (ElegantNumberButton) findViewById(R.id.Quantity);
-//        FavProductSize=(Spinner) findViewById(R.id.Size);
-        FavShippingList=(Spinner)findViewById(R.id.Shipping);
-        btnFavouriteProduct=(Button) findViewById(R.id.Favourite_button);
+       FavproductName=(TextView) findViewById(R.id.ProductName2);
+       FavproductPrice=(TextView) findViewById(R.id.ProductPrice2);
+       Favbtn = (ElegantNumberButton) findViewById(R.id.Quantity2);
+       FavProductSize=(Spinner) findViewById(R.id.ShoesSize2);
+       FavShippingList=(Spinner)findViewById(R.id.Shipping2);
+       btnFavouriteProduct=(Button) findViewById(R.id.Favourite_button2);
 
         btnFavouriteProduct.setOnClickListener(new View.OnClickListener(){
             @Override
