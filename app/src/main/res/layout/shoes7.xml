@@ -55,8 +55,8 @@
         android:layout_marginStart="2dp"
         android:layout_marginLeft="2dp"
         android:layout_marginTop="1dp"
-        android:layout_toEndOf="@+id/textView62"
-        android:layout_toRightOf="@+id/textView62"
+        android:layout_toEndOf="@+id/textView627"
+        android:layout_toRightOf="@+id/textView627"
         tools:layout_editor_absoluteX="103dp"
         tools:layout_editor_absoluteY="362dp" />
 
@@ -130,7 +130,7 @@
         android:background="@color/colorRed"
         android:text="@string/add_to_cart"
         android:textColor="@color/colorWhite"
-        android:textSize="18dp" />
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/Favourite_button7"

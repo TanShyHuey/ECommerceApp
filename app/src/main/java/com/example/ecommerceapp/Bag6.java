@@ -52,13 +52,13 @@ public class Bag6 extends AppCompatActivity implements AdapterView.OnItemSelecte
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        productName=(TextView) findViewById(R.id.ProductName);
-        productPrice=(TextView) findViewById(R.id.ProductPrice);
-        addToCartButton=(Button) findViewById(R.id.pd_add_to_cart_button);
-        btn = (ElegantNumberButton) findViewById(R.id.Quantity);
-        ProductSize=(Spinner) findViewById(R.id.Size);
-        ShippingList=(Spinner)findViewById(R.id.Shipping);
-        btnFavouriteProduct=(Button) findViewById(R.id.Favourite_button);
+        productName=(TextView) findViewById(R.id.ProductNameb6);
+        productPrice=(TextView) findViewById(R.id.ProductPriceb6);
+        addToCartButton=(Button) findViewById(R.id.pd_add_to_cart_buttonb6);
+        btn = (ElegantNumberButton) findViewById(R.id.Quantityb6);
+        ProductSize=(Spinner) findViewById(R.id.Sizeb6);
+        ShippingList=(Spinner)findViewById(R.id.Shippingb6);
+        btnFavouriteProduct=(Button) findViewById(R.id.Favourite_buttonb6);
 
 
         product=new product();
@@ -90,13 +90,13 @@ public class Bag6 extends AppCompatActivity implements AdapterView.OnItemSelecte
             }
         });
 
-        Spinner spinner = findViewById(R.id.Shipping);
+        Spinner spinner = findViewById(R.id.Shippingb6);
         ArrayAdapter<CharSequence> adapter= ArrayAdapter.createFromResource(this,R.array.carrierlist,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
 
-        spinner = findViewById(R.id.Size);
+        spinner = findViewById(R.id.Sizeb6);
         adapter = ArrayAdapter.createFromResource(this, R.array.sizelist, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
@@ -105,11 +105,11 @@ public class Bag6 extends AppCompatActivity implements AdapterView.OnItemSelecte
         favourite =new Favmodel();
         Referenced = FirebaseDatabase.getInstance().getReference().child("Favorite");
 
-        FavproductName=(TextView) findViewById(R.id.ProductName);
-        FavproductPrice=(TextView) findViewById(R.id.ProductPrice);
-        Favbtn = (ElegantNumberButton) findViewById(R.id.Quantity);
-        FavShippingList=(Spinner)findViewById(R.id.Shipping);
-        btnFavouriteProduct=(Button) findViewById(R.id.Favourite_button);
+        FavproductName=(TextView) findViewById(R.id.ProductNameb6);
+        FavproductPrice=(TextView) findViewById(R.id.ProductPriceb6);
+        Favbtn = (ElegantNumberButton) findViewById(R.id.Quantityb6);
+        FavShippingList=(Spinner)findViewById(R.id.Shippingb6);
+        btnFavouriteProduct=(Button) findViewById(R.id.Favourite_buttonb6);
 
         btnFavouriteProduct.setOnClickListener(new View.OnClickListener(){
             @Override

@@ -52,13 +52,13 @@ public class Comestic6 extends AppCompatActivity implements AdapterView.OnItemSe
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        productName=(TextView) findViewById(R.id.ProductName);
-        productPrice=(TextView) findViewById(R.id.ProductPrice);
-        addToCartButton=(Button) findViewById(R.id.pd_add_to_cart_button);
-        btn = (ElegantNumberButton) findViewById(R.id.Quantity);
-        ShippingList=(Spinner)findViewById(R.id.Shipping);
-        ProductColor=(Spinner) findViewById(R.id.Color);
-        btnFavouriteProduct=(Button) findViewById(R.id.Favourite_button);
+        productName=(TextView) findViewById(R.id.ProductNamec5);
+        productPrice=(TextView) findViewById(R.id.ProductPricec5);
+        addToCartButton=(Button) findViewById(R.id.pd_add_to_cart_buttonc5);
+        btn = (ElegantNumberButton) findViewById(R.id.Quantityc5);
+        ShippingList=(Spinner)findViewById(R.id.Shippingc5);
+        ProductColor=(Spinner) findViewById(R.id.Colorc5);
+        btnFavouriteProduct=(Button) findViewById(R.id.Favourite_buttonc5);
 
 
 
@@ -91,13 +91,13 @@ public class Comestic6 extends AppCompatActivity implements AdapterView.OnItemSe
             }
         });
 
-        Spinner spinner = findViewById(R.id.Shipping);
+        Spinner spinner = findViewById(R.id.Shippingc5);
         ArrayAdapter<CharSequence> adapter= ArrayAdapter.createFromResource(this,R.array.carrierlist,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
 
-        spinner = findViewById(R.id.Color);
+        spinner = findViewById(R.id.Colorc5);
         adapter = ArrayAdapter.createFromResource(this, R.array.colorlist, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
@@ -106,11 +106,11 @@ public class Comestic6 extends AppCompatActivity implements AdapterView.OnItemSe
         favourite =new Favmodel();
         Referenced = FirebaseDatabase.getInstance().getReference().child("Favorite");
 
-        FavproductName=(TextView) findViewById(R.id.ProductName);
-        FavproductPrice=(TextView) findViewById(R.id.ProductPrice);
-        Favbtn = (ElegantNumberButton) findViewById(R.id.Quantity);
-        FavShippingList=(Spinner)findViewById(R.id.Shipping);
-        btnFavouriteProduct=(Button) findViewById(R.id.Favourite_button);
+        FavproductName=(TextView) findViewById(R.id.ProductNamec5);
+        FavproductPrice=(TextView) findViewById(R.id.ProductPricec5);
+        Favbtn = (ElegantNumberButton) findViewById(R.id.Quantityc5);
+        FavShippingList=(Spinner)findViewById(R.id.Shippingc5);
+        btnFavouriteProduct=(Button) findViewById(R.id.Favourite_buttonc5);
 
         btnFavouriteProduct.setOnClickListener(new View.OnClickListener(){
             @Override
