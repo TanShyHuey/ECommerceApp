@@ -11,15 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.Feedback.FeedbackActivity"></activity>
-        <activity android:name=".FavoriteProduct"></activity>
+        <activity android:name=".HistoryPayment"></activity>
+        <activity android:name=".ui.Feedback.FeedbackActivity" />
+        <activity android:name=".FavoriteProduct" />
         <activity
             android:name=".ui.Model.AddToCart"
             android:parentActivityName=".EcommerceMain" />
         <activity android:name=".Payment" />
-        <activity
-            android:name=".Homepage"
-            android:label="@string/title_activity_homepage" />
         <activity android:name=".AboutUsActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".OtpActivity" />

@@ -98,7 +98,6 @@ public class EcommerceMain extends AppCompatActivity {
         Intent intent = new Intent(this, AddToCart.class);
         startActivity(intent);
 
-
     }
 
 
@@ -112,6 +111,11 @@ public class EcommerceMain extends AppCompatActivity {
     }
     public void gotoComestic6(View view) {
         Intent intent = new Intent(this, Comestic4.class);
+        startActivity(intent);
+    }
+
+    public void gotoFavoriteProduct(View view) {
+        Intent intent =new Intent(this,FavoriteProduct.class);
         startActivity(intent);
     }
 }
