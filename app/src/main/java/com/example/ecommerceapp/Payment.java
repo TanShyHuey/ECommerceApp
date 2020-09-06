@@ -24,11 +24,12 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Payment extends AppCompatActivity {
 
+    private static final String TAG = "MyTag";
     EditText name, address,email, phone, notes;
     Button btnConOrder;
     PayDetail payDetail;
     FirebaseDatabase database;
-    DatabaseReference reference;
+    DatabaseReference reference, reff;
     FirebaseAuth auth;
     long maxed =0;
 
@@ -44,6 +45,7 @@ public class Payment extends AppCompatActivity {
         notes = (EditText) findViewById(R.id.editNote);
         btnConOrder = (Button) findViewById(R.id.btnConfirmOrder);
         payDetail=new PayDetail();
+        reff= FirebaseDatabase.getInstance().getReference().child("Product");
         reference = FirebaseDatabase.getInstance(). getReference(). child("PayDetail");
         reference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -89,28 +91,12 @@ public class Payment extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Enter your phone number pls!", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
+                FirebaseDatabase.getInstance().getReference().child("Product")
+                        .removeValue();
                 Toast.makeText(getApplicationContext(), "Payment done!", Toast.LENGTH_SHORT).show();
-
-                Task<Void> task = reference.child("Product").removeValue();
-
-                task.addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-
-                    }
-                })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-
-                            }
-                        });
-
 
                 startActivity(new Intent(Payment.this, NavActivity.class));
                 finish();
-
 
             }
         });

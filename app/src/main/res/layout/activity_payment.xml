@@ -144,7 +144,7 @@
         android:layout_marginRight="30dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:textColor="#B6B0B0"
+        android:textColor="#000000"
         android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/editPhone"
