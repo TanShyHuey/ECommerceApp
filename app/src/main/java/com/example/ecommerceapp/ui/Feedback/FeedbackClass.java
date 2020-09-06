@@ -14,10 +14,11 @@ public class FeedbackClass {
     public void setFname(String fname) {
         this.fname = fname;
     }
-
-
     public void setFemail(String femail) {
         this.femail = femail;
+    }
+    public void setFmessage(String fmessage) {
+        this.fmessage = fmessage;
     }
 
     public String getFname() {
