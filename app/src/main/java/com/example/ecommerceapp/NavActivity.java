@@ -1,14 +1,17 @@
 package com.example.ecommerceapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.ecommerceapp.ui.Model.AddToCart;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class NavActivity extends AppCompatActivity {
@@ -54,6 +57,34 @@ public class NavActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(NavActivity.this, UserProfile.class));
+            }
+        });
+
+
+
+        BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
+
+        bottomNavigationView.setSelectedItemId(R.id.);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()){
+                    case R.id.deals:
+                        startActivity(new Intent(getApplicationContext(),EcommerceMain.class));
+                        overridePendingTransition(0,0);
+
+                        return true;
+                    case R.id.addtocart:
+                        startActivity(new Intent(getApplicationContext(),AddToCart.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.myaccount:
+
+                        return true;
+                }
+
+                return false;
             }
         });
     }

@@ -4,13 +4,16 @@ package com.example.ecommerceapp;
 import android.content.Intent;
 import android.graphics.ColorSpace;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ecommerceapp.ui.Model.AddToCart;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class EcommerceMain extends AppCompatActivity {
 
@@ -27,6 +30,30 @@ public class EcommerceMain extends AppCompatActivity {
         int images[]={R.drawable.slide1,R.drawable.slide2,R.drawable.slide4};
 
         v_flipper =findViewById(R.id.v_flipper);
+
+        BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
+
+        bottomNavigationView.setSelectedItemId(R.id.deals);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()){
+                    case R.id.deals:
+                        return true;
+                    case R.id.addtocart:
+                        startActivity(new Intent(getApplicationContext(),AddToCart.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.myaccount:
+                        startActivity(new Intent(getApplicationContext(),NavActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+
+                return false;
+            }
+        });
 
         //for loop
 
@@ -118,4 +145,7 @@ public class EcommerceMain extends AppCompatActivity {
         Intent intent =new Intent(this,FavoriteProduct.class);
         startActivity(intent);
     }
+
+
+
 }
