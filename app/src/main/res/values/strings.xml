@@ -220,5 +220,7 @@
     <string name="payment_email">Payment email</string>
     <string name="payment_name">Payment name</string>
     <string name="payment_address">Payment address</string>
+    <string name="payment_phone">Payment phone</string>
+    <string name="history_payment_detail">History Payment Detail</string>
 
 </resources>
