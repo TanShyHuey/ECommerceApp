@@ -2,6 +2,7 @@ package com.example.ecommerceapp.ui.Feedback;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,6 +10,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.ecommerceapp.MessageClass;
+import com.example.ecommerceapp.NavActivity;
+import com.example.ecommerceapp.Payment;
 import com.example.ecommerceapp.R;
 import com.example.ecommerceapp.UserHelperClass;
 import com.google.firebase.database.DatabaseReference;
@@ -44,6 +47,8 @@ public class FeedbackActivity extends AppCompatActivity {
 
 
                 Toast.makeText(FeedbackActivity.this,"Save Feedback Successful",Toast.LENGTH_LONG).show();
+                startActivity(new Intent(FeedbackActivity .this, NavActivity.class));
+                finish();
             }
     });
 
