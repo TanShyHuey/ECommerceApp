@@ -28,7 +28,7 @@ public class NavActivity extends AppCompatActivity {
 
         tvLogout = (TextView) findViewById(R.id.aalogout);
         tvAbout=(TextView)findViewById(R.id.about);
-        tvhistorypayment=(TextView)findViewById(R.id.historypayment);
+        tvhistorypayment=(TextView)findViewById(R.id.hisPayment);
         profile=(ImageView)findViewById(R.id.imageView7);
         tvMessage =(TextView)findViewById(R.id.carrier3);
         tvChat=(TextView)findViewById(R.id.carrier2);

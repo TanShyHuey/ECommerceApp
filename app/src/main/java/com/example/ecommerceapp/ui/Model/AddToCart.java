@@ -19,7 +19,6 @@ import com.example.ecommerceapp.NavActivity;
 import com.example.ecommerceapp.Payment;
 import com.example.ecommerceapp.R;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.FirebaseDatabase;
 
 
@@ -35,7 +34,7 @@ public class AddToCart extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_to_cart);
 
-        getSupportActionBar().setTitle("Cart List");
+        getSupportActionBar().setTitle("Shopping Cart");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         btnNext=(Button) findViewById(R.id.next_process_btn);
@@ -73,6 +72,14 @@ public class AddToCart extends AppCompatActivity
         adapter.startListening();
     }
 }
+
+
+
+
+
+
+
+
 
 
 
