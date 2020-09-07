@@ -223,7 +223,7 @@
     <string name="payment_phone">Payment phone</string>
     <string name="history_payment_detail">History Payment Detail</string>
     <string name="email">email</string>
-    <string name="history_payemnt">History Payemnt</string>
+    <string name="history_payemnt">Payment History</string>
 
     <string name="navigation_carrierlist">CarrierList</string>
     <string name="navigation_favoritelist">FavoriteList</string>
@@ -231,6 +231,6 @@
     <string name="feedback">feedback</string>
     <string name="Feedback">Feedback</string>
     <string name="Email">Email</string>
-    <string name="Chat">chat</string>
+    <string name="Chat">Chat</string>
 
 </resources>

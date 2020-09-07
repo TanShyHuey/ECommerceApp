@@ -12,7 +12,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="60dp"
         android:layout_marginLeft="60dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="8dp"
         android:src="@drawable/ic_baseline_email"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewchat" />
@@ -52,14 +52,14 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="78dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="65dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_baseline_history"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        android:src="@drawable/ic_baseline_history" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -74,10 +74,10 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="80dp"
-        android:layout_height="63dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
+        android:layout_width="55dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
         android:layout_marginTop="180dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageViewFeedback"
@@ -85,8 +85,8 @@
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="77dp"
-        android:layout_height="56dp"
+        android:layout_width="73dp"
+        android:layout_height="48dp"
         android:layout_marginStart="44dp"
         android:layout_marginLeft="44dp"
         android:layout_marginTop="10dp"
@@ -110,13 +110,13 @@
         android:textStyle="normal"
         app:fontFamily="serif"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toEndOf="@+id/imageView6"
         app:layout_constraintTop_toBottomOf="@+id/about" />
 
     <TextView
         android:id="@+id/carrier"
-        android:layout_width="183dp"
+        android:layout_width="180dp"
         android:layout_height="52dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
@@ -136,7 +136,7 @@
         android:layout_height="53dp"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         android:text="@string/history_payment"
@@ -145,7 +145,7 @@
         android:textStyle="normal"
         app:fontFamily="serif"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.321"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/carrier" />
 
@@ -182,8 +182,8 @@
 
     <TextView
         android:id="@+id/carrier2"
-        android:layout_width="183dp"
-        android:layout_height="52dp"
+        android:layout_width="185dp"
+        android:layout_height="48dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
@@ -198,11 +198,11 @@
 
     <TextView
         android:id="@+id/carrier4"
-        android:layout_width="183dp"
-        android:layout_height="52dp"
+        android:layout_width="172dp"
+        android:layout_height="48dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="16dp"
         android:onClick="gotocarrierlist"
         android:text="@string/Feedback"
         android:textColor="#171717"
@@ -218,7 +218,7 @@
         android:layout_height="52dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="12dp"
         android:onClick="gotocarrierlist"
         android:text="@string/Email"
         android:textColor="#171717"
