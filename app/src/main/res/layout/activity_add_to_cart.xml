@@ -20,11 +20,15 @@
         android:id="@+id/next_process_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-1dp"
         android:background="@color/colorPrimaryDark"
         android:text="Next"
         android:textColor="@android:color/white"
         android:textSize="20dp"
-        />
+        android:layout_alignParentLeft="true" />
+
+
 
 </RelativeLayout>

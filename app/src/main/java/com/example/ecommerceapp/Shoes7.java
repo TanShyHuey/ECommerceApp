@@ -62,8 +62,6 @@ public class Shoes7 extends AppCompatActivity implements AdapterView.OnItemSelec
         SizeShoes=(Spinner) findViewById(R.id.ShoesSize7);
         btnFavouriteProduct=(Button) findViewById(R.id.Favourite_button7);
 
-
-
         product=new product();
         Item=FirebaseDatabase.getInstance().getReference().child("Product");
 

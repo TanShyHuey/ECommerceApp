@@ -1,20 +1,25 @@
 package com.example.ecommerceapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Message;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.ecommerceapp.ui.Feedback.FeedbackActivity;
 import com.example.ecommerceapp.ui.Model.AddToCart;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class NavActivity extends AppCompatActivity {
 
-    private TextView tvLogout,tvAbout,tvContact;
-    private ImageView profile ;
+    private TextView tvLogout,tvAbout,tvhistorypayment ,tvMessage,tvChat , tvFeedback  ;
+    private ImageView profile;
     private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,9 +28,11 @@ public class NavActivity extends AppCompatActivity {
 
         tvLogout = (TextView) findViewById(R.id.aalogout);
         tvAbout=(TextView)findViewById(R.id.about);
-        tvContact=(TextView)findViewById(R.id.contact);
+        tvhistorypayment=(TextView)findViewById(R.id.historypayment);
         profile=(ImageView)findViewById(R.id.imageView7);
-
+        tvMessage =(TextView)findViewById(R.id.carrier3);
+        tvChat=(TextView)findViewById(R.id.carrier2);
+        tvFeedback =(TextView)findViewById(R.id.carrier4);
         mAuth = FirebaseAuth.getInstance();
 
         tvLogout.setOnClickListener(new View.OnClickListener() {
@@ -36,6 +43,32 @@ public class NavActivity extends AppCompatActivity {
             }
         });
 
+        tvLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NavActivity.this, LoginActivity.class));
+                mAuth.signOut();
+            }
+        });
+        tvChat .setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NavActivity.this, ChatActivity.class));
+            }
+        });
+        tvMessage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NavActivity.this, SendEmail.class));
+            }
+        });
+        tvFeedback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NavActivity.this, FeedbackActivity.class));
+            }
+        });
+
         tvAbout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,10 +76,10 @@ public class NavActivity extends AppCompatActivity {
             }
         });
 
-        tvContact.setOnClickListener(new View.OnClickListener() {
+        tvhistorypayment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(NavActivity.this,ChatActivity.class));
+                startActivity(new Intent(NavActivity.this,HistoryPayment.class));
             }
         });
 
@@ -56,6 +89,9 @@ public class NavActivity extends AppCompatActivity {
                 startActivity(new Intent(NavActivity.this, UserProfile.class));
             }
         });
+
+
+
     }
 
 
