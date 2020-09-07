@@ -11,13 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="260dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/shoes6"/>
+        android:src="@drawable/usshoes"/>
     <TextView
         android:id="@+id/ProductName6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_details6"
-        android:text="@string/timberland_men_shoes"
+        android:text="2018 Summer New Breathable mesh cloth Sneaker stylish Casual shoe sports girl Shoes"
         android:textSize="15sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -28,11 +28,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_details6"
-        android:text="@string/rm85_00"
-        android:textSize="15sp"
-        android:textStyle="bold"
+        android:layout_marginTop="37dp"
         android:gravity="center"
-        android:layout_marginTop="20dp"/>
+        android:text="RM499"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView62"

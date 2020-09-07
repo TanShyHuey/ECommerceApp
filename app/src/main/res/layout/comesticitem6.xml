@@ -11,13 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="260dp"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/capture4"/>
+        app:srcCompat="@drawable/german_brand_malu_wilz_easy_wear_true_matte_lipstick"/>
     <TextView
         android:id="@+id/ProductNamec6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_detailsc6"
-        android:text="@string/natural_cheek_blush"
+        android:text="German Brand MALU WILZ Easy Wear True Matte Lipstick Creamy Color Long Lasting Lips harajuku Makeup Lipstick 3G"
         android:textSize="15sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -28,11 +28,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_detailsc6"
-        android:text="@string/rm13_90"
-        android:textSize="15sp"
-        android:textStyle="bold"
+        android:layout_marginTop="39dp"
         android:gravity="center"
-        android:layout_marginTop="20dp"/>
+        android:text="RM699"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView62"

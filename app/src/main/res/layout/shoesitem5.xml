@@ -11,13 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="260dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/shoes5"/>
+        android:src="@drawable/a2020koreanshoes"/>
     <TextView
         android:id="@+id/ProductName5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_details5"
-        android:text="@string/running_shoes"
+        android:text="2020 Fashion Korean Women Shoes Winter Warm Fur High Top Pink Platform Sneakers "
         android:textSize="15sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -28,11 +28,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_details5"
-        android:text="@string/rm40_90"
-        android:textSize="15sp"
-        android:textStyle="bold"
+        android:layout_marginTop="37dp"
         android:gravity="center"
-        android:layout_marginTop="20dp"/>
+        android:text="RM199"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView62"

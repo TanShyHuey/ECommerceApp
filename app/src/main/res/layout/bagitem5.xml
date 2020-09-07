@@ -11,13 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="260dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/bag5"/>
+        android:src="@drawable/femaleflowerbag"/>
     <TextView
         android:id="@+id/ProductNameb5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_detailsb5"
-        android:text="@string/crossbody_bag"
+        android:text="Women's Bag Female Flower Embroidery Handbag for 2018 New Luxury Shoulder Bag Design Women Messenger Bag Envelope Crossbody Bags"
         android:textSize="15sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -28,11 +28,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_detailsb5"
-        android:text="@string/rm19_90"
-        android:textSize="15sp"
-        android:textStyle="bold"
+        android:layout_marginTop="54dp"
         android:gravity="center"
-        android:layout_marginTop="20dp"/>
+        android:text="@string/rm85_00"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView62"

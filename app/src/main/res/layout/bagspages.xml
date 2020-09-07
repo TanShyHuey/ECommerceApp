@@ -35,48 +35,42 @@
         android:id="@+id/button7"
         android:layout_width="130dp"
         android:layout_height="55dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
         android:background="@color/colorDarkBlue"
         android:onClick="gotoComesticPages"
         android:text="@string/COSMETIC"
         android:textColor="@color/colorWhite"
         app:layout_constraintEnd_toStartOf="@+id/button8"
-        app:layout_constraintStart_toEndOf="@+id/button6"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView47"
-        android:layout_width="159dp"
-        android:layout_height="145dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="31dp"
+        android:layout_width="184dp"
+        android:layout_height="186dp"
+        android:layout_marginTop="20dp"
         android:onClick="gotobag2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button6"
-        app:srcCompat="@drawable/bag1"
+        app:srcCompat="@drawable/fashion_crossbody_women_rainbow_brand_new"
         tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView48"
-        android:layout_width="145dp"
-        android:layout_height="148dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
+        android:layout_width="190dp"
+        android:layout_height="186dp"
+        android:layout_marginTop="20dp"
         android:onClick="gotoBag3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button8"
-        app:srcCompat="@drawable/bag2"
+        app:srcCompat="@drawable/flamingobags"
         tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView49"
-        android:layout_width="180dp"
-        android:layout_height="167dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="50dp"
+        android:layout_width="191dp"
+        android:layout_height="176dp"
         android:onClick="gotoBag"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView47"
@@ -85,41 +79,32 @@
 
     <ImageView
         android:id="@+id/imageView51"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginRight="4dp"
+        android:layout_width="190dp"
+        android:layout_height="179dp"
         android:onClick="gotoBag4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView48"
-        app:srcCompat="@drawable/bag4"
+        app:srcCompat="@drawable/chinahandbag"
         tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView52"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="31dp"
-        android:layout_marginLeft="31dp"
-        android:layout_marginBottom="30dp"
+        android:layout_width="195dp"
+        android:layout_height="182dp"
         android:onClick="gotoBag5"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/bag5"
+        app:layout_constraintTop_toBottomOf="@+id/imageView49"
+        app:srcCompat="@drawable/femaleflowerbag"
         tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView53"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="30dp"
+        android:layout_width="192dp"
+        android:layout_height="182dp"
         android:onClick="gotoBag6"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/bag6"
+        app:layout_constraintTop_toBottomOf="@+id/imageView51"
+        app:srcCompat="@drawable/milandohnadbag"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

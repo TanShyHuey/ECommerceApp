@@ -9,15 +9,15 @@
     <ImageView
         android:id="@+id/product_image_detailsc5"
         android:layout_width="match_parent"
-        android:layout_height="260dp"
+        android:layout_height="293dp"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/capture6"/>
+        app:srcCompat="@drawable/flowercolor_lipstick" />
     <TextView
         android:id="@+id/ProductNamec5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_detailsc5"
-        android:text="@string/Cheek_Blusher"
+        android:text="FLOWERCOLOR LIPSTICK"
         android:textSize="15sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -28,11 +28,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_detailsc5"
-        android:text="@string/rm10_99"
-        android:textSize="15sp"
-        android:textStyle="bold"
+        android:layout_marginTop="22dp"
         android:gravity="center"
-        android:layout_marginTop="20dp"/>
+        android:text="RM499"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView62"

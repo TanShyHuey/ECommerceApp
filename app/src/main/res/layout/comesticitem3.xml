@@ -9,15 +9,15 @@
     <ImageView
         android:id="@+id/product_image_detailsc3"
         android:layout_width="match_parent"
-        android:layout_height="260dp"
+        android:layout_height="319dp"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/capture5"/>
+        app:srcCompat="@drawable/maclipstick" />
     <TextView
         android:id="@+id/ProductNamec3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_detailsc3"
-        android:text="@string/liquid_foundation"
+        android:text="MAC Baroque the Internet Lipstick"
         android:textSize="15sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -28,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_detailsc3"
-        android:text="@string/rm9_90"
+        android:text="RM199"
         android:textSize="15sp"
         android:textStyle="bold"
         android:gravity="center"

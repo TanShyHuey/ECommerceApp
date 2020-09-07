@@ -11,13 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="260dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/shoes3"/>
+        android:src="@drawable/lv_shoes"/>
     <TextView
         android:id="@+id/ProductName3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_details3"
-        android:text="@string/macaron_sneakers"
+        android:text="2020 New LV man shoes fashion shoes board casual shoes for men casual men shoes"
         android:textSize="15sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -28,11 +28,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_details3"
-        android:text="@string/RM45_90"
-        android:textSize="15sp"
-        android:textStyle="bold"
+        android:layout_marginTop="39dp"
         android:gravity="center"
-        android:layout_marginTop="20dp"/>
+        android:text="RM2299"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView62"

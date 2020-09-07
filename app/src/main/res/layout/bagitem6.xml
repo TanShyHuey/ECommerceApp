@@ -11,13 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="260dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/bag6"/>
+        android:src="@drawable/milandohnadbag"/>
     <TextView
         android:id="@+id/ProductNameb6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_detailsb6"
-        android:text="@string/women_s_casual_bag"
+        android:text="2020 New High Quality MILANDO Ladies Handbag Luxury Handbags Design Women PU Leather Handbag"
         android:textSize="15sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -28,11 +28,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_detailsb6"
-        android:text="@string/rm7_90"
-        android:textSize="15sp"
-        android:textStyle="bold"
+        android:layout_marginTop="40dp"
         android:gravity="center"
-        android:layout_marginTop="20dp"/>
+        android:text="RM399"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView62"

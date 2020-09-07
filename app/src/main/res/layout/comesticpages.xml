@@ -8,14 +8,12 @@
 
     <ImageView
         android:id="@+id/imageView23"
-        android:layout_width="170dp"
-        android:layout_height="115dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginBottom="25dp"
+        android:layout_width="219dp"
+        android:layout_height="189dp"
+        android:layout_marginTop="4dp"
         android:onClick="gotocomestic4"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView32"
         app:srcCompat="@drawable/ysl_the_mats_2016" />
 
     <Button
@@ -45,78 +43,66 @@
         android:id="@+id/button1"
         android:layout_width="130dp"
         android:layout_height="55dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
         android:background="@color/colorGrey"
         android:onClick="gotoComesticPages"
         android:text="@string/COSMETIC"
         android:textColor="@color/colorWhite"
         app:layout_constraintEnd_toStartOf="@+id/button3"
-        app:layout_constraintStart_toEndOf="@+id/button2"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView37"
-        android:layout_width="156dp"
-        android:layout_height="133dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginRight="12dp"
+        android:layout_width="187dp"
+        android:layout_height="186dp"
+        android:layout_marginTop="17dp"
         android:onClick="gotoComestic3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button3"
-        app:srcCompat="@drawable/capture1"
+        app:srcCompat="@drawable/tom_ford_soleil_2020_summer_makeup_collection_1"
         tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView41"
-        android:layout_width="169dp"
-        android:layout_height="137dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="55dp"
+        android:layout_width="210dp"
+        android:layout_height="187dp"
         android:onClick="gotoComestic4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView32"
+        app:layout_constraintTop_toBottomOf="@+id/imageView23"
         app:srcCompat="@drawable/dior"
         tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView42"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="57dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_width="185dp"
+        android:layout_height="178dp"
         android:onClick="gotoComestic5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView37"
-        app:srcCompat="@drawable/capture4"
+        app:srcCompat="@drawable/german_brand_malu_wilz_easy_wear_true_matte_lipstick"
         tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView44"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
-        android:layout_marginBottom="25dp"
+        android:layout_width="185dp"
+        android:layout_height="178dp"
         android:onClick="gotoComestic6"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/capture6"
+        app:layout_constraintTop_toBottomOf="@+id/imageView42"
+        app:srcCompat="@drawable/flowercolor_lipstick"
         tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView32"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="25dp"
+        android:layout_width="196dp"
+        android:layout_height="184dp"
+        android:layout_marginTop="15dp"
         android:onClick="gotoComestic1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2"
-        app:srcCompat="@drawable/capture5" />
+        app:srcCompat="@drawable/maclipstick" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

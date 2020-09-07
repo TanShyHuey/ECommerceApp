@@ -11,28 +11,29 @@
         android:layout_width="match_parent"
         android:layout_height="260dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/bag4"/>
+        android:src="@drawable/chinahandbag"/>
+
     <TextView
         android:id="@+id/ProductNameb4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_detailsb4"
-        android:text="@string/crossbody_bag"
-        android:textSize="15sp"
-        android:textStyle="bold"
+        android:layout_marginTop="0dp"
         android:gravity="center"
-        android:layout_marginTop="0dp"/>
+        android:text="Professional Handbag Woman Tote Bag Sholder Bag Fashion Leather Hand Bags Designer Handbag New Style Tote Bag"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/ProductPriceb4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_detailsb4"
-        android:text="@string/rm13_90"
-        android:textSize="15sp"
-        android:textStyle="bold"
+        android:layout_marginTop="41dp"
         android:gravity="center"
-        android:layout_marginTop="20dp"/>
+        android:text="RM99"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView62"

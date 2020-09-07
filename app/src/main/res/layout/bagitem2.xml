@@ -11,13 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="260dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/bag1"/>
+        android:src="@drawable/fashion_crossbody_women_rainbow_brand_new"/>
     <TextView
         android:id="@+id/ProductNameb2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_detailsb2"
-        android:text="@string/simple_satchel_bags"
+        android:text="Fashion crossbody women rainbow brand new designer shoulder bag purses female handbags Leather bag totes 550 clutch 411 bags"
         android:textSize="15sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -28,11 +28,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_detailsb2"
-        android:text="@string/rm6_90"
-        android:textSize="15sp"
-        android:textStyle="bold"
+        android:layout_marginTop="56dp"
         android:gravity="center"
-        android:layout_marginTop="20dp"/>
+        android:text="RM100"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView62"

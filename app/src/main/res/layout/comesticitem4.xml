@@ -11,13 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="260dp"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/capture1"/>
+        app:srcCompat="@drawable/tom_ford_soleil_2020_summer_makeup_collection_1"/>
     <TextView
         android:id="@+id/ProductNamec4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_detailsc4"
-        android:text="@string/FullCoverageConcealer"
+        android:text="TOM FORD NEW LIP COLORS FOR SUMMER 2020 AVAILABLE NOW"
         android:textSize="15sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -28,11 +28,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_detailsc4"
-        android:text="@string/rm6_90"
-        android:textSize="15sp"
-        android:textStyle="bold"
+        android:layout_marginTop="37dp"
         android:gravity="center"
-        android:layout_marginTop="20dp"/>
+        android:text="RM188"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView62"

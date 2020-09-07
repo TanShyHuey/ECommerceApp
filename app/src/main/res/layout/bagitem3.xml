@@ -11,14 +11,14 @@
         android:layout_width="match_parent"
         android:layout_height="260dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/bag2"/>
+        android:src="@drawable/flamingobags"/>
 
     <TextView
         android:id="@+id/ProductNameb3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_detailsb3"
-        android:text="@string/women_s_sling_bag"
+        android:text="Flamingo shoulder bags hot new luxury handbags women handbags designer handbags bags for women 2019 ladies handbag"
         android:textSize="15sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -29,11 +29,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_detailsb3"
-        android:text="@string/rm6_90"
-        android:textSize="15sp"
-        android:textStyle="bold"
+        android:layout_marginTop="53dp"
         android:gravity="center"
-        android:layout_marginTop="20dp"/>
+        android:text="RM2399"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView62"

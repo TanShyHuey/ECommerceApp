@@ -11,13 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="260dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/shoes2"/>
+        android:src="@drawable/shoes9"/>
     <TextView
         android:id="@+id/ProductName2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_details2"
-        android:text="@string/couple_shoes_sneakers"
+        android:text="Fashion shoes flat men sports casual fashion canvas boys shoes "
         android:textSize="15sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -28,11 +28,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_details2"
-        android:text="@string/rm36_90"
-        android:textSize="15sp"
-        android:textStyle="bold"
+        android:layout_marginTop="38dp"
         android:gravity="center"
-        android:layout_marginTop="20dp"/>
+        android:text="RM799"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView62"

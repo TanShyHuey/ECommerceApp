@@ -11,13 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="260dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/shoes4"/>
+        android:src="@drawable/koreanshoes"/>
     <TextView
         android:id="@+id/ProductName4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_details4"
-        android:text="@string/women_s_hight_heels"
+        android:text="Women Korean Fashion Wild Style Flat Bottom Casual Canvas Sport Shoes"
         android:textSize="15sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -28,11 +28,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/product_image_details4"
-        android:text="@string/rm23_90"
-        android:textSize="15sp"
-        android:textStyle="bold"
+        android:layout_marginTop="40dp"
         android:gravity="center"
-        android:layout_marginTop="20dp"/>
+        android:text="RM299"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView62"
