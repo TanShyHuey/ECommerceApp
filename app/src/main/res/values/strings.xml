@@ -228,5 +228,8 @@
     <string name="navigation_carrierlist">CarrierList</string>
     <string name="navigation_favoritelist">FavoriteList</string>
     <string name="navigation_cartlist">CartList</string>
+    <string name="feedback">feedback</string>
+    <string name="Feedback">Feedback</string>
+    <string name="Email">Email</string>
 
 </resources>
