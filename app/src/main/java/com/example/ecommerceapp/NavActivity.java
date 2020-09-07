@@ -15,8 +15,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class NavActivity extends AppCompatActivity {
 
-    private TextView tvLogout,tvAbout,tvhistorypayment ;
-    private ImageView profile ,message,chat,feedback;
+    private TextView tvLogout,tvAbout,tvhistorypayment ,tvMessage,tvChat , tvFeedback  ;
+    private ImageView profile;
     private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +27,9 @@ public class NavActivity extends AppCompatActivity {
         tvAbout=(TextView)findViewById(R.id.about);
         tvhistorypayment=(TextView)findViewById(R.id.historypayment);
         profile=(ImageView)findViewById(R.id.imageView7);
-        message=(ImageView)findViewById(R.id.imageViewmessage);
-        chat=(ImageView)findViewById(R.id.imageViewchat);
-        feedback =(ImageView)findViewById(R.id.imageViewFeedback);
+        tvMessage =(TextView)findViewById(R.id.carrier3);
+        tvChat=(TextView)findViewById(R.id.carrier2);
+        tvFeedback =(TextView)findViewById(R.id.carrier4);
         mAuth = FirebaseAuth.getInstance();
 
         tvLogout.setOnClickListener(new View.OnClickListener() {
@@ -47,19 +47,19 @@ public class NavActivity extends AppCompatActivity {
                 mAuth.signOut();
             }
         });
-        chat .setOnClickListener(new View.OnClickListener() {
+        tvChat .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(NavActivity.this, ChatActivity.class));
             }
         });
-        message.setOnClickListener(new View.OnClickListener() {
+        tvMessage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(NavActivity.this, SendEmail.class));
             }
         });
-        feedback .setOnClickListener(new View.OnClickListener() {
+        tvFeedback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(NavActivity.this, FeedbackActivity.class));

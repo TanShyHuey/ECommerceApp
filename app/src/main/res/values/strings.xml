@@ -231,5 +231,6 @@
     <string name="feedback">feedback</string>
     <string name="Feedback">Feedback</string>
     <string name="Email">Email</string>
+    <string name="Chat">chat</string>
 
 </resources>
