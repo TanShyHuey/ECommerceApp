@@ -58,30 +58,6 @@ public class AddToCart extends AppCompatActivity
             }
         });
 
-        BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
-
-        bottomNavigationView.setSelectedItemId(R.id.deals);
-
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch (menuItem.getItemId()){
-                    case R.id.deals:
-                        startActivity(new Intent(getApplicationContext(), EcommerceMain.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.addtocart:
-                        return true;
-                    case R.id.myaccount:
-                        startActivity(new Intent(getApplicationContext(),NavActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                }
-
-                return false;
-            }
-        });
-
 
     }
 

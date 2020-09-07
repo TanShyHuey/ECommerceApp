@@ -10,11 +10,13 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.ecommerceapp.ui.Model.AddToCart;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class EcommerceMain extends AppCompatActivity {
@@ -46,6 +48,30 @@ public class EcommerceMain extends AppCompatActivity {
         for (int image: images){
             flipperImages(image);
         }
+        BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
+
+        bottomNavigationView.setSelectedItemId(R.id.deals);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()){
+                    case R.id.deals:
+                        return true;
+                    case R.id.addtocart:
+                        startActivity(new Intent(getApplicationContext(),AddToCart.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.myaccount:
+                        startActivity(new Intent(getApplicationContext(),NavActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+
+                return false;
+            }
+        });
+
 
     }
 
