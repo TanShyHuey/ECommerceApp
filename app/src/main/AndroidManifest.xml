@@ -19,14 +19,18 @@
             android:parentActivityName=".EcommerceMain" />
         <activity android:name=".Payment" />
         <activity android:name=".AboutUsActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".OtpActivity" />
-        <activity android:name=".PhoneAuthentication" />
-        <activity android:name=".UserProfile" />
+        <activity android:name=".LoginActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".OtpActivity" android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".PhoneAuthentication" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".UserProfile"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".SendEmail" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".ResetActivity" />
-        <activity android:name=".NavActivity" />
+        <activity android:name=".RegisterActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ResetActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".NavActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".Shoes7"
             android:parentActivityName=".ShoesPagesJava" />
@@ -102,8 +106,9 @@
         <activity
             android:name=".CarrierList"
             android:parentActivityName=".NavActivity" />
-        <activity android:name=".ChatActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".ChatActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

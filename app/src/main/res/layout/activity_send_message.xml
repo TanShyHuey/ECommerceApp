@@ -13,8 +13,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chat_recycler"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/chat_relative"/>
+        android:layout_height="613dp"
+        android:layout_above="@+id/chat_relative" />
 
     <RelativeLayout
         android:id="@+id/chat_relative"

@@ -2,10 +2,13 @@ package com.example.ecommerceapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.content.IntentSender;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class SendEmail extends AppCompatActivity {
 
@@ -29,7 +32,12 @@ public class SendEmail extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sendEmail();
+                Toast.makeText(getApplicationContext(), "Email done!", Toast.LENGTH_SHORT).show();
+
+                startActivity(new Intent(SendEmail .this, NavActivity.class));
+                finish();
             }
+
         });
     }
 
@@ -42,5 +50,6 @@ public class SendEmail extends AppCompatActivity {
         JavaMailAPI javaMailAPI = new JavaMailAPI(this, mEmail, mSubject, mMessage);
 
         javaMailAPI.execute();
+
     }
 }
